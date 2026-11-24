@@ -10,9 +10,11 @@ from concurrent.futures import ThreadPoolExecutor
 from functools import lru_cache
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit, parse_qs
 from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
+
+import catalog
 
 ROOT = Path(__file__).resolve().parent
 MAX_BYTES = 8 * 1024 * 1024
@@ -75,7 +77,7 @@ def normalize(value):
 
 def remote(base, **params):
     request = Request(base + "?" + urlencode(params), headers={"User-Agent": "Planche/1.0 personal culture tracker"})
-    with urlopen(request, timeout=4) as response:
+    with urlopen(request, timeout=4, context=catalog.context()) as response:
         return json.loads(response.read(2 * 1024 * 1024))
 
 
@@ -138,7 +140,19 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(payload)
 
+    def do_GET(self):
+        path = urlsplit(self.path)
+        if path.path == "/api/catalog":
+            self.reply(200, catalog.search(parse_qs(path.query)))
+        elif path.path == "/api/catalog/status":
+            self.reply(200, catalog.status())
+        else:
+            super().do_GET()
+
     def do_POST(self):
+        if self.path == "/api/catalog/update":
+            self.reply(202, {"started": catalog.update()})
+            return
         if self.path not in ("/api/csv", "/api/xlsx", "/api/enrich"):
             self.reply(404, {"error": "Route inconnue."})
             return
@@ -164,6 +178,7 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    catalog.connect().close()
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
     with ThreadingHTTPServer(("127.0.0.1", port), Handler) as server:
         print(f"Planche est disponible sur http://127.0.0.1:{port}", flush=True)

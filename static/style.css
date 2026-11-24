@@ -14,3 +14,17 @@ input:not([type=checkbox]),select,textarea{border:1px solid var(--line);backgrou
 @media(max-width:480px){main,header{padding-inline:11px}.hero{grid-template-columns:1fr 1fr}.hero-text .eyebrow{font-size:8px}.hero .dark{padding-inline:10px;min-height:35px;font-size:12px}.hero-art{background-size:auto 85%;min-height:238px}.stat{display:grid;padding:10px;align-content:start;min-height:95px}.stat .ring,.stat .stat-icon{display:none}.dashboard-grid,.collection-grid{grid-template-columns:1fr}.works,.badge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:14px}.page-title{align-items:flex-start;flex-direction:column}.page-title h1{font-size:50px}.cover{padding:10px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 @media(max-width:760px){#side:has(.demo){display:flex;justify-content:flex-end;margin-top:-5px}.level{display:none}.demo{min-height:26px;margin-top:0}}
+.catalog-rules{margin-bottom:20px;line-height:1.5;font-size:14px}
+.catalog-rules summary{cursor:pointer;font-weight:700}
+.catalog-rules p{margin-top:12px}
+.catalog-rules ul,.catalog-evidence{padding-left:20px}
+.catalog-rules li{margin:12px 0}
+.catalog-rules small,.catalog-evidence small{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+.catalog-works{row-gap:25px}
+.catalog-works .tag{display:none}
+.catalog-works .cover{aspect-ratio:1.17}
+.catalog-proof{font-size:14px;margin:8px 0;min-height:20px}
+.catalog-works>article>button{font-size:14px}
+.catalog-pagination{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px}
+.catalog-evidence li{margin-bottom:12px}
+#catalog-add{margin-top:18px}

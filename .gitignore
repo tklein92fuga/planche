@@ -1,0 +1,9 @@
+__pycache__/
+data/cache/
+data/*.sqlite3-journal
+data/*.sqlite3-wal
+data/*.sqlite3-shm
+.DS_Store
+data/.update.lock
+data/catalog.sqlite3
+data/*.restore

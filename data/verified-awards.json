@@ -1,0 +1,102 @@
+[
+  {
+    "id": "awards:verified-imdb:tt6751668",
+    "type": "film",
+    "title": "Parasite",
+    "year": "2019",
+    "genre": "Drama, Thriller",
+    "creator": "",
+    "image": "",
+    "length": "132",
+    "score": 85.0,
+    "votes": 1210831,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Palme d’or 2019",
+        "url": "https://www.festival-cannes.com/en/f/gisaengchung/",
+        "checked": "2026-11-24T01:22:19+00:00",
+        "canonical": "imdb:tt6751668"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "id": "awards:verified-imdb:tt14230458",
+    "type": "film",
+    "title": "Poor Things",
+    "year": "2023",
+    "genre": "Comedy, Drama, Romance",
+    "creator": "",
+    "image": "",
+    "length": "141",
+    "score": 77.0,
+    "votes": 428482,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Lion d’or 2023",
+        "url": "https://www.labiennale.org/en/history-venice-film-festival",
+        "checked": "2026-11-24T01:22:19+00:00",
+        "canonical": "imdb:tt14230458"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "id": "awards:verified-books:OL59048W",
+    "type": "book",
+    "title": "Les Vestiges du jour",
+    "year": "1989",
+    "genre": "",
+    "creator": "Kazuo Ishiguro",
+    "image": "https://covers.openlibrary.org/b/id/983162-M.jpg",
+    "length": "",
+    "score": 84.28572000000001,
+    "votes": 28,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Booker Prize 1989",
+        "url": "https://thebookerprizes.com/the-booker-library/books/the-remains-of-the-day",
+        "checked": "2026-11-24T01:22:19+00:00",
+        "canonical": "books:OL59048W"
+      }
+    ],
+    "edition": {
+      "title": "Les Vestiges du jour",
+      "url": "https://openlibrary.org/books/OL8912536M",
+      "language": "français"
+    },
+    "updated": "2026-11-24T01:10:32+00:00"
+  },
+  {
+    "id": "awards:verified-steam:1086940",
+    "type": "game",
+    "title": "Baldur's Gate 3",
+    "year": "2023",
+    "genre": "",
+    "creator": "",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/3dd81008e9c385caf68152450c22353f6a8abec9/capsule_231x87.jpg?t=1777363040",
+    "length": "",
+    "score": 96.0,
+    "votes": 453133,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Game of the Year 2023",
+        "url": "https://thegameawards.com/rewind/year-2023",
+        "checked": "2026-11-24T01:22:19+00:00",
+        "canonical": "steam:1086940"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:13:35+00:00"
+  }
+]

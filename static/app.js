@@ -1,4 +1,5 @@
 import {types,statuses,initial,key,today,importRows} from './data.js';
+import {createCatalog} from './catalog-ui.js';
 const storage = 'planche.v1';
 const main = document.querySelector('#main');
 const modal = document.querySelector('#modal');
@@ -7,7 +8,7 @@ let state = read();
 let filter = {type:'all',status:'all',query:'',collection:'all'};
 let toastTimer;
 let importBusy = false;
-const pages = {accueil:['◈','Vue d’ensemble'],bibliotheque:['▦','Bibliothèque'],collections:['▱','Collections'],objectifs:['◎','Objectifs & badges'],decouverte:['✧','À découvrir']};
+const pages = {accueil:['◈','Vue d’ensemble'],bibliotheque:['▦','Bibliothèque'],catalogue:['✺','Catalogue'],collections:['▱','Collections'],objectifs:['◎','Objectifs & badges'],decouverte:['✧','À découvrir']};
 const page = ()=>Object.hasOwn(pages,location.hash.slice(1))?location.hash.slice(1):'accueil';
 const esc = value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const opts = (values, selected)=>Object.entries(values).map(([k,v])=>`<option value="${esc(k)}" ${k===selected?'selected':''}>${esc(v)}</option>`).join('');
@@ -87,6 +88,7 @@ function render(){
   const current=page();
   document.querySelector('#nav').innerHTML=Object.entries(pages).map(([k,[icon,label]])=>`<a href="#${k}" ${current===k?'aria-current="page"':''}><span>${icon}</span>${label}</a>`).join('');
   document.querySelector('#side').innerHTML=`<section class="level"><span class="stat-icon">✦</span><b>Niveau ${level()}</b><small>${xp()%100} / 100 XP</small>${bar(xp()%100,100)}</section>${state.demo?'<button class="ghost demo" data-act="demo">Retirer la démo</button>':''}`;
+  if(current==='catalogue'){main.innerHTML=catalogUI.mount();catalogUI.load();}
   if(current==='accueil')main.innerHTML=dashboard();
   if(current==='bibliotheque'){main.innerHTML=library();results();}
   if(current==='collections')main.innerHTML=title('TES LISTES','Collections<span>.</span>','Regroupe tes œuvres comme tu le souhaites.','<button class="dark" data-act="collection">+ Nouvelle collection</button>')+
@@ -275,4 +277,20 @@ document.addEventListener('change',e=>{
 });
 window.addEventListener('hashchange',()=>{render();main.focus({preventScroll:true});window.scrollTo(0,0);});
 window.addEventListener('storage',event=>{if(event.key===storage&&!importBusy){state=read();render();}});
+const catalogUI=createCatalog({
+  types,esc,opts,cover,show,notify,
+  library:()=>state.items,
+  add:{
+    collections,
+    item:(item,collection)=>{
+      state.items.unshift({
+        id:crypto.randomUUID(),catalogId:item.id,type:item.type,title:item.title,year:item.year,
+        genre:item.genre||'',creator:item.creator||'',image:item.image||'',length:item.length||'',
+        collection,status:'todo',rating:0,review:'',completed:'',
+        evidence:item.evidence,edition:item.edition,source:item.evidence.map(e=>e.source).join(', ')
+      });
+      return save();
+    }
+  }
+});
 render();
