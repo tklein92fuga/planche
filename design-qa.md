@@ -58,3 +58,12 @@ Suppression des sous-listes automatiques par format, seuil ramené à trois œuv
 Nouvelle navigation Tout / Films / Jeux vidéo / Livres. Chaque vue filtre les membres, les compteurs et la pagination, sans modifier la sélection complète utilisée pour les trophées. Ajout d’icônes SVG originales pellicule, manette et livre sur chaque case et sur les couvertures de cartes.
 
 Contrôles navigateur: neuf films de la Seconde Guerre mondiale, trilogies de trois films, filtre Jeux vidéo montrant uniquement des icônes de manette (120 cases), filtre Livres montrant uniquement des livres (43 cases). Capture `../parcours-sagas-filtres.jpg`. Largeur mobile 390 pixels, aucun débordement, les quatre boutons restent visibles. Aucune erreur JavaScript. Neuf tests Python et deux scénarios Node vérifient aussi la recherche pendant un changement de filtre et l’absence de trophée attribué pour la seule partie visible d’une liste mixte.
+
+
+## Navigation en cours et retrait des icônes de format — 24 novembre 2026
+
+L’accueil affiche uniquement les méta-listes sous forme de cartes. Chaque carte ouvre un cours avec ses sous-listes dans le menu latéral et une grille de progression par sous-liste. La recherche d’une sous-liste retrouve sa méta-liste au premier niveau. Suppression des icônes de format dans les cases, cartes et filtres. Les trophées restent disponibles sur le profil.
+
+Horreur → Films de John Carpenter contient The Thing (1982), Halloween (1978), They Live (1988) et In the Mouth of Madness (1994), rapprochés par titre, année et format, sous réserve des critères du catalogue. Références: https://theofficialjohncarpenter.com/biography/ et https://theofficialjohncarpenter.com/credits/. Le compteur Horreur porte sur les quatre œuvres de cette sous-liste. Les méta-listes sans sous-listes sont retirées, y compris dans les projections par format.
+
+Contrôle navigateur: aucun bouton d’œuvre à l’accueil, aucune icône de format dans le DOM, ouverture de Horreur puis John Carpenter et affichage des quatre titres, retour à la grille de méta-listes. Mobile 390 pixels sans débordement dans les deux vues. Aucune erreur JavaScript. Capture `../parcours-horreur-carpenter.jpg`. Neuf tests Python et deux tests Node validés.

@@ -28,7 +28,6 @@ def overview(kind="all"):
             signature += ((DATA/'taxonomy.json').stat().st_mtime_ns,(DATA/'editorial-lists.json').stat().st_mtime_ns)
             if CACHE is not None and SIGNATURE == signature:
                 return project(CACHE,kind)
-            countries={r['id']:json.loads(r['countries']) for r in conn.execute('SELECT id,countries FROM work_details')}
             rows = conn.execute('SELECT *, '+catalog.CANONICAL+' canonical FROM works ORDER BY score DESC,id').fetchall()
         taxonomy = json.loads((DATA/'taxonomy.json').read_text())
         editorial=json.loads((DATA/'editorial-lists.json').read_text())
@@ -56,7 +55,6 @@ def overview(kind="all"):
             for credit in re.split(r'[,;]',w.get('creator','')):
                 by_creator.setdefault(catalog.normalized(credit),set()).add(ident)
             if any(p.get('kind')=='award' for p in proofs[ident]):award_ids.add(ident)
-        meta_members={meta['id']:[ident for ident,w in works.items() if journey_rules.root_match(meta,w,countries.get(ident,[]))] for meta in taxonomy['meta_lists']}
         tagged={}
         for ident,w in works.items():
             for tag in journey_rules.tags(w):tagged.setdefault(tag,set()).add(ident)
@@ -66,8 +64,8 @@ def overview(kind="all"):
             result.update(meta=meta['id'],family=meta['family'],parent=parent,breadcrumb=list(trail),items=[])
             if node.get('children'):
                 children=[child for c in node['children'] if (child:=build(c,meta,node['id'],(*trail,node['title']))) ]
-                own=meta_members.get(node['id'],[]) if node['kind']=='meta' else []
-                if not children and len(own)<MIN_WORKS:return None
+                own=[]
+                if not children:return None
                 result['directMembers']=own
                 result['children']=[c['id'] for c in children]
                 result['members']=sorted(set(own)|{i for c in children for i in c['members']})
@@ -150,7 +148,13 @@ def project(data,kind):
         idset=set(ids)
         if 'directMembers' in g:g['directMembers']=[i for i in g['directMembers'] if i in idset]
         groups.append(g)
-    available={g['id'] for g in groups}
+    kept={}
     for g in groups:
-        if 'children' in g:g['children']=[i for i in g['children'] if i in available]
+        if 'children' in g:
+            g['children']=[i for i in g['children'] if i in kept]
+            if not g['children']:continue
+            ids=sorted({ident for child in g['children'] for ident in kept[child]['members']})
+            g.update(members=ids,total=len(ids),items=[data['_works'][i] for i in sorted(ids,key=lambda i:-(data['_works'][i].get('votes') or 0))[:16]])
+        kept[g['id']]=g
+    groups=list(kept.values())
     return dict(public,groups=groups,media=kind,coverage=dict(populated=sum(g['kind']=='sublist' for g in groups),sublists=sum(g['kind']=='sublist' for g in groups),metaLists=sum(g['kind']=='meta' for g in groups),minimumWorks=MIN_WORKS))

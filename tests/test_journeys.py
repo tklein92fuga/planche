@@ -14,6 +14,10 @@ class JourneysTest(unittest.TestCase):
         self.assertTrue(all(g['total']>=3 for g in self.groups.values()))
         self.assertIn('fantasy',self.groups)
         self.assertIn('action',self.groups)
+        carpenter=self.groups['horreur/john-carpenter']
+        self.assertEqual(carpenter['parent'],'horreur')
+        self.assertGreaterEqual(carpenter['total'],3)
+        self.assertTrue(all(i['type']=='film' for i in carpenter['items']))
         self.assertFalse(any('/format-' in g['id'] for g in self.groups.values()))
         self.assertEqual(self.groups['fantasy/terre-du-milieu-seigneur-des-anneaux']['total'],3)
         self.assertTrue(all(self.groups[i]['kind']=='sublist' for i in self.groups['fantasy']['children']))
@@ -41,6 +45,7 @@ class JourneysTest(unittest.TestCase):
             data=journeys.overview(kind)
             for g in data['groups']:
                 self.assertGreaterEqual(g['total'],3)
+                if g['kind']!='sublist':self.assertTrue(g['children'])
                 self.assertTrue(all(i['type']==kind for i in g['items']))
             g=data['groups'][0]
             detail=journeys.detail(g['id'],1,kind)

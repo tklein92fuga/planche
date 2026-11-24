@@ -654,5 +654,37 @@
     "sources": [
       "https://www.bfi.org.uk/features/where-begin-with-keanu-reeves"
     ]
+  },
+  {
+    "meta": "horreur",
+    "id": "horreur/john-carpenter",
+    "title": "Films de John Carpenter",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Halloween",
+        "year": "1978",
+        "type": "film"
+      },
+      {
+        "title": "The Thing",
+        "year": "1982",
+        "type": "film"
+      },
+      {
+        "title": "They Live",
+        "year": "1988",
+        "type": "film"
+      },
+      {
+        "title": "In the Mouth of Madness",
+        "year": "1994",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://theofficialjohncarpenter.com/biography/",
+      "https://theofficialjohncarpenter.com/credits/"
+    ]
   }
 ]

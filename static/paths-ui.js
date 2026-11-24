@@ -1,6 +1,6 @@
-import {mediaIcon,mediaNames} from './media-ui.js';
+import {mediaNames} from './media-ui.js';
 export function createPaths({esc,library,open,level,xp,notify}) {
-  let loadRevision=0,media='all',allGroups=[],fullList=false,groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
+  let loadRevision=0,media='all',allGroups=[],groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
   const active=()=>['#parcours','#profil'].includes(location.hash);
   const done=g=>g.members.filter(id=>tracked.get(id)?.status==='done').length;
   const percent=g=>g.total?Math.floor(done(g)/g.total*100):0;
@@ -30,20 +30,29 @@ export function createPaths({esc,library,open,level,xp,notify}) {
   function tile(i){
     items.set(i.id,i);
     const status=tracked.get(i.id)?.status||'todo';
-    return `<button class="mastery-tile ${status}" data-path-work="${esc(i.id)}" aria-label="${esc(i.title)} · ${mediaNames[i.type]} · ${status==='done'?'Terminé':status==='doing'?'En cours':'À découvrir'}" title="${esc(i.title)}">${mediaIcon(i.type)}${status==='done'?'<span class="tile-complete" aria-hidden="true">✓</span>':''}</button>`;
+    return `<button class="mastery-tile ${status}" data-path-work="${esc(i.id)}" aria-label="${esc(i.title)} · ${mediaNames[i.type]} · ${status==='done'?'Terminé':status==='doing'?'En cours':'À découvrir'}" title="${esc(i.title)}">${status==='done'?'<span class="tile-complete" aria-hidden="true">✓</span>':''}</button>`;
   }
   function row(g){
     const award=ledger()[g.id];
     return `<section class="journey-row ${award?'awarded':''}"><button class="journey-title" data-path-list="${esc(g.id)}"><span>${g.kind==='meta'?'MÉTA-LISTE':g.kind==='group'?'SECTION':'SOUS-LISTE'}</span><strong>${esc(g.title)}</strong><small>${g.total?`${done(g)} / ${g.total} œuvres`:'Sélection à compléter'}</small></button><div class="journey-progress">${g.total?`<div class="mastery-tiles">${g.items.slice(0,16).map(tile).join('')}</div>${meter(g)}`:'<p class="muted">Les œuvres de cette liste seront ajoutées après sélection.</p>'}</div><div class="journey-reward ${award?'earned':'locked'}">${g.kind==='group'?'<small>Ouvrir</small>':`${trophy(g)}<small>${award?'Débloqué':names[medal(g)]}</small>`}</div></section>`;
   }
-  function mediaNav(){return `<nav class="media-navbar" aria-label="Filtrer les parcours par format">${[['all','Tout'],['film','Films'],['game','Jeux vidéo'],['book','Livres']].map(([id,label])=>`<button data-path-media="${id}" aria-label="${label}" aria-pressed="${media===id}">${id==='all'?'':mediaIcon(id)}${label}</button>`).join('')}</nav>${media!=='all'?'<p class="path-data-note">Les trophées demandent la liste complète, tous formats confondus.</p>':''}`;}
+  function mediaNav(){return `<nav class="media-navbar" aria-label="Filtrer les parcours par format">${[['all','Tout'],['film','Films'],['game','Jeux vidéo'],['book','Livres']].map(([id,label])=>`<button data-path-media="${id}" aria-label="${label}" aria-pressed="${media===id}">${label}</button>`).join('')}</nav>${media!=='all'?'<p class="path-data-note">Les trophées demandent la liste complète, tous formats confondus.</p>':''}`;}
   function controls(){
     const families=[...new Set(groups.filter(g=>g.kind==='meta').map(g=>g.family))];
     return `<div class="filter-bar"><input type="search" id="journey-search" value="${esc(query)}" placeholder="Rechercher une liste…" aria-label="Rechercher une liste"><select id="journey-family" aria-label="Famille"><option value="">Toutes les familles</option>${families.map(f=>`<option ${f===family?'selected':''}>${esc(f)}</option>`).join('')}</select></div>`;
   }
-  function navigation(){
-    const metas=groups.filter(g=>g.kind==='meta');
-    return `<nav class="path-navigation" aria-label="Méta-listes"><button data-path-list="" class="path-overview ${!selected?'selected':''}">Tous les parcours</button>${metas.map(g=>`<button data-path-list="${esc(g.id)}" class="path-nav-item ${selected===g.id?'selected':''}"><strong>${esc(g.title)}</strong><span>${g.children.length?g.children.length+' sections':g.total+' œuvres'} · ${percent(g)} %</span></button>`).join('')}</nav>`;
+  const sublistCount=n=>n+' sous-liste'+(n>1?'s':'');
+  function descendants(g){
+    return (g.children||[]).flatMap(id=>{const child=groups.find(c=>c.id===id);return !child?[]:child.kind==='group'?descendants(child):[child];});
+  }
+  function courseFor(g){return g.kind==='meta'?g:groups.find(c=>c.id===g.meta);}
+  function courseNavigation(course){
+    if(!course)return '';
+    return `<nav class="path-navigation" aria-label="Sous-listes de ${esc(course.title)}"><button class="path-overview" data-path-list="">Toutes les méta-listes</button><button class="path-course-title ${selected===course.id?'selected':''}" data-path-list="${esc(course.id)}"><strong>${esc(course.title)}</strong><span>${sublistCount(descendants(course).length)}</span></button>${descendants(course).map((child,index)=>`<button class="path-nav-item ${selected===child.id?'selected':''}" data-path-list="${esc(child.id)}"><span>SOUS-LISTE ${index+1}</span><strong>${esc(child.title)}</strong><span>${done(child)} / ${child.total} terminées</span></button>`).join('')}</nav>`;
+  }
+  function metaCard(g){
+    const count=descendants(g).length;
+    return `<button class="meta-index-card" data-path-list="${esc(g.id)}"><span class="eyebrow">${esc(g.family)}</span><strong>${esc(g.title)}</strong><span>${count?sublistCount(count):'Sous-listes à venir'}</span><span class="meta-card-progress">${percent(g)} % · ${done(g)} / ${g.total} œuvres</span>${meter(g)}</button>`;
   }
   function match(g){return (!family||family===g.family)&&g.title.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr'));}
   async function draw(){
@@ -53,24 +62,27 @@ export function createPaths({esc,library,open,level,xp,notify}) {
     if(mode==='profil'){target.innerHTML=profile();return;}
     let content='';
     const g=groups.find(g=>g.id===selected);
+    const course=g?courseFor(g):null;
     if(!g){
-      const visible=groups.filter(g=>g.kind!=='group'&&(!query?g.kind==='meta':true)&&match(g));
-      content=`<div class="path-heading"><p class="eyebrow">EXPLORER · COMPLÉTER · COLLECTIONNER</p><h1>Parcours culturels.</h1><p>${groups.filter(g=>g.kind==='meta').length} méta-listes, ${groups.filter(g=>g.kind==='sublist').length} sous-listes. Une œuvre terminée valide toutes ses cases.</p><a href="#profil">Voir mon profil et mes trophées</a></div>${controls()}<p class="path-data-note">Chaque liste contient au moins trois œuvres. Un trophée est attribué lorsque toutes ses œuvres sont terminées. Le platine récompense une méta-liste complète.</p>${visible.map(row).join('')||'<p>Aucun parcours trouvé.</p>'}`;
-    }else if(g.children?.length&&!fullList){
-      content=`<button class="ghost" data-path-list="${esc(g.parent||'')}">Retour aux parcours</button>${heading(g)}${meter(g)}<div class="mastery-tiles">${g.items.map(tile).join('')}</div><button data-path-full>Voir les ${g.total} œuvres de cette méta-liste</button><p class="path-data-note">${g.ready?'Sélections disponibles.':'Certaines sélections restent à compléter. Le trophée final est verrouillé.'}</p>${g.children.map(id=>row(groups.find(g=>g.id===id))).join('')}`;
+      const visible=groups.filter(g=>g.kind==='meta'&&(!family||family===g.family)&&(!query||g.title.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr'))||descendants(g).some(c=>c.title.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr')))));
+      content=`<div class="path-heading"><p class="eyebrow">TES PARCOURS CULTURELS</p><h1>Choisis une méta-liste.</h1><p>Ouvre un univers pour découvrir ses sous-listes et suivre ta progression.</p><a href="#profil">Mon profil et mes trophées</a></div>${controls()}<div class="meta-index">${visible.map(metaCard).join('')||'<p>Aucune méta-liste pour cette recherche.</p>'}</div>`;
+    }else if(g.kind==='meta'||g.kind==='group'){
+      const units=descendants(g);
+      content=`${heading(g)}${meter(g)}<p class="course-description">${sublistCount(units.length)} à compléter. Une case représente une œuvre.</p><div class="mastery-legend"><span>Terminé</span><span>En cours</span><span>À découvrir</span></div><div class="course-units">${units.length?units.map(row).join(''):'<div class="empty">Les sous-listes de cette méta-liste seront proposées dès qu’au moins trois œuvres pourront être regroupées autour d’un sujet.</div>'}</div>`;
     }else{
-      target.innerHTML=`${mediaNav()}<div class="path-layout">${navigation()}<div class="path-content">Chargement…</div></div>`;
+      target.innerHTML=`${mediaNav()}<div class="path-layout">${courseNavigation(course)}<div class="path-content">Chargement…</div></div>`;
       try{
         const response=await fetch('/api/paths/detail?'+new URLSearchParams({id:g.id,page,type:media}));
         if(!response.ok)throw Error('Impossible de charger cette liste.');
         const detail=await response.json();if(version!==request||!active())return;
         const pages=Math.max(1,Math.ceil(detail.total/60));
-        content=`<button class="ghost" data-path-list="${esc(g.parent)}">Retour à ${esc(groups.find(p=>p.id===g.parent)?.title||'tous les parcours')}</button>${heading(g)}${meter(g)}<div class="mastery-legend"><span>♛ Terminé</span><span>◧ En cours</span><span>□ À découvrir</span></div>${detail.total?`<div class="mastery-tiles">${detail.items.map(tile).join('')}</div><div class="path-work-list">${detail.items.map(i=>`<button class="path-work-row" data-path-work="${esc(i.id)}">${tileLabel(i)}<span><strong>${esc(i.title)}</strong><small>${esc(i.year)} · ${mediaIcon(i.type)} ${mediaNames[i.type]}</small></span></button>`).join('')}</div><div class="catalog-pagination"><button data-path-page="-1" ${page<=1?'disabled':''}>Précédente</button><span>${page} / ${pages}</span><button data-path-page="1" ${page>=pages?'disabled':''}>Suivante</button></div>`:'<div class="empty">Sélection à compléter. Aucun trophée ne peut être débloqué sur une liste vide.</div>'}`;
+        content=`<button class="ghost" data-path-list="${esc(course?.id||'')}">Retour à ${esc(course?.title||'toutes les méta-listes')}</button>${heading(g)}${meter(g)}<div class="mastery-legend"><span>Terminé</span><span>En cours</span><span>À découvrir</span></div>${detail.total?`<div class="mastery-tiles">${detail.items.map(tile).join('')}</div><div class="path-work-list">${detail.items.map(i=>`<button class="path-work-row" data-path-work="${esc(i.id)}">${tileLabel(i)}<span><strong>${esc(i.title)}</strong><small>${esc(i.year)} · ${mediaNames[i.type]}</small></span></button>`).join('')}</div><div class="catalog-pagination"><button data-path-page="-1" ${page<=1?'disabled':''}>Précédente</button><span>${page} / ${pages}</span><button data-path-page="1" ${page>=pages?'disabled':''}>Suivante</button></div>`:'<div class="empty">Aucune œuvre pour ce format.</div>'}`;
       }catch(e){content=`<p>${esc(e.message)}</p>`;}
     }
-    if(version===request&&active())target.innerHTML=`${mediaNav()}<div class="path-layout">${navigation()}<div class="path-content">${content}</div></div>`;
+    if(version===request&&active())target.innerHTML=`${mediaNav()}${g?`<div class="path-layout">${courseNavigation(course)}<div class="path-content">${content}</div></div>`:`<div class="path-content">${content}</div>`}`;
   }
-  function tileLabel(i){const status=tracked.get(i.id)?.status||'todo';return `<span class="mastery-tile ${status}">${mediaIcon(i.type)}${status==='done'?'<span class="tile-complete" aria-hidden="true">✓</span>':''}</span>`;}
+
+  function tileLabel(i){const status=tracked.get(i.id)?.status||'todo';return `<span class="mastery-tile ${status}">${status==='done'?'<span class="tile-complete" aria-hidden="true">✓</span>':''}</span>`;}
   function profile(){
     const awards=ledger(),entries=Object.entries(awards).filter(([id])=>groups.some(g=>g.id===id&&g.kind!=='group')).sort((a,b)=>b[1].date.localeCompare(a[1].date));
     const available=groups.filter(g=>g.kind!=='group');
@@ -88,7 +100,7 @@ export function createPaths({esc,library,open,level,xp,notify}) {
       allGroups=data.groups;
       const projection=mode==='parcours'&&media!=='all'?await fetch('/api/paths?'+new URLSearchParams({type:media})).then(r=>{if(!r.ok)throw Error('Impossible de filtrer les parcours.');return r.json();}):data;
       if(version!==loadRevision||(!background&&!active()))return;
-      groups=projection.groups;if(selected&&!groups.some(g=>g.id===selected)){selected='';fullList=false;}
+      groups=projection.groups;if(selected&&!groups.some(g=>g.id===selected)){const previous=allGroups.find(g=>g.id===selected);selected=groups.some(g=>g.id===previous?.meta)?previous.meta:'';}
       resolved=matches;tracked=new Map();items=new Map();
       for(const g of allGroups)for(const i of g.items)items.set(i.id,i);
       const rank={todo:0,doing:1,done:2};
@@ -98,9 +110,8 @@ export function createPaths({esc,library,open,level,xp,notify}) {
   }
   document.addEventListener('click',e=>{
     const format=e.target.closest('[data-path-media]');if(format){media=format.dataset.pathMedia;page=1;return load();}
-    const path=e.target.closest('[data-path-list]');if(path){fullList=false;selected=path.dataset.pathList;page=1;query='';draw();}
-    const profilePath=e.target.closest('[data-profile-path]');if(profilePath){fullList=false;selected=profilePath.dataset.profilePath;page=1;query='';location.hash='#parcours';}
-    if(e.target.closest('[data-path-full]')){fullList=true;page=1;draw();}
+    const path=e.target.closest('[data-path-list]');if(path){selected=path.dataset.pathList;page=1;query='';return draw();}
+    const profilePath=e.target.closest('[data-profile-path]');if(profilePath){selected=profilePath.dataset.profilePath;page=1;query='';location.hash='#parcours';}
     const paging=e.target.closest('[data-path-page]');if(paging){page+=Number(paging.dataset.pathPage);draw();}
     const work=e.target.closest('[data-path-work]');if(work){const item=items.get(work.dataset.pathWork);if(item)open(item,tracked.get(item.id));}
   });

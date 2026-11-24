@@ -1,4 +1,1 @@
 export const mediaNames={film:'Film',game:'Jeu vidéo',book:'Livre'};
-const drawings={film:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4M7 12h10"/>',game:'<path d="M7 7h10c3 0 5 10 3 12-2 1-4-3-5-3H9c-1 0-3 4-5 3C2 17 4 7 7 7Z"/><path d="M8 10v5M5.5 12.5h5M16 11h.01M18 14h.01"/>',book:'<path d="M12 5C8 2 3 4 3 4v15s5-2 9 1c4-3 9-1 9-1V4s-5-2-9 1Zm0 0v15"/>'};
-export function mediaIcon(kind){return `<svg class="media-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="${mediaNames[kind]||'Œuvre'}">${drawings[kind]||drawings.film}</svg>`;}
-export function mediaBadge(kind){return `<span class="media-badge">${mediaIcon(kind)}<span>${mediaNames[kind]||'Œuvre'}</span></span>`;}
