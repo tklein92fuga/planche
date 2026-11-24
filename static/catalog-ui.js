@@ -2,6 +2,7 @@ export function createCatalog({types, esc, opts, cover, show, library, add, noti
   const defaults={q:'',type:'all',criterion:'all',sort:'votes',year_min:'',year_max:'',min_score:'',genre:'',page:1};
   let filter={...defaults};
   let lastItems = [];
+  let selectedItem;
   let revision = 0;
   let timer;
   let debounce;
@@ -16,7 +17,7 @@ export function createCatalog({types, esc, opts, cover, show, library, add, noti
     return response.json();
   }
   function evidence(item) {
-    return item.evidence.map(e => `<li><a href="${safeLink(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.source)}</a> · ${e.kind === 'award' ? esc((e.nomination ? 'Nomination · ' : 'Prix · ') + e.label) : `${esc(e.value)}/${esc(e.scale)} · ${formatCount(e.votes)} avis${e.label ? ' · '+esc(e.label) : ''}`}<small>Vérifié le ${esc(e.checked.slice(0,10))}</small></li>`).join('');
+    return item.evidence.map(e => `<li><a href="${safeLink(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.source)}</a> · ${e.kind === 'award' ? esc((e.nomination ? 'Nomination · ' : 'Prix · ') + e.label+(e.year?' · '+e.year:'')) : `${esc(e.value)}/${esc(e.scale)} · ${formatCount(e.votes)} avis${e.label ? ' · '+esc(e.label+(e.year?' · '+e.year:'')) : ''}`}<small>Vérifié le ${esc(e.checked.slice(0,10))}</small></li>`).join('');
   }
   function exists(item) {
     return library().some(i => i.catalogId === item.id || i.type === item.type && String(i.title).toLocaleLowerCase() === item.title.toLocaleLowerCase() && (!i.year || !item.year || String(i.year) === item.year));
@@ -93,20 +94,23 @@ export function createCatalog({types, esc, opts, cover, show, library, add, noti
     }
     if(action==='detail'){
       const item=lastItems.find(i=>i.id===button.dataset.id);
-      if(!item)return;
-      show(esc(item.title),`<p class="muted">${types[item.type].label} · ${esc(item.year)}${item.creator?' · '+esc(item.creator):''}</p><p>${esc(item.genre)}</p><ul class="catalog-evidence">${evidence(item)}</ul>${item.edition?`<p>Édition française · <a href="${safeLink(item.edition.url)}" target="_blank" rel="noopener noreferrer">${esc(item.edition.title)}</a></p>`:''}${exists(item)?'<p>Cette œuvre figure déjà dans ta bibliothèque.</p>':`<form id="catalog-add" data-id="${esc(item.id)}"><label>Collection<select name="collection">${opts({'':'Sans collection',...add.collections()},'')}</select></label><button class="dark" type="submit">Ajouter à ma bibliothèque</button></form>`}`);
+      if(item)openItem(item);
     }
   });
+  function openItem(item){
+    selectedItem=item;
+      show(esc(item.title),`<p class="muted">${types[item.type].label} · ${esc(item.year)}${item.creator?' · '+esc(item.creator):''}</p><p>${esc(item.genre)}</p><ul class="catalog-evidence">${evidence(item)}</ul>${item.edition?`<p>Édition française · <a href="${safeLink(item.edition.url)}" target="_blank" rel="noopener noreferrer">${esc(item.edition.title)}</a></p>`:''}${exists(item)?'<p>Cette œuvre figure déjà dans ta bibliothèque.</p>':`<form id="catalog-add" data-id="${esc(item.id)}"><label>Collection<select name="collection">${opts({'':'Sans collection',...add.collections()},'')}</select></label><button class="dark" type="submit">Ajouter à ma bibliothèque</button></form>`}`);
+  }
   document.addEventListener('submit',event=>{
     if(event.target.id!=='catalog-add')return;
     event.preventDefault();
-    const item=lastItems.find(i=>i.id===event.target.dataset.id);
+    const item=selectedItem?.id===event.target.dataset.id?selectedItem:null;
     if(!item||exists(item))return;
     if(add.item(item,new FormData(event.target).get('collection'))) {
       document.querySelector('#modal').close();
       notify('Œuvre ajoutée à ta bibliothèque.');
-      load();
+      if(active())load();
     }
   });
-  return {mount,load(){load();poll();}};
+  return {mount,open:openItem,load(){load();poll();}};
 }

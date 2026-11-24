@@ -1,5 +1,6 @@
 import {types,statuses,initial,key,today,importRows} from './data.js';
 import {createCatalog} from './catalog-ui.js';
+import {createPaths} from './paths-ui.js';
 const storage = 'planche.v1';
 const main = document.querySelector('#main');
 const modal = document.querySelector('#modal');
@@ -8,7 +9,7 @@ let state = read();
 let filter = {type:'all',status:'all',query:'',collection:'all'};
 let toastTimer;
 let importBusy = false;
-const pages = {accueil:['◈','Vue d’ensemble'],bibliotheque:['▦','Bibliothèque'],decouvrir:['✺','Découvrir'],collections:['▱','Collections'],objectifs:['◎','Objectifs & badges'],recommandations:['✧','Pour moi']};
+const pages = {accueil:['◈','Vue d’ensemble'],bibliotheque:['▦','Bibliothèque'],decouvrir:['✺','Découvrir'],parcours:['▦','Parcours'],collections:['▱','Collections'],objectifs:['◎','Objectifs & badges'],recommandations:['✧','Pour moi']};
 const page = ()=>{
   const route=location.hash.slice(1);
   const current={catalogue:'decouvrir',decouverte:'decouvrir'}[route]||route;
@@ -37,10 +38,22 @@ function notify(message){
   toastTimer=setTimeout(()=>toast.classList.remove('visible'),3600);
 }
 function cover(i){
-  const url = /^https?:\/\//i.test(i.image || '')?i.image:'';
-  return `<div class="cover" style="--tint:${types[i.type].color}"><span class="cover-icon">${types[i.type].icon}</span><em>${esc(i.title)}</em>${url?`<img src="${esc(url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}<span class="tag ${i.status}">${statuses[i.status]}</span></div>`;
+  const ident=i.catalogId||i.id;
+  const steam=String(ident).match(/^steam:(\d+)$/)||String(i.image||'').match(/steam\/apps\/(\d+)/);
+  const fallback=/^https?:\/\//i.test(i.image||'')?i.image:'';
+  const image=steam?'https://cdn.cloudflare.steamstatic.com/steam/apps/'+steam[1]+'/library_600x900.jpg':
+    fallback||((i.type==='film'||i.type==='game')&&/^(imdb:|steam:|awards:)/.test(ident)?'/api/catalog/art?id='+encodeURIComponent(ident):'');
+  const lookup=!/^(imdb:|steam:|books:|awards:)/.test(ident)?'/api/catalog/art?'+new URLSearchParams({title:i.title,type:i.type,year:i.year||''}):'';
+  return `<div class="cover" style="--tint:${types[i.type].color}"><em>${esc(i.title)}</em>${image?`<img src="${esc(image)}" data-fallback="${esc(fallback)}" data-lookup="${esc(lookup)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}<span class="tag ${i.status}">${statuses[i.status]||''}</span></div>`;
 }
-main.addEventListener('error',e=>{if(e.target.tagName==='IMG')e.target.hidden=true;},true);
+main.addEventListener('error',e=>{
+  const img=e.target;
+  if(img.tagName!=='IMG')return;
+  if(img.dataset.fallback&&img.src!==img.dataset.fallback){img.classList.add('cover-fallback');img.src=img.dataset.fallback;img.dataset.fallback='';}
+  else if(img.dataset.lookup){img.src=img.dataset.lookup;img.dataset.lookup='';}
+  else img.hidden=true;
+},true);
+
 function card(i, reason=''){
   return `<article class="work"><button class="work-open" data-act="edit" data-id="${i.id}">${cover(i)}<span class="work-title">${esc(i.title)}</span><span class="muted">${types[i.type].label}${i.year?' · '+esc(i.year):''}${i.genre?' · '+esc(i.genre):''}</span></button>${reason?`<p class="reason">${esc(reason)}</p>`:''}</article>`;
 }
@@ -92,6 +105,7 @@ function render(){
   const current=page();
   document.querySelector('#nav').innerHTML=Object.entries(pages).map(([k,[icon,label]])=>`<a href="#${k}" ${current===k?'aria-current="page"':''}><span>${icon}</span>${label}</a>`).join('');
   document.querySelector('#side').innerHTML=`<section class="level"><span class="stat-icon">✦</span><b>Niveau ${level()}</b><small>${xp()%100} / 100 XP</small>${bar(xp()%100,100)}</section>${state.demo?'<button class="ghost demo" data-act="demo">Retirer la démo</button>':''}`;
+  if(current==='parcours'){main.innerHTML=pathsUI.mount();pathsUI.load();}
   if(current==='decouvrir'){main.innerHTML=catalogUI.mount();catalogUI.load();}
   if(current==='accueil')main.innerHTML=dashboard();
   if(current==='bibliotheque'){main.innerHTML=library();results();}
@@ -296,5 +310,9 @@ const catalogUI=createCatalog({
       return save();
     }
   }
+});
+const pathsUI=createPaths({
+  esc,library:()=>state.items,level,xp,
+  open:(item,existing)=>existing?edit(existing.id):catalogUI.open(item)
 });
 render();

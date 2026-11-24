@@ -15,6 +15,7 @@ from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
 
 import catalog
+import paths
 
 ROOT = Path(__file__).resolve().parent
 MAX_BYTES = 8 * 1024 * 1024
@@ -142,7 +143,35 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         path = urlsplit(self.path)
-        if path.path == "/api/catalog":
+        if path.path == "/api/paths":
+            self.reply(200, paths.overview())
+        elif path.path == "/api/paths/detail":
+            params = parse_qs(path.query)
+            try:
+                page = max(1,int(params.get("page",["1"])[0]))
+                result = paths.detail(params.get("id",[""])[0],page)
+                self.reply(200 if result else 404,result or {"error":"Liste introuvable."})
+            except ValueError:
+                self.reply(400,{"error":"Page invalide."})
+        elif path.path == "/api/catalog/art":
+            try:
+                params = parse_qs(path.query)
+                ident = params.get("id",[""])[0]
+                if not ident and params.get("title"):
+                    item = {key:params.get(key,[""])[0][:200] for key in ("title","type","year")}
+                    item["id"]="art"
+                    ident=paths.resolve([item]).get("art","")
+                url = paths.artwork(ident)
+            except (OSError,ValueError,KeyError):
+                url = ""
+            if url.startswith("https://"):
+                self.send_response(302)
+                self.send_header("Location",url)
+                self.send_header("Cache-Control","private, max-age=86400")
+                self.end_headers()
+            else:
+                self.send_error(404,"Visuel indisponible")
+        elif path.path == "/api/catalog":
             self.reply(200, catalog.search(parse_qs(path.query)))
         elif path.path == "/api/catalog/status":
             self.reply(200, catalog.status())
@@ -150,6 +179,18 @@ class Handler(SimpleHTTPRequestHandler):
             super().do_GET()
 
     def do_POST(self):
+        if self.path == "/api/catalog/resolve":
+            try:
+                length=int(self.headers.get("Content-Length",0))
+                if not 0 < length <= MAX_BYTES:
+                    raise ValueError("Requête trop volumineuse.")
+                items=json.loads(self.rfile.read(length))
+                if not isinstance(items,list) or len(items)>10000:
+                    raise ValueError("Bibliothèque trop volumineuse.")
+                self.reply(200,paths.resolve(items))
+            except (ValueError,TypeError,KeyError):
+                self.reply(400,{"error":"Bibliothèque invalide."})
+            return
         if self.path == "/api/catalog/update":
             self.reply(202, {"started": catalog.update()})
             return

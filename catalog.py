@@ -65,6 +65,8 @@ def connect():
         );
     """)
     conn.execute("CREATE INDEX IF NOT EXISTS works_canonical ON works(" + CANONICAL + ")")
+    import paths
+    paths.install(conn)
     return conn
 
 

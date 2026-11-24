@@ -90,13 +90,389 @@
       {
         "source": "Organisateur du prix",
         "kind": "award",
-        "label": "Game of the Year 2023",
+        "label": "Game of the Year",
         "url": "https://thegameawards.com/rewind/year-2023",
         "checked": "2026-11-24T01:22:19+00:00",
-        "canonical": "steam:1086940"
+        "canonical": "steam:1086940",
+        "year": 2023
       }
     ],
     "edition": null,
     "updated": "2026-11-24T01:13:35+00:00"
+  },
+  {
+    "id": "awards:verified-film-2023-oppenheimer",
+    "type": "film",
+    "title": "Oppenheimer",
+    "year": "2023",
+    "genre": "Biography, Drama, History",
+    "creator": "",
+    "image": "",
+    "length": "180",
+    "score": 82.0,
+    "votes": 1114516,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": false,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "imdb:tt15398776"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "id": "awards:verified-film-2023-american-fiction",
+    "type": "film",
+    "title": "American Fiction",
+    "year": "2023",
+    "genre": "Comedy, Drama",
+    "creator": "",
+    "image": "",
+    "length": "117",
+    "score": 75.0,
+    "votes": 158518,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "imdb:tt23561236"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "id": "awards:verified-film-2023-anatomy-of-a-fall",
+    "type": "film",
+    "title": "Anatomy of a Fall",
+    "year": "2023",
+    "genre": "Crime, Drama, Mystery",
+    "creator": "",
+    "image": "",
+    "length": "151",
+    "score": 76.0,
+    "votes": 240668,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "imdb:tt17009710"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "type": "film",
+    "title": "Barbie",
+    "year": "2023",
+    "creator": "",
+    "genre": "",
+    "image": "",
+    "length": "",
+    "score": null,
+    "votes": null,
+    "edition": null,
+    "id": "awards:verified-film-2023-barbie",
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00"
+      }
+    ]
+  },
+  {
+    "id": "awards:verified-film-2023-the-holdovers",
+    "type": "film",
+    "title": "The Holdovers",
+    "year": "2023",
+    "genre": "Comedy, Drama",
+    "creator": "",
+    "image": "",
+    "length": "133",
+    "score": 79.0,
+    "votes": 276863,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "imdb:tt14849194"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "id": "awards:verified-film-2023-killers-of-the-flower-moon",
+    "type": "film",
+    "title": "Killers of the Flower Moon",
+    "year": "2023",
+    "genre": "Crime, Drama, History",
+    "creator": "",
+    "image": "",
+    "length": "206",
+    "score": 75.0,
+    "votes": 317089,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "imdb:tt5537002"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "type": "film",
+    "title": "Maestro",
+    "year": "2023",
+    "creator": "",
+    "genre": "",
+    "image": "",
+    "length": "",
+    "score": null,
+    "votes": null,
+    "edition": null,
+    "id": "awards:verified-film-2023-maestro",
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00"
+      }
+    ]
+  },
+  {
+    "id": "awards:verified-film-2023-past-lives",
+    "type": "film",
+    "title": "Past Lives",
+    "year": "2023",
+    "genre": "Drama, Romance",
+    "creator": "",
+    "image": "",
+    "length": "105",
+    "score": 78.0,
+    "votes": 180535,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "imdb:tt13238346"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "id": "awards:verified-film-2023-poor-things",
+    "type": "film",
+    "title": "Poor Things",
+    "year": "2023",
+    "genre": "Comedy, Drama, Romance",
+    "creator": "",
+    "image": "",
+    "length": "141",
+    "score": 77.0,
+    "votes": 428482,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "imdb:tt14230458"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "id": "awards:verified-film-2023-the-zone-of-interest",
+    "type": "film",
+    "title": "The Zone of Interest",
+    "year": "2023",
+    "genre": "Drama, History, War",
+    "creator": "",
+    "image": "",
+    "length": "105",
+    "score": 73.0,
+    "votes": 194929,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Oscars 2024 · Meilleur film",
+        "url": "https://www.oscars.org/oscars/ceremonies/2024",
+        "nomination": true,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "imdb:tt7160372"
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:10:12+00:00"
+  },
+  {
+    "id": "awards:verified-game-2023-baldur's-gate-3",
+    "type": "game",
+    "title": "Baldur's Gate 3",
+    "year": "2023",
+    "genre": "Adventure, RPG, Strategy",
+    "creator": "Larian Studios",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/3dd81008e9c385caf68152450c22353f6a8abec9/capsule_231x87.jpg?t=1777363040",
+    "length": "",
+    "score": 96.0,
+    "votes": 453133,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Game of the Year",
+        "url": "https://thegameawards.com/rewind/year-2023",
+        "nomination": false,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "steam:1086940",
+        "year": 2023
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:13:35+00:00"
+  },
+  {
+    "id": "awards:verified-game-2022-elden-ring",
+    "type": "game",
+    "title": "ELDEN RING",
+    "year": "2022",
+    "genre": "Action, RPG",
+    "creator": "FromSoftware, Inc.",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/capsule_231x87.jpg?t=1790290043",
+    "length": "",
+    "score": 94.0,
+    "votes": 438175,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Game of the Year",
+        "url": "https://thegameawards.com/rewind/year-2022",
+        "nomination": false,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "steam:1245620",
+        "year": 2022
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:16:48+00:00"
+  },
+  {
+    "id": "awards:verified-game-2021-it-takes-two",
+    "type": "game",
+    "title": "It Takes Two",
+    "year": "2021",
+    "genre": "",
+    "creator": "",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426210/capsule_231x87.jpg?t=1777395376",
+    "length": "",
+    "score": 95.0,
+    "votes": 48668,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Game of the Year",
+        "url": "https://thegameawards.com/rewind/year-2021",
+        "nomination": false,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "steam:1426210",
+        "year": 2021
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:13:40+00:00"
+  },
+  {
+    "type": "game",
+    "title": "Sekiro: Shadows Die Twice",
+    "year": "2019",
+    "creator": "",
+    "genre": "",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/capsule_231x87.jpg?t=1762888662",
+    "length": "",
+    "score": 93.0,
+    "votes": 89431,
+    "edition": null,
+    "id": "awards:verified-game-2019-sekiro:-shadows-die-twice",
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Game of the Year",
+        "url": "https://thegameawards.com/rewind/year-2019",
+        "nomination": false,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "year": 2019,
+        "canonical": "steam:814380"
+      }
+    ]
+  },
+  {
+    "id": "awards:verified-game-2018-god-of-war",
+    "type": "game",
+    "title": "God of War",
+    "year": "2022",
+    "genre": "",
+    "creator": "",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/capsule_231x87.jpg?t=1763059412",
+    "length": "",
+    "score": 96.0,
+    "votes": 61441,
+    "evidence": [
+      {
+        "source": "Organisateur du prix",
+        "kind": "award",
+        "label": "Game of the Year",
+        "url": "https://thegameawards.com/rewind/year-2018",
+        "nomination": false,
+        "checked": "2026-11-24T02:29:04+00:00",
+        "canonical": "steam:1593500",
+        "year": 2018
+      }
+    ],
+    "edition": null,
+    "updated": "2026-11-24T01:13:40+00:00"
   }
 ]

@@ -52,6 +52,21 @@ La base active est `data/catalog.sqlite3`. Au premier démarrage, elle est resta
 - [Open Library](https://openlibrary.org/dev/docs/api/search) fournit les notes de lecteurs et les références d’éditions françaises. Cette base collaborative peut contenir des erreurs bibliographiques.
 - [Steam](https://partner.steamgames.com/doc/store/getreviews) fournit les avis de son catalogue PC. La collecte utilise les résultats du magasin français, affichés en anglais, sans compte utilisateur. Les changements du magasin et ses limites de requêtes peuvent interrompre la collecte.
 - Wikidata fournit les prix et nominations documentés pour les Oscars du meilleur film, Cannes, Berlin, Venise, Goncourt, Femina, Booker, International Booker, Pulitzer fiction, Hugo, Nebula et Game Awards. Seules les distinctions rattachées à une œuvre sont retenues. Les éditions françaises des livres sont vérifiées ensuite dans Open Library. La couverture dépend des contributions et de l’accès à Wikidata.
-- Quatre distinctions vérifiées directement auprès de leurs organisateurs sont livrées dans `data/verified-awards.json` pour initialiser ce filtre lorsque la collecte internationale est limitée.
+- Des distinctions vérifiées directement auprès de leurs organisateurs sont livrées dans `data/verified-awards.json` pour initialiser ce filtre lorsque la collecte internationale est limitée.
 
 Metacritic et les jeux exclusifs aux consoles restent à connecter. Le catalogue expose sa couverture réelle dans l’état des sources. Il ne représente pas l’ensemble des œuvres satisfaisant tous les critères envisagés.
+
+ 
+## Cartes et parcours
+
+Toutes les cartes utilisent un cadre portrait 2:3, un titre sur deux lignes et des scores alignés. Les jeux utilisent les couvertures verticales Steam lorsqu’elles existent. Les livres utilisent Open Library. Les affiches de films proviennent des résumés Wikipédia et sont cherchées à la demande, puis mises en cache. Une carte conserve son titre lorsqu’aucune image exploitable n’est disponible.
+
+L’onglet « Parcours » reprend une grille de progression avec une case par œuvre. Les catégories regroupent les genres, les pays d’origine renseignés et les récompenses documentées. Le contour gris indique une œuvre à découvrir, l’orange une œuvre en cours et la couronne violette une œuvre terminée. Clique sur une case pour ouvrir sa fiche, l’ajouter à ta bibliothèque ou modifier son statut. La progression est calculée à partir de ta bibliothèque personnelle.
+
+La vue d’ensemble montre jusqu’à seize cases par liste, en commençant par tes œuvres déjà suivies. Ouvre une liste pour parcourir toutes ses œuvres, avec une pagination de soixante cases. Une coproduction peut apparaître dans plusieurs pays.
+
+Les pays proviennent de la propriété « pays d’origine » de Wikidata. La première sélection concerne 131 œuvres. Les genres complémentaires des jeux et des livres sont issus respectivement de Steam et des sujets Open Library. Les données manquantes sont omises. Les sources bibliographiques et les pays restent susceptibles d’erreurs de leurs catalogues d’origine.
+
+La sélection de récompenses initiale comprend notamment les dix films nommés à l’Oscar du meilleur film 2024 et cinq lauréats des Game Awards, ainsi que les distinctions déjà présentes. Elle est documentée dans `data/verified-awards.json`. Les métadonnées complémentaires livrées sont appliquées au premier démarrage, y compris sur une installation existante.
+
+Les icônes proviennent de Lucide, dont la licence figure dans `static/icons/LICENSE`.
