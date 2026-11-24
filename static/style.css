@@ -28,3 +28,9 @@ input:not([type=checkbox]),select,textarea{border:1px solid var(--line);backgrou
 .catalog-pagination{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px}
 .catalog-evidence li{margin-bottom:12px}
 #catalog-add{margin-top:18px}
+
+.catalog-extra-filters{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr auto;gap:10px;align-items:end;margin:14px 0}
+.catalog-extra-filters label{display:grid;gap:5px;font-size:14px;font-weight:600}
+.catalog-extra-filters input,.catalog-extra-filters select{width:100%}
+.catalog-filter-help{font-size:13px;line-height:1.5;margin-bottom:18px}
+@media(max-width:900px){.catalog-extra-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}

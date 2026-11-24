@@ -1,11 +1,12 @@
 export function createCatalog({types, esc, opts, cover, show, library, add, notify}) {
-  let filter = {q:'',type:'all',criterion:'all',sort:'votes',page:1};
+  const defaults={q:'',type:'all',criterion:'all',sort:'votes',year_min:'',year_max:'',min_score:'',genre:'',page:1};
+  let filter={...defaults};
   let lastItems = [];
   let revision = 0;
   let timer;
   let debounce;
   let status;
-  const active = () => location.hash === '#catalogue';
+  const active = () => ['#decouvrir','#catalogue','#decouverte'].includes(location.hash);
   const safeLink = url => /^https:\/\//.test(url || '') ? esc(url) : '#';
   const sourceNames = {imdb:'Films · IMDb',books:'Livres · Open Library',steam:'Jeux · Steam',awards:'Prix & nominations'};
   const formatCount = n => Number(n || 0).toLocaleString('fr-FR');
@@ -22,9 +23,9 @@ export function createCatalog({types, esc, opts, cover, show, library, add, noti
   }
   function mount() {
     clearTimeout(timer);
-    return `<div class="page-title"><div><p class="eyebrow">EXPLORER LES ŒUVRES</p><h1>Catalogue<span>.</span></h1><p class="muted">Des œuvres sélectionnées sur leurs notes, prix ou nominations. Ajoute celles qui t’intéressent à ta bibliothèque.</p></div><button class="dark" data-cat="refresh">Actualiser les sources</button></div>
+    return `<div class="page-title"><div><p class="eyebrow">EXPLORER LES ŒUVRES</p><h1>Découvrir<span>.</span></h1><p class="muted">Explore toutes les œuvres de la base et ajoute tes prochaines découvertes à tes collections.</p></div><button class="dark" data-cat="refresh">Actualiser les sources</button></div>
       <details class="panel catalog-rules"><summary>Critères et couverture des sources</summary><div id="catalog-status" role="status">Chargement des sources…</div><p>Les scores des lecteurs concernent l’œuvre, toutes éditions confondues. Une édition française identifiée est obligatoire pour chaque livre. Steam utilise les avis affichés en anglais sur le magasin français. La couverture dépend des catalogues accessibles.</p><p>Metacritic et les jeux exclusifs aux consoles ne disposent pas encore de source connectée. Les prix et nominations sont limités aux distinctions recensées dans la source Wikidata.</p></details>
-      <section class="library"><div class="filter-bar"><input id="catalog-search" type="search" aria-label="Rechercher dans le catalogue" placeholder="Titre, auteur, genre…" value="${esc(filter.q)}"><select id="catalog-type" aria-label="Format du catalogue">${opts({all:'Tous les formats',...Object.fromEntries(Object.entries(types).map(([k,t])=>[k,t.plural]))},filter.type)}</select><select id="catalog-criterion" aria-label="Critère de sélection">${opts({all:'Tous les critères',award:'Prix et nominations'},filter.criterion)}</select><select id="catalog-sort" aria-label="Trier le catalogue">${opts({votes:'Nombre d’avis',score:'Note',year:'Plus récents',title:'Titre A–Z'},filter.sort)}</select></div><div id="catalog-results" aria-live="polite"></div></section>`;
+      <section class="library"><div class="filter-bar"><input id="catalog-search" type="search" aria-label="Rechercher dans le catalogue" placeholder="Titre, auteur, genre…" value="${esc(filter.q)}"><select id="catalog-type" aria-label="Format du catalogue">${opts({all:'Tous les formats',...Object.fromEntries(Object.entries(types).map(([k,t])=>[k,t.plural]))},filter.type)}</select><select id="catalog-criterion" aria-label="Critère de sélection">${opts({all:'Tous les critères',award:'Prix et nominations'},filter.criterion)}</select><select id="catalog-sort" aria-label="Trier le catalogue">${opts({votes:'Nombre d’avis',score:'Note',year:'Plus récents',title:'Titre A–Z'},filter.sort)}</select></div><div class="catalog-extra-filters"><label>Genre<input id="catalog-genre" type="search" placeholder="Drama, RPG…" value="${esc(filter.genre)}"></label><label>Depuis<input id="catalog-year-min" type="number" min="1" max="9999" placeholder="Année" value="${esc(filter.year_min)}"></label><label>Jusqu’à<input id="catalog-year-max" type="number" min="1" max="9999" placeholder="Année" value="${esc(filter.year_max)}"></label><label>Score minimal / 100<select id="catalog-score">${opts({'':'Tous les scores',70:'70 / 100',80:'80 / 100',90:'90 / 100'},filter.min_score)}</select></label><button data-cat="reset" class="ghost">Réinitialiser</button></div><p class="muted catalog-filter-help">Les notes sont ramenées sur 100 pour le filtre. Sur Steam, le score représente la proportion d’avis positifs. Les œuvres sans score restent visibles avec « Tous les scores ».</p><div id="catalog-results" aria-live="polite"></div></section>`;
   }
   async function load() {
     const request = ++revision;
@@ -62,18 +63,25 @@ export function createCatalog({types, esc, opts, cover, show, library, add, noti
     }
   }
   document.addEventListener('input',event=>{
-    if(event.target.id!=='catalog-search')return;
-    filter.q=event.target.value;filter.page=1;
+    const name={'catalog-search':'q','catalog-genre':'genre','catalog-year-min':'year_min','catalog-year-max':'year_max'}[event.target.id];
+    if(!name)return;
+    filter[name]=event.target.value;filter.page=1;
     clearTimeout(debounce);debounce=setTimeout(load,250);
   });
   document.addEventListener('change',event=>{
-    const name={'catalog-type':'type','catalog-criterion':'criterion','catalog-sort':'sort'}[event.target.id];
+    const name={'catalog-type':'type','catalog-criterion':'criterion','catalog-sort':'sort','catalog-score':'min_score'}[event.target.id];
     if(name){filter[name]=event.target.value;filter.page=1;load();}
   });
   document.addEventListener('click',async event=>{
     const button=event.target.closest('[data-cat]');
     if(!button)return;
     const action=button.dataset.cat;
+    if(action==='reset'){
+      clearTimeout(debounce);
+      filter={...defaults};
+      document.querySelector('#main').innerHTML=mount();
+      load();poll();
+    }
     if(action==='previous'||action==='next'){filter.page+=action==='next'?1:-1;load();}
     if(action==='refresh'){
       button.disabled=true;

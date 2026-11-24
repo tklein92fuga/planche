@@ -8,8 +8,12 @@ let state = read();
 let filter = {type:'all',status:'all',query:'',collection:'all'};
 let toastTimer;
 let importBusy = false;
-const pages = {accueil:['◈','Vue d’ensemble'],bibliotheque:['▦','Bibliothèque'],catalogue:['✺','Catalogue'],collections:['▱','Collections'],objectifs:['◎','Objectifs & badges'],decouverte:['✧','À découvrir']};
-const page = ()=>Object.hasOwn(pages,location.hash.slice(1))?location.hash.slice(1):'accueil';
+const pages = {accueil:['◈','Vue d’ensemble'],bibliotheque:['▦','Bibliothèque'],decouvrir:['✺','Découvrir'],collections:['▱','Collections'],objectifs:['◎','Objectifs & badges'],recommandations:['✧','Pour moi']};
+const page = ()=>{
+  const route=location.hash.slice(1);
+  const current={catalogue:'decouvrir',decouverte:'decouvrir'}[route]||route;
+  return Object.hasOwn(pages,current)?current:'accueil';
+};
 const esc = value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const opts = (values, selected)=>Object.entries(values).map(([k,v])=>`<option value="${esc(k)}" ${k===selected?'selected':''}>${esc(v)}</option>`).join('');
 const typeNames = Object.fromEntries(Object.entries(types).map(([k,v])=>[k,v.label]));
@@ -81,14 +85,14 @@ function recommendation(){
     return {i,score:related.length*3+(i.status==='doing'?2:0)+fav.filter(f=>f.type===i.type&&f.id!==i.id).length*.25,
       reason:related.length?`Dans le même genre que ${related[0].title}, que tu as bien noté.`:i.status==='doing'?'À reprendre dans tes œuvres en cours.':'Une œuvre à découvrir dans ta bibliothèque.'};
   }).sort((a,b)=>b.score-a.score);
-  return title('LA SUITE DU PROGRAMME','À découvrir<span>.</span>','Des suggestions parmi les œuvres de ta bibliothèque, selon tes notes et ta progression.')+
+  return title('LA SUITE DU PROGRAMME','Pour moi<span>.</span>','Des suggestions parmi les œuvres de ta bibliothèque, selon tes notes et ta progression.')+
     (ranked.length?`<div class="works">${ranked.slice(0,8).map(r=>card(r.i,r.reason)).join('')}</div>`:empty('Ajoute une œuvre à découvrir pour recevoir une suggestion.'));
 }
 function render(){
   const current=page();
   document.querySelector('#nav').innerHTML=Object.entries(pages).map(([k,[icon,label]])=>`<a href="#${k}" ${current===k?'aria-current="page"':''}><span>${icon}</span>${label}</a>`).join('');
   document.querySelector('#side').innerHTML=`<section class="level"><span class="stat-icon">✦</span><b>Niveau ${level()}</b><small>${xp()%100} / 100 XP</small>${bar(xp()%100,100)}</section>${state.demo?'<button class="ghost demo" data-act="demo">Retirer la démo</button>':''}`;
-  if(current==='catalogue'){main.innerHTML=catalogUI.mount();catalogUI.load();}
+  if(current==='decouvrir'){main.innerHTML=catalogUI.mount();catalogUI.load();}
   if(current==='accueil')main.innerHTML=dashboard();
   if(current==='bibliotheque'){main.innerHTML=library();results();}
   if(current==='collections')main.innerHTML=title('TES LISTES','Collections<span>.</span>','Regroupe tes œuvres comme tu le souhaites.','<button class="dark" data-act="collection">+ Nouvelle collection</button>')+
@@ -101,7 +105,7 @@ function render(){
     main.innerHTML=title('TON PARCOURS','Objectifs & badges<span>.</span>','25 XP par œuvre terminée, 10 XP par note, 15 XP par critique.','<button class="dark" data-act="goal">+ Nouvel objectif</button>')+
     `<div class="collection-grid">${goalsMarkup()}</div><section class="shelf"><h2>Badges</h2><div class="badge-grid">${badges.map(([icon,name,earned,rule])=>`<article class="panel badge ${earned?'earned':''}"><i>${icon}</i><h3>${name}</h3><p>${rule}</p><small>${earned?'Débloqué':'À débloquer'}</small></article>`).join('')}</div></section>`;
   }
-  if(current==='decouverte')main.innerHTML=recommendation();
+  if(current==='recommandations')main.innerHTML=recommendation();
 }
 function show(title,body){
   modal.innerHTML=`<div class="section-line modal-head"><h2 id="modal-title">${title}</h2><button class="ghost" data-act="close" aria-label="Fermer">×</button></div>${body}`;

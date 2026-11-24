@@ -432,6 +432,19 @@ def search(params):
     if kind in ("film", "book", "game"):
         clauses.append("type=?")
         args.append(kind)
+    genre = normalized(params.get("genre", [""])[0][:100]).strip()
+    if genre:
+        clauses.append("LOWER(genre) LIKE ? ESCAPE '\\'")
+        args.append("%" + genre.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%")
+    for parameter, operator in (("year_min", ">="), ("year_max", "<=")):
+        raw = params.get(parameter, [""])[0]
+        if re.fullmatch(r"[0-9]{1,4}", raw) and 1 <= int(raw) <= 9999:
+            clauses.append("CAST(year AS INTEGER) " + (">= ?" if operator == ">=" else "BETWEEN 1 AND ?"))
+            args.append(int(raw))
+    raw_score = params.get("min_score", [""])[0]
+    if re.fullmatch(r"[0-9]{1,3}", raw_score) and 0 <= int(raw_score) <= 100:
+        clauses.append("score >= ?")
+        args.append(int(raw_score))
     if params.get("criterion", ["all"])[0] == "award":
         clauses.append("id LIKE 'awards:%'")
     try:

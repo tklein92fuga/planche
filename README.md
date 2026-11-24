@@ -30,7 +30,7 @@ Ouvre [Planche dans ton navigateur](http://127.0.0.1:8000). Garde le Terminal ou
  
 ## Catalogue
 
-L’onglet « Catalogue » propose une recherche par titre, auteur et genre, des filtres de format et de récompenses, un tri et une pagination. Ouvre une fiche pour consulter ses critères, leurs sources et leurs dates de vérification, puis ajoute l’œuvre à la collection de ton choix. Les scores publics restent distincts de ta note personnelle.
+L’onglet « Découvrir » présente toutes les œuvres de la base, avec une recherche par titre et auteur, des filtres de format, de genre, de période, de score et de récompenses, un tri et une pagination. Le bouton « Réinitialiser » affiche à nouveau toutes les œuvres. Les anciens liens vers « Catalogue » restent valides. « Pour moi » propose les recommandations issues de ta bibliothèque. Ouvre une fiche pour consulter ses critères, leurs sources et leurs dates de vérification, puis ajoute l’œuvre à la collection de ton choix. Les scores publics restent distincts de ta note personnelle.
 
 Les règles initiales sont IMDb au moins 7/10 et 1 000 votes, Steam au moins 80 % d’avis positifs affichés en anglais et 100 avis, Open Library au moins 3,5/5 et 20 avis. Une édition française explicitement identifiée dans Open Library est exigée pour chaque livre, y compris les livres primés. Les notes de lecteurs portent sur l’œuvre, toutes langues et éditions confondues. Le seuil de 20 avis pour les livres est un réglage initial.
 
