@@ -1,91 +1,108 @@
-export function createPaths({esc,library,open,level,xp}) {
-  let groups=[],category='Genres',selected='',resolved={},page=1,request=0,tracked=new Map();
-  const categories=['Genres','Pays','Récompenses'];
-  const active=()=>location.hash==='#parcours';
-  const progress=group=>group.members.filter(id=>tracked.get(id)?.status==='done').length;
-  const stateFor=item=>tracked.get(item.id)||library().find(i=>i.type===item.type && i.title===item.title && String(i.year||'')===String(item.year||''));
-  const icon=name=>`<img src="icons/${name}.svg" alt="">`;
-  function mount(){
-    return `<div class="path-page"><div class="path-topbar"><div><h1>Mes parcours culturels</h1><p>Une œuvre, une case. Avance dans les univers qui te plaisent.</p></div><div class="path-level"><b>Niveau ${level()}</b><span>${xp()%100} / 100 XP</span></div></div><div class="path-layout"><nav id="path-navigation" class="path-navigation" aria-label="Listes thématiques"></nav><div id="path-content" class="path-content" aria-live="polite">Chargement des listes…</div></div></div>`;
+export function createPaths({esc,library,open,level,xp,notify}) {
+  let groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
+  const active=()=>['#parcours','#profil'].includes(location.hash);
+  const done=g=>g.members.filter(id=>tracked.get(id)?.status==='done').length;
+  const percent=g=>g.total?Math.floor(done(g)/g.total*100):0;
+  const medal=g=>ledger()[g.id]?.tier||(g.kind==='meta'?'platinum':g.total>=50?'gold':g.total>=15?'silver':'bronze');
+  const names={bronze:'Bronze',silver:'Argent',gold:'Or',platinum:'Platine'};
+  const trophy=g=>`<span class="trophy-icon ${medal(g)}" aria-label="${names[medal(g)]}"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M19 9h26v15c0 12-7 17-13 17S19 36 19 24Z"/><path d="M19 14H9v6c0 10 7 14 14 14M45 14h10v6c0 10-7 14-14 14M32 41v12M22 56h20"/><path d="m32 15 2 5 6 1-4 4 1 6-5-3-5 3 1-6-4-4 6-1Z" class="trophy-star"/></svg></span>`;
+  function ledger(){try{return JSON.parse(localStorage.getItem('planche.trophies.v1'))||{};}catch{return {};}}
+  function earn(){
+    const awards=ledger(),newOnes=[];
+    for(const g of groups.filter(g=>g.kind!=='group')){
+      if(g.ready&&g.total>0&&done(g)===g.total&&!awards[g.id]){
+        awards[g.id]={date:new Date().toISOString(),title:g.title,tier:medal(g),revision:g.revision,total:g.total};newOnes.push(g.title);
+      }
+    }
+    if(newOnes.length){
+      try{localStorage.setItem('planche.trophies.v1',JSON.stringify(awards));notify(`Trophée débloqué · ${newOnes[0]}${newOnes.length>1?` et ${newOnes.length-1} autre(s)`:''}`);}
+      catch{notify('Impossible de sauvegarder les trophées. Vérifie l’espace disponible.');}
+    }
   }
-  function nav(){
-    const filtered=groups.filter(g=>g.category===category);
-    document.querySelector('#path-navigation').innerHTML=`<div class="path-category-tabs">${categories.map(c=>`<button data-path-category="${c}" aria-pressed="${c===category}">${c}</button>`).join('')}</div><button class="path-overview ${!selected?'selected':''}" data-path-list="">Vue d’ensemble</button>${filtered.map(g=>`<button class="path-nav-item ${g.id===selected?'selected':''}" data-path-list="${esc(g.id)}"><strong>${esc(g.title)}</strong><span>${esc(g.subtitle)} · ${g.total} œuvres</span></button>`).join('')}`;
+  function mount(current='parcours'){
+    mode=current;
+    return `<div class="journeys"><div id="journey-view" aria-live="polite">Chargement des parcours…</div></div>`;
   }
-  function tiles(group){
-    return `<div class="mastery-tiles">${group.items.map(i=>{
-      const item=stateFor(i),status=item?.status||'todo';
-      return `<button class="mastery-tile ${status}" data-path-work="${esc(i.id)}" title="${esc(i.title)} · ${status==='done'?'Terminé':status==='doing'?'En cours':'À découvrir'}" aria-label="${esc(i.title)} · ${status==='done'?'Terminé':status==='doing'?'En cours':'À découvrir'}">${status==='done'?icon('crown'):status==='doing'?icon('play'):''}</button>`;
-    }).join('')}</div>`;
+  const heading=(g)=>`<div class="path-heading"><p class="eyebrow">${esc(g.family||'TES PARCOURS CULTURELS')}</p><h1>${esc(g.title)}</h1><p>${done(g)} / ${g.total} œuvres · ${percent(g)} %</p></div>`;
+  const meter=g=>`<div class="track"><i style="width:${percent(g)}%"></i></div>`;
+  const counts=g=>`<span>${done(g)} / ${g.total} terminées</span>`;
+  function tile(i){
+    items.set(i.id,i);
+    const status=tracked.get(i.id)?.status||'todo';
+    return `<button class="mastery-tile ${status}" data-path-work="${esc(i.id)}" aria-label="${esc(i.title)} · ${status==='done'?'Terminé':status==='doing'?'En cours':'À découvrir'}" title="${esc(i.title)}">${status==='done'?'<img src="icons/crown.svg" alt="">':status==='doing'?'<img src="icons/play.svg" alt="">':''}</button>`;
   }
-  function legend(){
-    return `<div class="mastery-legend"><span><i class="mastery-tile done">${icon('crown')}</i>Terminé</span><span><i class="mastery-tile doing">${icon('play')}</i>En cours</span><span><i class="mastery-tile todo"></i>À découvrir</span></div>`;
+  function row(g){
+    const award=ledger()[g.id];
+    return `<section class="journey-row ${award?'awarded':''}"><button class="journey-title" data-path-list="${esc(g.id)}"><span>${g.kind==='meta'?'MÉTA-LISTE':g.kind==='group'?'SECTION':'SOUS-LISTE'}</span><strong>${esc(g.title)}</strong><small>${g.total?`${done(g)} / ${g.total} œuvres`:'Sélection à compléter'}</small></button><div class="journey-progress">${g.total?`<div class="mastery-tiles">${g.items.slice(0,16).map(tile).join('')}</div>${meter(g)}`:'<p class="muted">Les œuvres de cette liste seront ajoutées après sélection.</p>'}</div><div class="journey-reward ${award?'earned':'locked'}">${g.kind==='group'?'<small>Ouvrir</small>':`${trophy(g)}<small>${award?'Débloqué':names[medal(g)]}</small>`}</div></section>`;
   }
-  function preview(group){
-    const own=[...tracked.entries()].filter(([id])=>group.members.includes(id)).map(([id,i])=>({...i,id}));
-    const items=[...own,...group.items.filter(i=>!own.some(o=>o.id===i.id))].slice(0,16);
-    return {...group,items};
+  function controls(){
+    const families=[...new Set(groups.filter(g=>g.kind==='meta').map(g=>g.family))];
+    return `<div class="filter-bar"><input type="search" id="journey-search" value="${esc(query)}" placeholder="Rechercher une liste…" aria-label="Rechercher une liste"><select id="journey-family" aria-label="Famille"><option value="">Toutes les familles</option>${families.map(f=>`<option ${f===family?'selected':''}>${esc(f)}</option>`).join('')}</select></div>`;
   }
-  function overview(){
-    const filtered=groups.filter(g=>g.category===category);
-    const unique=new Set(filtered.flatMap(g=>g.members));
-    const done=new Set(library().filter(i=>i.status==='done').map(i=>i.catalogId||resolved[i.id]).filter(id=>unique.has(id)));
-    const percent=unique.size?Math.round(done.size/unique.size*100):0;
-    return `<div class="path-heading"><p class="eyebrow">MES PARCOURS / ${esc(category.toUpperCase())}</p><h2>${esc(category)}</h2><p>Progression · <b>${percent} %</b> · ${done.size} / ${unique.size} œuvres</p></div>${legend()}${category==='Pays'?'<p class="path-data-note">Les pays d’origine sont affichés lorsqu’ils sont référencés dans les données. Une coproduction peut figurer dans plusieurs listes.</p>':''}${category==='Récompenses'?'<p class="path-data-note">Chaque liste rassemble les prix ou nominations effectivement documentés dans la base.</p>':''}<div class="mastery-groups">${filtered.map(g=>`<section class="mastery-row"><div class="mastery-row-title"><button data-path-list="${esc(g.id)}">${esc(g.title)}</button><span>${g.category==='Genres'?esc(g.subtitle)+' · ':''}${progress(g)} / ${g.total} terminées</span></div><div>${tiles(preview(g))}${g.total>16?`<button class="path-see-all" data-path-list="${esc(g.id)}">Voir les ${g.total} œuvres</button>`:''}</div></section>`).join('')||'<div class="empty">Aucune liste disponible pour cette catégorie pour le moment.</div>'}</div>`;
+  function navigation(){
+    const metas=groups.filter(g=>g.kind==='meta');
+    return `<nav class="path-navigation" aria-label="Méta-listes"><button data-path-list="" class="path-overview ${!selected?'selected':''}">Tous les parcours</button>${metas.map(g=>`<button data-path-list="${esc(g.id)}" class="path-nav-item ${selected===g.id?'selected':''}"><strong>${esc(g.title)}</strong><span>${g.children.length} sections · ${percent(g)} %</span></button>`).join('')}</nav>`;
   }
+  function match(g){return (!family||family===g.family)&&g.title.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr'));}
   async function draw(){
     if(!active())return;
-    tracked=new Map();
-    const rank={todo:0,doing:1,done:2};
-    for(const item of library()){
-      const id=item.catalogId||resolved[item.id];
-      if(id&&(!tracked.has(id)||rank[item.status]>rank[tracked.get(id).status]))tracked.set(id,item);
+    const version=++request;
+    const target=document.querySelector('#journey-view');if(!target)return;
+    if(mode==='profil'){target.innerHTML=profile();return;}
+    let content='';
+    const g=groups.find(g=>g.id===selected);
+    if(!g){
+      const visible=groups.filter(g=>g.kind!=='group'&&(!query?g.kind==='meta':true)&&match(g));
+      content=`<div class="path-heading"><p class="eyebrow">EXPLORER · COMPLÉTER · COLLECTIONNER</p><h1>Parcours culturels.</h1><p>53 méta-listes, 1 098 sous-listes. Une œuvre terminée valide toutes ses cases.</p><a href="#profil">Voir mon profil et mes trophées</a></div>${controls()}<p class="path-data-note">Les listes vides attendent leur sélection. Un trophée est attribué à 100 % d’une sélection non vide. Le platine exige que toutes les sous-listes soient documentées et terminées.</p>${visible.map(row).join('')||'<p>Aucun parcours trouvé.</p>'}`;
+    }else if(g.children){
+      content=`<button class="ghost" data-path-list="${esc(g.parent||'')}">Retour aux parcours</button>${heading(g)}${meter(g)}<p class="path-data-note">${g.ready?'Sélections disponibles.':'Certaines sélections restent à compléter. Le trophée final est verrouillé.'}</p>${g.children.map(id=>row(groups.find(g=>g.id===id))).join('')}`;
+    }else{
+      target.innerHTML=`<div class="path-layout">${navigation()}<div class="path-content">Chargement…</div></div>`;
+      try{
+        const response=await fetch('/api/paths/detail?'+new URLSearchParams({id:g.id,page}));
+        if(!response.ok)throw Error('Impossible de charger cette liste.');
+        const detail=await response.json();if(version!==request||!active())return;
+        const pages=Math.max(1,Math.ceil(detail.total/60));
+        content=`<button class="ghost" data-path-list="${esc(g.parent)}">Retour à ${esc(groups.find(p=>p.id===g.parent)?.title)}</button>${heading(g)}${meter(g)}<div class="mastery-legend"><span>♛ Terminé</span><span>◧ En cours</span><span>□ À découvrir</span></div>${detail.total?`<div class="mastery-tiles">${detail.items.map(tile).join('')}</div><div class="path-work-list">${detail.items.map(i=>`<button class="path-work-row" data-path-work="${esc(i.id)}">${tileLabel(i)}<span><strong>${esc(i.title)}</strong><small>${esc(i.year)} · ${{film:'Film',book:'Livre',game:'Jeu vidéo'}[i.type]}</small></span></button>`).join('')}</div><div class="catalog-pagination"><button data-path-page="-1" ${page<=1?'disabled':''}>Précédente</button><span>${page} / ${pages}</span><button data-path-page="1" ${page>=pages?'disabled':''}>Suivante</button></div>`:'<div class="empty">Sélection à compléter. Aucun trophée ne peut être débloqué sur une liste vide.</div>'}`;
+      }catch(e){content=`<p>${esc(e.message)}</p>`;}
     }
-    nav();
-    if(!selected){document.querySelector('#path-content').innerHTML=overview();return;}
+    if(version===request&&active())target.innerHTML=`<div class="path-layout">${navigation()}<div class="path-content">${content}</div></div>`;
+  }
+  function tileLabel(i){const status=tracked.get(i.id)?.status||'todo';return `<span class="mastery-tile ${status}">${status==='done'?'<img src="icons/crown.svg" alt="Terminé">':status==='doing'?'◧':''}</span>`;}
+  function profile(){
+    const awards=ledger(),entries=Object.entries(awards).sort((a,b)=>b[1].date.localeCompare(a[1].date));
+    const available=groups.filter(g=>g.kind!=='group');
+    const filtered=available.filter(g=>match(g)&&(tier==='all'||medal(g)===tier)&&(filter==='all'||filter==='earned'&&awards[g.id]||filter==='locked'&&!awards[g.id]));
+    const ongoing=available.filter(g=>g.kind==='sublist'&&g.total>0&&!awards[g.id]).sort((a,b)=>percent(b)-percent(a)).slice(0,5);
+    const unique=new Set(library().filter(i=>i.status==='done').map(i=>i.catalogId||resolved[i.id]||i.id));
+    return `<section class="profile-banner"><div class="profile-avatar">Q</div><div><p class="eyebrow">CARNET PERSONNEL</p><h1>Mon profil culturel.</h1><p>Niveau ${level()} · ${xp()} XP</p></div><div class="profile-stats"><div><b>${unique.size}</b><span>Œuvres terminées</span></div><div><b>${entries.length}</b><span>Trophées obtenus</span></div><div><b>${available.filter(g=>g.ready).length}</b><span>Listes disponibles</span></div></div></section><div class="profile-metals">${Object.entries(names).map(([k,n])=>`<div>${trophy({kind:k==='platinum'?'meta':'sublist',total:k==='gold'?50:k==='silver'?15:1})}<b>${entries.filter(([,a])=>a.tier===k).length}</b><span>${n}</span></div>`).join('')}</div><div class="profile-layout"><section><div class="section-line"><h2>Tous les trophées</h2><span>${entries.length} / ${available.length}</span></div>${controls()}<div class="trophy-filters"><select id="trophy-filter" aria-label="Statut des trophées">${[['all','Tous les trophées'],['earned','Débloqués'],['locked','À débloquer']].map(([k,n])=>`<option value="${k}" ${filter===k?'selected':''}>${n}</option>`).join('')}</select><select id="trophy-tier" aria-label="Métal">${[['all','Tous les métaux'],...Object.entries(names)].map(([k,n])=>`<option value="${k}" ${tier===k?'selected':''}>${n}</option>`).join('')}</select></div><p class="muted">Bronze · 1–14 œuvres. Argent · 15–49. Or · 50 et plus. Platine · méta-liste complète. Un trophée acquis reste dans ta collection.</p><div class="trophy-list">${filtered.map(g=>{const a=awards[g.id];return `<button class="trophy-row ${a?'earned':'locked'}" data-profile-path="${esc(g.id)}">${trophy(g)}<span><strong>${esc(g.title)}</strong><small>${esc(g.breadcrumb.join(' / ')||g.family)}</small>${meter(g)}<small>${a?`Obtenu le ${new Date(a.date).toLocaleDateString('fr-FR')}`:g.total?`${done(g)} / ${g.total} œuvres · ${percent(g)} %`:'Sélection à compléter'}</small></span><b>${a?'✓':names[medal(g)]}</b></button>`;}).join('')||'<div class="empty">Aucun trophée pour ces filtres.</div>'}</div></section><aside class="trophy-cabinet"><h2>Ma vitrine</h2>${entries.length?entries.slice(0,6).map(([id,a])=>`<button class="cabinet-item" data-profile-path="${esc(id)}">${trophy(groups.find(g=>g.id===id)||{kind:'sublist',total:a.total})}<span><strong>${esc(a.title)}</strong><small>${names[a.tier]} · ${new Date(a.date).toLocaleDateString('fr-FR')}</small></span></button>`).join(''):'<div class="cabinet-empty">♜<h3>Ton premier trophée t’attend.</h3><p>Termine toutes les œuvres d’une sous-liste pour le débloquer.</p></div>'}<h2>Prochains trophées</h2>${ongoing.map(g=>`<button class="cabinet-item" data-profile-path="${esc(g.id)}">${trophy(g)}<span><strong>${esc(g.title)}</strong><small>${done(g)} / ${g.total} œuvres</small>${meter(g)}</span></button>`).join('')}</aside></div>`;
+  }
+  async function load(background=false){
     const version=++request;
     try{
-      const response=await fetch('/api/paths/detail?'+new URLSearchParams({id:selected,page}));
-      if(!response.ok)throw Error('Impossible de charger cette liste.');
-      const g=await response.json();
-      if(!active()||version!==request||g.id!==selected)return;
-      const local=groups.find(group=>group.id===g.id);
-      if(local)local.items=g.items;
-      const done=progress(g),pages=Math.max(1,Math.ceil(g.total/g.pageSize));
-      document.querySelector('#path-content').innerHTML=`<div class="path-heading"><button class="ghost" data-path-list="">Toutes les listes</button><h2>${esc(g.title)}</h2><p>${esc(g.subtitle)} · ${done} / ${g.total} terminées · ${g.total?Math.round(done/g.total*100):0} %</p></div>${legend()}<section class="path-unit"><div class="section-line"><h3>${esc(g.title)}</h3><span>Page ${g.page} / ${pages}</span></div>${tiles(g)}<div class="path-work-list">${g.items.map(i=>{
-        const item=stateFor(i),status=item?.status||'todo';
-        return `<button data-path-work="${esc(i.id)}" class="path-work-row"><span class="mastery-tile ${status}">${status==='done'?icon('crown'):icon('play')}</span><span><strong>${esc(i.title)}</strong><small>${esc(i.year)} · ${status==='done'?'Terminé':status==='doing'?'En cours':'À découvrir'}</small></span></button>`;
-      }).join('')}</div><div class="catalog-pagination"><button data-path-page="-1" ${page<=1?'disabled':''}>Précédente</button><span>${page} / ${pages}</span><button data-path-page="1" ${page>=pages?'disabled':''}>Suivante</button></div></section>`;
-    }catch(error){if(active()&&version===request)document.querySelector('#path-content').textContent=error.message;}
+      const [response,matches]=await Promise.all([fetch('/api/paths'),fetch('/api/catalog/resolve',{method:'POST',body:JSON.stringify(library().map(({id,catalogId,type,title,year})=>({id,catalogId,type,title,year})))}).then(r=>{if(!r.ok)throw Error('Impossible de lire la progression.');return r.json();})]);
+      if(!response.ok)throw Error('Redémarre le serveur pour activer les nouveaux parcours.');
+      const data=await response.json();if(version!==request||(!background&&!active()))return;
+      groups=data.groups;resolved=matches;tracked=new Map();items=new Map();
+      for(const g of groups)for(const i of g.items)items.set(i.id,i);
+      const rank={todo:0,doing:1,done:2};
+      for(const item of library()){const id=item.catalogId||resolved[item.id];if(id&&(!tracked.has(id)||rank[item.status]>rank[tracked.get(id).status]))tracked.set(id,item);}
+      earn();if(!background)await draw();
+    }catch(e){const target=document.querySelector('#journey-view');if(target&&active()&&version===request)target.textContent=e.message;}
   }
-  async function load(){
-    try{
-      const version=++request;
-      const [response,matches]=await Promise.all([
-        fetch('/api/paths'),
-        fetch('/api/catalog/resolve',{method:'POST',body:JSON.stringify(library().map(({id,catalogId,type,title,year})=>({id,catalogId,type,title,year})))}).then(r=>r.ok?r.json():{})
-      ]);
-      if(!response.ok)throw Error('Redémarre le serveur pour activer les parcours.');
-      const data=await response.json();
-      if(!active()||version!==request)return;
-      groups=data.groups;resolved=matches;
-      await draw();
-    }catch(error){if(active())document.querySelector('#path-content').textContent=error.message;}
-  }
-  document.addEventListener('click',event=>{
-    const categoryButton=event.target.closest('[data-path-category]');
-    if(categoryButton){category=categoryButton.dataset.pathCategory;selected='';page=1;request++;draw();}
-    const list=event.target.closest('[data-path-list]');
-    if(list){selected=list.dataset.pathList;page=1;request++;draw();}
-    const paging=event.target.closest('[data-path-page]');
-    if(paging){page+=Number(paging.dataset.pathPage);draw();}
-    const work=event.target.closest('[data-path-work]');
-    if(work){
-      const id=work.dataset.pathWork;
-      const existing=tracked.get(id);
-      const item=groups.flatMap(g=>g.items).find(i=>i.id===id)||(existing?{...existing,id}:null);
-      if(item)open(item,stateFor(item));
-    }
+  document.addEventListener('click',e=>{
+    const path=e.target.closest('[data-path-list]');if(path){selected=path.dataset.pathList;page=1;query='';draw();}
+    const profilePath=e.target.closest('[data-profile-path]');if(profilePath){selected=profilePath.dataset.profilePath;page=1;query='';location.hash='#parcours';}
+    const paging=e.target.closest('[data-path-page]');if(paging){page+=Number(paging.dataset.pathPage);draw();}
+    const work=e.target.closest('[data-path-work]');if(work){const item=items.get(work.dataset.pathWork);if(item)open(item,tracked.get(item.id));}
   });
-  return {mount,load};
+  document.addEventListener('change',e=>{
+    if(e.target.id==='journey-family'){family=e.target.value;draw();}
+    if(e.target.id==='trophy-filter'){filter=e.target.value;draw();}
+    if(e.target.id==='trophy-tier'){tier=e.target.value;draw();}
+  });
+  document.addEventListener('input',e=>{
+    if(e.target.id==='journey-search'){query=e.target.value;const start=e.target.selectionStart;draw().then(()=>{const input=document.querySelector('#journey-search');if(input){input.focus();input.setSelectionRange(start,start);}});}
+  });
+  return {mount,load,sync:()=>load(true)};
 }

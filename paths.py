@@ -113,12 +113,13 @@ def group_items(definition, full=False, page=1):
 
 
 def overview():
-    return {"groups":[group_items(d) for d in definitions()]}
+    import journeys
+    return journeys.overview()
 
 
 def detail(ident,page):
-    definition=next((d for d in definitions() if d["id"]==ident),None)
-    return group_items(definition,True,page) if definition else None
+    import journeys
+    return journeys.detail(ident,page)
 
 
 def resolve(items):

@@ -9,7 +9,7 @@ let state = read();
 let filter = {type:'all',status:'all',query:'',collection:'all'};
 let toastTimer;
 let importBusy = false;
-const pages = {accueil:['◈','Vue d’ensemble'],bibliotheque:['▦','Bibliothèque'],decouvrir:['✺','Découvrir'],parcours:['▦','Parcours'],collections:['▱','Collections'],objectifs:['◎','Objectifs & badges'],recommandations:['✧','Pour moi']};
+const pages = {accueil:['◈','Vue d’ensemble'],bibliotheque:['▦','Bibliothèque'],decouvrir:['✺','Découvrir'],parcours:['▦','Parcours'],profil:['♜','Profil & trophées'],collections:['▱','Collections'],objectifs:['◎','Objectifs & badges'],recommandations:['✧','Pour moi']};
 const page = ()=>{
   const route=location.hash.slice(1);
   const current={catalogue:'decouvrir',decouverte:'decouvrir'}[route]||route;
@@ -27,7 +27,7 @@ const level = ()=>Math.floor(xp()/100)+1;
 const bar = (n,max)=>`<div class="track"><i style="width:${Math.min(100,progress(n,max))}%"></i></div>`;
 const mediaLength = i=>i.length?(i.type==='film'?`${esc(i.length)}${/^\d+$/.test(i.length)?' min':''}`:i.type==='book'?`${esc(i.length)}${/^\d+$/.test(i.length)?' p.':''}`:esc(i.length)):'';
 function save(){
-  try {localStorage.setItem(storage,JSON.stringify(state)); render(); return true;}
+  try {localStorage.setItem(storage,JSON.stringify(state)); render(); if(!['parcours','profil'].includes(page()))pathsUI.sync(); return true;}
   catch {state=read(); render(); notify('Sauvegarde impossible. Vérifie l’espace disponible dans le navigateur.');return false;}
 }
 function notify(message){
@@ -105,7 +105,7 @@ function render(){
   const current=page();
   document.querySelector('#nav').innerHTML=Object.entries(pages).map(([k,[icon,label]])=>`<a href="#${k}" ${current===k?'aria-current="page"':''}><span>${icon}</span>${label}</a>`).join('');
   document.querySelector('#side').innerHTML=`<section class="level"><span class="stat-icon">✦</span><b>Niveau ${level()}</b><small>${xp()%100} / 100 XP</small>${bar(xp()%100,100)}</section>${state.demo?'<button class="ghost demo" data-act="demo">Retirer la démo</button>':''}`;
-  if(current==='parcours'){main.innerHTML=pathsUI.mount();pathsUI.load();}
+  if(current==='parcours'||current==='profil'){main.innerHTML=pathsUI.mount(current);pathsUI.load();}
   if(current==='decouvrir'){main.innerHTML=catalogUI.mount();catalogUI.load();}
   if(current==='accueil')main.innerHTML=dashboard();
   if(current==='bibliotheque'){main.innerHTML=library();results();}
@@ -312,7 +312,8 @@ const catalogUI=createCatalog({
   }
 });
 const pathsUI=createPaths({
-  esc,library:()=>state.items,level,xp,
+  esc,library:()=>state.items,level,xp,notify,
   open:(item,existing)=>existing?edit(existing.id):catalogUI.open(item)
 });
 render();
+if(!['parcours','profil'].includes(page()))pathsUI.sync();

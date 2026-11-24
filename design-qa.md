@@ -34,3 +34,9 @@ Une capture réalisée pendant le changement de format a été remplacée par un
 Aucun défaut visuel bloquant restant dans le périmètre vérifié. La disponibilité des couvertures et des pays dépend des sources. Le titre reste visible lorsqu’une couverture est absente. Les regroupements utilisent les métadonnées effectivement présentes.
 
 final result: passed
+
+## Parcours imbriqués et trophées — 24 novembre 2026
+
+Référence fournie: profil PSN avec bandeau de statistiques, trophées par métal, liste filtrable et vitrine latérale. Adaptation à Planche avec arrondis, bleu nuit et accent vert, coupes SVG originales. Toutes les méta-listes et sous-listes de l’arborescence validée sont présentes. Les sélections non attribuées restent explicitement vides et ne déclenchent pas de récompense.
+
+Vérifications: navigation Science-fiction → Cyberpunk, recherche de sous-listes, trois formats dans la liste Cyberpunk, profil avec trophée Larian Studios issu de la bibliothèque de test, filtre Débloqués, date dans la vitrine et absence d’erreurs JavaScript. Largeurs 390 et 1440 pixels sans débordement horizontal. Capture `../profil-trophees.jpg`. Les quatre tests Python et le scénario Node vérifient hiérarchie, union sans doublon, séparation lauréats/nominations, pagination, listes vides, conservation de la date et absence de double attribution. Origine de test 8002, bibliothèque de l’origine habituelle 8001 préservée.
