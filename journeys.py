@@ -10,6 +10,7 @@ LOCK = threading.Lock()
 CACHE = None
 SIGNATURE = None
 DATA = Path(__file__).parent / 'data'
+MIN_WORKS = 3
 
 # Exact titles only. An absent title does not create a catalogue record.
 CURATED = {
@@ -55,7 +56,8 @@ def overview():
             result={k:v for k,v in node.items() if k!='children'}
             result.update(meta=meta['id'],family=meta['family'],parent=parent,breadcrumb=list(trail),items=[])
             if node.get('children'):
-                children=[build(c,meta,node['id'],(*trail,node['title'])) for c in node['children']]
+                children=[child for c in node['children'] if (child:=build(c,meta,node['id'],(*trail,node['title']))) ]
+                if not children:return None
                 result['children']=[c['id'] for c in children]
                 result['members']=sorted({i for c in children for i in c['members']})
                 result['ready']=all(c['ready'] for c in children)
@@ -93,6 +95,7 @@ def overview():
                 result['members']=members
                 result['ready']=bool(members)
             result['total']=len(result['members'])
+            if result['total'] < MIN_WORKS:return None
             result['revision']=hashlib.sha256('\n'.join(sorted(result['members'])).encode()).hexdigest()[:16]
             result['items']=[works[i] for i in sorted(result['members'],key=lambda i:-(works[i].get('votes') or 0))[:16]]
             result['subtitle']='Sélection documentée' if result['ready'] else 'Sélection à compléter'
@@ -100,7 +103,7 @@ def overview():
             return result
         for meta in taxonomy['meta_lists']:
             build(meta,meta)
-        CACHE={'groups':groups,'version':taxonomy['version'],'coverage':{'populated':sum(g['kind']=='sublist' and g['total']>0 for g in groups),'sublists':taxonomy['counts']['sub_lists']}}
+        CACHE={'groups':groups,'version':taxonomy['version'],'coverage':{'populated':sum(g['kind']=='sublist' and g['total']>0 for g in groups),'sublists':sum(g['kind']=='sublist' for g in groups),'metaLists':sum(g['kind']=='meta' for g in groups),'minimumWorks':MIN_WORKS}}
         SIGNATURE=signature
         CACHE['_works']=works
         return {k:v for k,v in CACHE.items() if not k.startswith('_')}

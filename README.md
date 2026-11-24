@@ -61,22 +61,22 @@ Metacritic et les jeux exclusifs aux consoles restent à connecter. Le catalogue
 
 Toutes les cartes utilisent un cadre portrait 2:3, un titre sur deux lignes et des scores alignés. Les jeux utilisent les couvertures verticales Steam lorsqu’elles existent. Les livres utilisent Open Library. Les affiches de films proviennent des résumés Wikipédia et sont cherchées à la demande, puis mises en cache. Une carte conserve son titre lorsqu’aucune image exploitable n’est disponible.
 
-L’onglet « Parcours » applique l’arborescence complète de `data/taxonomy.json`, avec 53 méta-listes et 1 098 sous-listes. Cyberpunk est une sous-liste de Science-fiction. Les prix et les nominations ont des méta-listes distinctes. Les sections intermédiaires servent uniquement à naviguer. La recherche retrouve toutes les sous-listes et le filtre permet de choisir une famille.
+L’onglet « Parcours » utilise l’arborescence éditoriale de `data/taxonomy.json`. Seules les sous-listes contenant au moins trois œuvres distinctes sont publiées. Les sections et méta-listes devenues vides sont supprimées des parcours et du profil. Leurs effectifs et leur progression sont recalculés sur les listes conservées. Cyberpunk est une sous-liste de Science-fiction. Les prix et les nominations ont des méta-listes distinctes. Les sections intermédiaires servent uniquement à naviguer. La recherche retrouve toutes les sous-listes et le filtre permet de choisir une famille.
 
 Une case représente une œuvre. Le contour gris indique une œuvre à découvrir, l’orange une œuvre en cours et la couronne violette une œuvre terminée. Clique sur une case pour ouvrir sa fiche, l’ajouter à ta bibliothèque ou modifier son statut. Une œuvre terminée valide toutes ses occurrences. Les pourcentages des méta-listes utilisent l’union des identifiants du catalogue, sans doublon.
 
-L’arborescence complète est installée, mais l’affectation éditoriale reste partielle. Le premier ensemble relie les sélections Cyberpunk, Space opera et Post-apocalyptique par titres exacts, les créateurs par crédits exacts présents dans le catalogue et plusieurs prix par preuves sourcées avec distinction entre nominations et lauréats. Les listes sans affectation affichent « Sélection à compléter ». Les œuvres restent soumises aux règles d’entrée du catalogue, dont l’édition française pour les livres. Les listes ne prétendent pas contenir toute l’œuvre d’un créateur.
+Le fichier éditorial conserve les sujets possibles, mais seules les sélections atteignant le minimum de trois œuvres apparaissent dans le site. L’affectation éditoriale reste partielle. Le premier ensemble relie les sélections Cyberpunk, Space opera et Post-apocalyptique par titres exacts, les créateurs par crédits exacts présents dans le catalogue et plusieurs prix par preuves sourcées avec distinction entre nominations et lauréats. Les listes sans affectation, ainsi que celles contenant une ou deux œuvres, sont exclues des parcours et des trophées. Les œuvres restent soumises aux règles d’entrée du catalogue, dont l’édition française pour les livres. Les listes ne prétendent pas contenir toute l’œuvre d’un créateur.
 
 ### Profil et trophées
 
 « Profil & trophées » rassemble les statistiques personnelles, la vitrine chronologique, les prochaines listes à terminer et tous les trophées filtrables par nom, famille, statut et métal. Les coupes originales en SVG s’inspirent des trophées de consoles. Le déblocage est automatique après une sauvegarde de la bibliothèque, et lors de l’ouverture des parcours ou du profil pour reprendre une bibliothèque existante.
 
-- Bronze pour une sous-liste de 1 à 14 œuvres.
+- Bronze pour une sous-liste de 3 à 14 œuvres.
 - Argent pour 15 à 49 œuvres.
 - Or à partir de 50 œuvres.
 - Platine pour une méta-liste dont toutes les sous-listes sont documentées et toutes les œuvres terminées.
 
-Les listes vides ne donnent aucun trophée. Les sections intermédiaires ne donnent aucun trophée. La date, le métal et la version de sélection sont enregistrés au premier déblocage dans `planche.trophies.v1`, dans le stockage du navigateur. Un trophée acquis reste dans la vitrine après une modification du statut ou du catalogue. Effacer les données du navigateur efface aussi les trophées. Utilise la même adresse et le même port pour retrouver tes données personnelles.
+Les listes de moins de trois œuvres ne donnent aucun trophée. Les trophées historiques des listes retirées restent enregistrés localement, mais sont exclus du profil et de ses compteurs. Les sections intermédiaires ne donnent aucun trophée. La date, le métal et la version de sélection sont enregistrés au premier déblocage dans `planche.trophies.v1`, dans le stockage du navigateur. Un trophée acquis reste dans la vitrine après une modification du statut ou du catalogue. Effacer les données du navigateur efface aussi les trophées. Utilise la même adresse et le même port pour retrouver tes données personnelles.
 
 Après installation de cette version, redémarre le serveur puis recharge la page. Depuis le dossier du projet, exécute `python3 server.py 8001` et ouvre `http://127.0.0.1:8001/#profil`.
 

@@ -9,8 +9,11 @@ class JourneysTest(unittest.TestCase):
         cls.groups={g['id']:g for g in cls.data['groups']}
 
     def test_full_tree_and_parentage(self):
-        self.assertEqual(sum(g['kind']=='meta' for g in self.groups.values()),53)
-        self.assertEqual(sum(g['kind']=='sublist' for g in self.groups.values()),1098)
+        self.assertGreater(len(self.groups),0)
+        self.assertEqual(sum(g['kind']=='sublist' for g in self.groups.values()),self.data['coverage']['sublists'])
+        self.assertTrue(all(g['total']>=3 for g in self.groups.values()))
+        for g in self.groups.values():
+            if g['parent']:self.assertIn(g['parent'],self.groups)
         self.assertEqual(self.groups['science-fiction/cyberpunk']['parent'],'science-fiction')
         for g in self.groups.values():
             if g.get('children'):
@@ -21,14 +24,16 @@ class JourneysTest(unittest.TestCase):
     def test_no_empty_completion(self):
         for g in self.groups.values():
             if not g['total']:self.assertFalse(g['ready'])
-        self.assertFalse(self.groups['science-fiction']['ready'])
+        self.assertTrue(self.groups['science-fiction']['ready'])
+        self.assertNotIn('science-fiction/space-opera',self.groups)
+        self.assertIsNone(journeys.detail('science-fiction/space-opera',1))
 
-    def test_awards_separate_nominees_and_winners(self):
-        win=self.groups['uvres-recompensees-par-des-prix/cinema-oscars/meilleur-film']
+    def test_sparse_awards_are_removed(self):
+        self.assertNotIn('uvres-recompensees-par-des-prix/cinema-oscars/meilleur-film',self.groups)
         nominated=self.groups['uvres-nommees-et-selectionnees/oscars-nominations/meilleur-film']
-        self.assertGreater(win['total'],0)
-        self.assertGreater(nominated['total'],0)
-        self.assertFalse(set(win['members']) & set(nominated['members']))
+        self.assertGreaterEqual(nominated['total'],3)
+        goty=self.groups['uvres-recompensees-par-des-prix/jeux-video-the-game-awards/game-of-the-year']
+        self.assertGreaterEqual(goty['total'],3)
 
     def test_pagination_and_cache_are_public(self):
         for _ in range(2):self.assertNotIn('_works',journeys.overview())
