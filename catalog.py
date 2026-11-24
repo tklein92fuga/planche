@@ -25,7 +25,7 @@ LOCK = threading.Lock()
 RULES = {
     "imdb": "IMDb ≥ 7/10 · au moins 1 000 votes",
     "books": "Lecteurs Open Library ≥ 3,5/5 · au moins 20 avis · édition française identifiée",
-    "steam": "Steam ≥ 80 % d’avis positifs · au moins 100 avis",
+    "metacritic": "Metacritic ≥ 70/100 · au moins 10 critiques professionnelles",
     "awards": "Prix ou nomination recensé dans Wikidata · sélection internationale",
 }
 # Awards apply to works, never to their authors as a substitute for a work award.
@@ -67,6 +67,8 @@ def connect():
     conn.execute("CREATE INDEX IF NOT EXISTS works_canonical ON works(" + CANONICAL + ")")
     import paths
     paths.install(conn)
+    import metacritic
+    metacritic.install(conn)
     return conn
 
 
@@ -390,7 +392,8 @@ def update(selected=None):
         lease.close()
         LOCK.release()
         return False
-    sources = {"imdb": imdb, "books": books, "steam": steam, "awards": awards}
+    import metacritic
+    sources = {"imdb": imdb, "books": books, "metacritic": metacritic.collect, "awards": awards}
     chosen = [s for s in (selected or sources) if s in sources]
 
     def run(name):
@@ -448,7 +451,7 @@ def search(params):
         clauses.append("score >= ?")
         args.append(int(raw_score))
     if params.get("criterion", ["all"])[0] == "award":
-        clauses.append("id LIKE 'awards:%'")
+        clauses.append("EXISTS(SELECT 1 FROM works award_work WHERE award_work.id LIKE 'awards:%' AND COALESCE(json_extract(award_work.evidence,'$[0].canonical'),award_work.id)=COALESCE(json_extract(works.evidence,'$[0].canonical'),works.id))")
     try:
         page = max(1, int(params.get("page", ["1"])[0]))
     except ValueError:

@@ -5,12 +5,13 @@ import re
 import threading
 from pathlib import Path
 import catalog
+import journey_rules
 
 LOCK = threading.Lock()
 CACHE = None
 SIGNATURE = None
 DATA = Path(__file__).parent / 'data'
-MIN_WORKS = 3
+MIN_WORKS = 4
 
 # Exact titles only. An absent title does not create a catalogue record.
 CURATED = {
@@ -27,6 +28,7 @@ def overview():
             signature += ( (DATA/'taxonomy.json').stat().st_mtime_ns,)
             if CACHE is not None and SIGNATURE == signature:
                 return {k:v for k,v in CACHE.items() if not k.startswith('_')}
+            countries={r['id']:json.loads(r['countries']) for r in conn.execute('SELECT id,countries FROM work_details')}
             rows = conn.execute('SELECT *, '+catalog.CANONICAL+' canonical FROM works ORDER BY score DESC,id').fetchall()
         taxonomy = json.loads((DATA/'taxonomy.json').read_text())
         works = {}
@@ -51,15 +53,27 @@ def overview():
             for credit in re.split(r'[,;]',w.get('creator','')):
                 by_creator.setdefault(catalog.normalized(credit),set()).add(ident)
             if any(p.get('kind')=='award' for p in proofs[ident]):award_ids.add(ident)
+        meta_members={meta['id']:[ident for ident,w in works.items() if journey_rules.root_match(meta,w,countries.get(ident,[]))] for meta in taxonomy['meta_lists']}
+        tagged={}
+        for ident,w in works.items():
+            for tag in journey_rules.tags(w):tagged.setdefault(tag,set()).add(ident)
         groups=[]
         def build(node,meta,parent='',trail=()):
             result={k:v for k,v in node.items() if k!='children'}
             result.update(meta=meta['id'],family=meta['family'],parent=parent,breadcrumb=list(trail),items=[])
             if node.get('children'):
                 children=[child for c in node['children'] if (child:=build(c,meta,node['id'],(*trail,node['title']))) ]
-                if not children:return None
+                own=meta_members.get(node['id'],[]) if node['kind']=='meta' else []
+                if node['kind']=='meta':
+                    for kind,label in [('film','Films'),('book','Livres en français'),('game','Jeux vidéo')]:
+                        ids=[ident for ident in own if works[ident]['type']==kind]
+                        if len(ids)<MIN_WORKS:continue
+                        child=dict(id=node['id']+'/format-'+kind,title=label,kind='sublist',meta=meta['id'],family=meta['family'],parent=node['id'],breadcrumb=[node['title']],members=ids,total=len(ids),ready=True,subtitle='Classement par format',revision=hashlib.sha256('\n'.join(sorted(ids)).encode()).hexdigest()[:16],items=[works[i] for i in sorted(ids,key=lambda i:-(works[i].get('votes') or 0))[:16]])
+                        children.append(child);groups.append(child)
+                if not children and len(own)<MIN_WORKS:return None
+                result['directMembers']=own
                 result['children']=[c['id'] for c in children]
-                result['members']=sorted({i for c in children for i in c['members']})
+                result['members']=sorted(set(own)|{i for c in children for i in c['members']})
                 result['ready']=all(c['ready'] for c in children)
                 result['populated']=sum(bool(c['total']) for c in children)
             else:
@@ -70,9 +84,10 @@ def overview():
                 candidates=set().union(*(by_title.get(t,set()) for t in titles)) if titles else set()
                 if creator_family:candidates.update(by_creator.get(catalog.normalized(node['title']),set()))
                 if award_family:candidates.update(award_ids)
+                for tag in journey_rules.SUBJECTS.get(node['title'],[]):candidates.update(tagged.get(tag,set()))
                 for ident in candidates:
                     w=works[ident]
-                    matched=catalog.normalized(w['title']) in titles
+                    matched=catalog.normalized(w['title']) in titles or journey_rules.sub_match(node,w)
                     if creator_family:
                         creator=catalog.normalized(node['title'])
                         credits=[catalog.normalized(c) for c in re.split(r'[,;]',w.get('creator',''))]

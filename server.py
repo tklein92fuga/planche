@@ -104,20 +104,11 @@ def metadata(kind, title, year):
                 return dict(year=release, creator=", ".join(hit.get("author_name", [])),
                             length=hit.get("number_of_pages_median"), image=f"https://covers.openlibrary.org/b/id/{cover}-M.jpg" if cover else "", source="Open Library")
     if kind == "game":
-        data = remote("https://store.steampowered.com/api/storesearch/", term=title, l="french", cc="FR")
-        for hit in data.get("items", []):
-            if matches(hit.get("name", "")):
-                appid = str(int(hit["id"]))
-                info = remote("https://store.steampowered.com/api/appdetails", appids=appid, l="french", cc="FR").get(appid, {}).get("data", {})
-                if info.get("type") != "game":
-                    continue
-                release = re.search(r"\b\d{4}\b", info.get("release_date", {}).get("date", ""))
-                release = release.group() if release else ""
-                if year and release and year != release:
-                    continue
-                return dict(year=release, creator=", ".join(info.get("developers", [])),
-                            genre=", ".join(g["description"] for g in info.get("genres", [])),
-                            image=info.get("header_image") or hit.get("tiny_image"), source="Steam")
+        with catalog.connect() as conn:
+            rows=conn.execute("SELECT * FROM works WHERE type='game' AND id LIKE 'metacritic:%' AND title=? COLLATE NOCASE AND (?='' OR year=?)",(title,year,year)).fetchall()
+            if len(rows)==1:
+                hit=rows[0]
+                return dict(year=hit['year'],creator=hit['creator'],genre=hit['genre'],image=hit['image'],source='Metacritic')
     return {}
 
 

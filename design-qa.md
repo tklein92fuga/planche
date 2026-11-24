@@ -40,3 +40,12 @@ final result: passed
 Référence fournie: profil PSN avec bandeau de statistiques, trophées par métal, liste filtrable et vitrine latérale. Adaptation à Planche avec arrondis, bleu nuit et accent vert, coupes SVG originales. Toutes les méta-listes et sous-listes de l’arborescence validée sont présentes. Les sélections non attribuées restent explicitement vides et ne déclenchent pas de récompense.
 
 Vérifications: navigation Science-fiction → Cyberpunk, recherche de sous-listes, trois formats dans la liste Cyberpunk, profil avec trophée Larian Studios issu de la bibliothèque de test, filtre Débloqués, date dans la vitrine et absence d’erreurs JavaScript. Largeurs 390 et 1440 pixels sans débordement horizontal. Capture `../profil-trophees.jpg`. Les quatre tests Python et le scénario Node vérifient hiérarchie, union sans doublon, séparation lauréats/nominations, pagination, listes vides, conservation de la date et absence de double attribution. Origine de test 8002, bibliothèque de l’origine habituelle 8001 préservée.
+
+
+## Méta-listes générales et source Metacritic — 24 novembre 2026
+
+Les méta-listes générales proviennent du fichier d’arborescence initial. Genres et pays explicitement renseignés alimentent directement ces méta-listes. Les sous-listes éditoriales et les sous-listes par format ne sont publiées qu’à partir de quatre œuvres distinctes. Aucun sujet n’est déduit du seul titre d’une œuvre pour les règles générales.
+
+Collecte des pages publiques Metacritic terminée au seuil inférieur à 70. Instantané de 7 515 jeux, tous avec un Metascore au moins égal à 70 et 10 critiques. Les jeux Steam ne sont plus servis par le catalogue. Liens avec les anciennes bibliothèques conservés par identifiants quand le rapprochement est certain. Test d’installation neuve et réouverture idempotente.
+
+Vérification navigateur sur l’origine de test 8002, navigation Fantasy → Films et Livres, recherche Cyberpunk 2077, source Metacritic et preuve de 86/100 sur 106 critiques, couvertures affichées, aucune erreur JavaScript. Capture `../catalogue-metacritic.jpg`. Huit tests Python et scénario Node validés, incluant les seuils, la structure des pages, la migration et le filtre récompenses combiné au score.

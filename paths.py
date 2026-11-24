@@ -141,18 +141,18 @@ def resolve(items):
 
 
 def artwork(ident):
-    if not re.fullmatch(r"(imdb:tt\d+|books:OL\d+W|steam:\d+)",ident) and not (ident.startswith("awards:") and len(ident)<300):
+    if not re.fullmatch(r"(imdb:tt\d+|books:OL\d+W|steam:\d+|metacritic:[a-z0-9-]+)",ident) and not (ident.startswith("awards:") and len(ident)<300):
         return ""
     with ART_LOCK:
         with catalog.connect() as conn:
             existing=conn.execute("SELECT image,checked FROM work_details WHERE id=?",(ident,)).fetchone()
             if existing and time.time()-existing["checked"]<86400*7:
                 return existing["image"]
-            row=conn.execute("SELECT * FROM works WHERE id=?",(ident,)).fetchone()
+            row=conn.execute("SELECT * FROM works WHERE id=? OR "+catalog.CANONICAL+"=? ORDER BY score DESC LIMIT 1",(ident,ident)).fetchone()
         if not row:
             return ""
         image=row["image"] or ""
-        if row["type"]=="game":
+        if row["type"]=="game" and not row["id"].startswith("metacritic:"):
             appid=ident.split(":")[1] if ident.startswith("steam:") else ""
             if not appid:
                 found=catalog.fetch("https://store.steampowered.com/api/storesearch/",term=row["title"],l="english",cc="fr")

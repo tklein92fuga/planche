@@ -7,3 +7,5 @@ data/*.sqlite3-shm
 data/.update.lock
 data/catalog.sqlite3
 data/*.restore
+
+data/metacritic.json.gz

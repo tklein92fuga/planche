@@ -39,7 +39,7 @@ function notify(message){
 }
 function cover(i){
   const ident=i.catalogId||i.id;
-  const steam=String(ident).match(/^steam:(\d+)$/)||String(i.image||'').match(/steam\/apps\/(\d+)/);
+  const steam=i.evidence?.some(e=>e.source==='Metacritic')?null:String(ident).match(/^steam:(\d+)$/)||String(i.image||'').match(/steam\/apps\/(\d+)/);
   const fallback=/^https?:\/\//i.test(i.image||'')?i.image:'';
   const image=steam?'https://cdn.cloudflare.steamstatic.com/steam/apps/'+steam[1]+'/library_600x900.jpg':
     fallback||((i.type==='film'||i.type==='game')&&/^(imdb:|steam:|awards:)/.test(ident)?'/api/catalog/art?id='+encodeURIComponent(ident):'');

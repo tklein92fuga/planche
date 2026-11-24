@@ -11,13 +11,17 @@ class JourneysTest(unittest.TestCase):
     def test_full_tree_and_parentage(self):
         self.assertGreater(len(self.groups),0)
         self.assertEqual(sum(g['kind']=='sublist' for g in self.groups.values()),self.data['coverage']['sublists'])
-        self.assertTrue(all(g['total']>=3 for g in self.groups.values()))
+        self.assertTrue(all(g['total']>=4 for g in self.groups.values()))
+        self.assertIn('fantasy',self.groups)
+        self.assertIn('action',self.groups)
+        self.assertIn('fantasy/format-film',self.groups)
+        self.assertTrue(all(self.groups[i]['kind']=='sublist' for i in self.groups['fantasy']['children']))
         for g in self.groups.values():
             if g['parent']:self.assertIn(g['parent'],self.groups)
         self.assertEqual(self.groups['science-fiction/cyberpunk']['parent'],'science-fiction')
         for g in self.groups.values():
             if g.get('children'):
-                members={i for child in g['children'] for i in self.groups[child]['members']}
+                members=set(g.get('directMembers',[]))|{i for child in g['children'] for i in self.groups[child]['members']}
                 self.assertEqual(set(g['members']),members)
                 self.assertEqual(g['total'],len(members))
 
@@ -25,8 +29,7 @@ class JourneysTest(unittest.TestCase):
         for g in self.groups.values():
             if not g['total']:self.assertFalse(g['ready'])
         self.assertTrue(self.groups['science-fiction']['ready'])
-        self.assertNotIn('science-fiction/space-opera',self.groups)
-        self.assertIsNone(journeys.detail('science-fiction/space-opera',1))
+        self.assertTrue(all(g['total']>3 for g in self.groups.values()))
 
     def test_sparse_awards_are_removed(self):
         self.assertNotIn('uvres-recompensees-par-des-prix/cinema-oscars/meilleur-film',self.groups)
