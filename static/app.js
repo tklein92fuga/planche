@@ -1,3 +1,4 @@
+import {mediaBadge} from './media-ui.js';
 import {types,statuses,initial,key,today,importRows} from './data.js';
 import {createCatalog} from './catalog-ui.js';
 import {createPaths} from './paths-ui.js';
@@ -44,7 +45,7 @@ function cover(i){
   const image=steam?'https://cdn.cloudflare.steamstatic.com/steam/apps/'+steam[1]+'/library_600x900.jpg':
     fallback||((i.type==='film'||i.type==='game')&&/^(imdb:|steam:|awards:)/.test(ident)?'/api/catalog/art?id='+encodeURIComponent(ident):'');
   const lookup=!/^(imdb:|steam:|books:|awards:)/.test(ident)?'/api/catalog/art?'+new URLSearchParams({title:i.title,type:i.type,year:i.year||''}):'';
-  return `<div class="cover" style="--tint:${types[i.type].color}"><em>${esc(i.title)}</em>${image?`<img src="${esc(image)}" data-fallback="${esc(fallback)}" data-lookup="${esc(lookup)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}<span class="tag ${i.status}">${statuses[i.status]||''}</span></div>`;
+  return `<div class="cover" style="--tint:${types[i.type].color}"><em>${esc(i.title)}</em>${image?`<img src="${esc(image)}" data-fallback="${esc(fallback)}" data-lookup="${esc(lookup)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}${mediaBadge(i.type)}<span class="tag ${i.status}">${statuses[i.status]||''}</span></div>`;
 }
 main.addEventListener('error',e=>{
   const img=e.target;

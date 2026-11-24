@@ -1,0 +1,658 @@
+[
+  {
+    "meta": "science-fiction",
+    "id": "science-fiction/retour-vers-le-futur",
+    "title": "Retour vers le futur",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Back to the Future",
+        "year": "1985",
+        "type": "film"
+      },
+      {
+        "title": "Back to the Future Part II",
+        "year": "1989",
+        "type": "film"
+      },
+      {
+        "title": "Back to the Future Part III",
+        "year": "1990",
+        "type": "film"
+      }
+    ],
+    "sources": []
+  },
+  {
+    "meta": "science-fiction",
+    "id": "science-fiction/star-wars-trilogie-originale",
+    "title": "Star Wars — trilogie originale",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Star Wars: Episode IV - A New Hope",
+        "year": "1977",
+        "type": "film"
+      },
+      {
+        "title": "Star Wars: Episode V - The Empire Strikes Back",
+        "year": "1980",
+        "type": "film"
+      },
+      {
+        "title": "Star Wars: Episode VI - Return of the Jedi",
+        "year": "1983",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.starwars.com/films"
+    ]
+  },
+  {
+    "meta": "fantasy",
+    "id": "fantasy/terre-du-milieu-seigneur-des-anneaux",
+    "title": "Le Seigneur des anneaux — trilogie",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": "2001",
+        "type": "film"
+      },
+      {
+        "title": "The Lord of the Rings: The Two Towers",
+        "year": "2002",
+        "type": "film"
+      },
+      {
+        "title": "The Lord of the Rings: The Return of the King",
+        "year": "2003",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.warnerbros.com/movies/lord-rings-fellowship-ring"
+    ]
+  },
+  {
+    "meta": "fantasy",
+    "id": "fantasy/terre-du-milieu-hobbit",
+    "title": "Le Hobbit — trilogie",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "The Hobbit: An Unexpected Journey",
+        "year": "2012",
+        "type": "film"
+      },
+      {
+        "title": "The Hobbit: The Desolation of Smaug",
+        "year": "2013",
+        "type": "film"
+      },
+      {
+        "title": "The Hobbit: The Battle of the Five Armies",
+        "year": "2014",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.warnerbros.com/movies/hobbit-unexpected-journey"
+    ]
+  },
+  {
+    "meta": "fantasy",
+    "id": "fantasy/harry-potter-cinema",
+    "title": "Harry Potter — saga au cinéma",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "year": "2001",
+        "type": "film"
+      },
+      {
+        "title": "Harry Potter and the Chamber of Secrets",
+        "year": "2002",
+        "type": "film"
+      },
+      {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "year": "2004",
+        "type": "film"
+      },
+      {
+        "title": "Harry Potter and the Goblet of Fire",
+        "year": "2005",
+        "type": "film"
+      },
+      {
+        "title": "Harry Potter and the Order of the Phoenix",
+        "year": "2007",
+        "type": "film"
+      },
+      {
+        "title": "Harry Potter and the Half-Blood Prince",
+        "year": "2009",
+        "type": "film"
+      },
+      {
+        "title": "Harry Potter and the Deathly Hallows: Part 1",
+        "year": "2010",
+        "type": "film"
+      },
+      {
+        "title": "Harry Potter and the Deathly Hallows: Part 2",
+        "year": "2011",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.harrypotter.com/discover/films"
+    ]
+  },
+  {
+    "meta": "action",
+    "id": "action/batman-nolan",
+    "title": "Batman — trilogie de Christopher Nolan",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Batman Begins",
+        "year": "2005",
+        "type": "film"
+      },
+      {
+        "title": "The Dark Knight",
+        "year": "2008",
+        "type": "film"
+      },
+      {
+        "title": "The Dark Knight Rises",
+        "year": "2012",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.festival-cannes.com/en/p/christopher-nolan/"
+    ]
+  },
+  {
+    "meta": "action",
+    "id": "action/john-wick",
+    "title": "John Wick — saga",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "John Wick",
+        "year": "2014",
+        "type": "film"
+      },
+      {
+        "title": "John Wick: Chapter 2",
+        "year": "2017",
+        "type": "film"
+      },
+      {
+        "title": "John Wick: Chapter 3 - Parabellum",
+        "year": "2019",
+        "type": "film"
+      },
+      {
+        "title": "John Wick: Chapter 4",
+        "year": "2023",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.bfi.org.uk/features/where-begin-with-keanu-reeves"
+    ]
+  },
+  {
+    "meta": "guerres-et-conflits",
+    "id": "guerres-et-conflits/seconde-guerre-mondiale",
+    "title": "Seconde Guerre mondiale",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Saving Private Ryan",
+        "year": "1998",
+        "type": "film"
+      },
+      {
+        "title": "Schindler's List",
+        "year": "1993",
+        "type": "film"
+      },
+      {
+        "title": "The Pianist",
+        "year": "2002",
+        "type": "film"
+      },
+      {
+        "title": "Dunkirk",
+        "year": "2017",
+        "type": "film"
+      },
+      {
+        "title": "Das Boot",
+        "year": "1981",
+        "type": "film"
+      },
+      {
+        "title": "The Bridge on the River Kwai",
+        "year": "1957",
+        "type": "film"
+      },
+      {
+        "title": "The Great Escape",
+        "year": "1963",
+        "type": "film"
+      },
+      {
+        "title": "Come and See",
+        "year": "1985",
+        "type": "film"
+      },
+      {
+        "title": "Army of Shadows",
+        "year": "1969",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.bfi.org.uk/lists/10-great-films-set-britain-during-second-world-war"
+    ]
+  },
+  {
+    "meta": "guerres-et-conflits",
+    "id": "guerres-et-conflits/premiere-guerre-mondiale",
+    "title": "Première Guerre mondiale",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "1917",
+        "year": "2019",
+        "type": "film"
+      },
+      {
+        "title": "Paths of Glory",
+        "year": "1957",
+        "type": "film"
+      },
+      {
+        "title": "All Quiet on the Western Front",
+        "year": "1930",
+        "type": "film"
+      },
+      {
+        "title": "All Quiet on the Western Front",
+        "year": "2022",
+        "type": "film"
+      },
+      {
+        "title": "Lawrence of Arabia",
+        "year": "1962",
+        "type": "film"
+      }
+    ],
+    "sources": []
+  },
+  {
+    "meta": "guerres-et-conflits",
+    "id": "guerres-et-conflits/guerre-du-vietnam",
+    "title": "Guerre du Vietnam",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Apocalypse Now",
+        "year": "1979",
+        "type": "film"
+      },
+      {
+        "title": "Platoon",
+        "year": "1986",
+        "type": "film"
+      },
+      {
+        "title": "Full Metal Jacket",
+        "year": "1987",
+        "type": "film"
+      },
+      {
+        "title": "The Deer Hunter",
+        "year": "1978",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.bfi.org.uk/lists/10-great-vietnam-war-films"
+    ]
+  },
+  {
+    "meta": "histoire-et-memoire",
+    "id": "histoire-et-memoire/guerre-froide",
+    "title": "Guerre froide et espionnage",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+        "year": "1964",
+        "type": "film"
+      },
+      {
+        "title": "Bridge of Spies",
+        "year": "2015",
+        "type": "film"
+      },
+      {
+        "title": "The Lives of Others",
+        "year": "2006",
+        "type": "film"
+      },
+      {
+        "title": "Tinker Tailor Soldier Spy",
+        "year": "2011",
+        "type": "film"
+      }
+    ],
+    "sources": []
+  },
+  {
+    "meta": "histoire-et-memoire",
+    "id": "histoire-et-memoire/conquete-spatiale",
+    "title": "Conquête spatiale — des débuts à Apollo",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "The Right Stuff",
+        "year": "1983",
+        "type": "film"
+      },
+      {
+        "title": "Apollo 13",
+        "year": "1995",
+        "type": "film"
+      },
+      {
+        "title": "First Man",
+        "year": "2018",
+        "type": "film"
+      },
+      {
+        "title": "Hidden Figures",
+        "year": "2016",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.nasa.gov/history/"
+    ]
+  },
+  {
+    "meta": "uvres-de-createurs-auteurs-et-studios",
+    "id": "uvres-de-createurs-auteurs-et-studios/realisateur-kubrick",
+    "title": "Stanley Kubrick — réalisation",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "2001: A Space Odyssey",
+        "year": "1968",
+        "type": "film"
+      },
+      {
+        "title": "A Clockwork Orange",
+        "year": "1971",
+        "type": "film"
+      },
+      {
+        "title": "The Shining",
+        "year": "1980",
+        "type": "film"
+      },
+      {
+        "title": "Barry Lyndon",
+        "year": "1975",
+        "type": "film"
+      },
+      {
+        "title": "Full Metal Jacket",
+        "year": "1987",
+        "type": "film"
+      },
+      {
+        "title": "Paths of Glory",
+        "year": "1957",
+        "type": "film"
+      },
+      {
+        "title": "Eyes Wide Shut",
+        "year": "1999",
+        "type": "film"
+      },
+      {
+        "title": "The Killing",
+        "year": "1956",
+        "type": "film"
+      },
+      {
+        "title": "Spartacus",
+        "year": "1960",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://stanleykubrick.de/en/filmography/"
+    ]
+  },
+  {
+    "meta": "uvres-de-createurs-auteurs-et-studios",
+    "id": "uvres-de-createurs-auteurs-et-studios/realisateur-nolan",
+    "title": "Christopher Nolan — réalisation",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Following",
+        "year": "1998",
+        "type": "film"
+      },
+      {
+        "title": "Memento",
+        "year": "2000",
+        "type": "film"
+      },
+      {
+        "title": "Insomnia",
+        "year": "2002",
+        "type": "film"
+      },
+      {
+        "title": "Batman Begins",
+        "year": "2005",
+        "type": "film"
+      },
+      {
+        "title": "The Prestige",
+        "year": "2006",
+        "type": "film"
+      },
+      {
+        "title": "The Dark Knight",
+        "year": "2008",
+        "type": "film"
+      },
+      {
+        "title": "Inception",
+        "year": "2010",
+        "type": "film"
+      },
+      {
+        "title": "The Dark Knight Rises",
+        "year": "2012",
+        "type": "film"
+      },
+      {
+        "title": "Interstellar",
+        "year": "2014",
+        "type": "film"
+      },
+      {
+        "title": "Dunkirk",
+        "year": "2017",
+        "type": "film"
+      },
+      {
+        "title": "Tenet",
+        "year": "2020",
+        "type": "film"
+      },
+      {
+        "title": "Oppenheimer",
+        "year": "2023",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.festival-cannes.com/en/p/christopher-nolan/"
+    ]
+  },
+  {
+    "meta": "uvres-de-createurs-auteurs-et-studios",
+    "id": "uvres-de-createurs-auteurs-et-studios/realisateur-miyazaki",
+    "title": "Hayao Miyazaki — réalisation",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Nausicaä of the Valley of the Wind",
+        "year": "1984",
+        "type": "film"
+      },
+      {
+        "title": "My Neighbor Totoro",
+        "year": "1988",
+        "type": "film"
+      },
+      {
+        "title": "Princess Mononoke",
+        "year": "1997",
+        "type": "film"
+      },
+      {
+        "title": "Spirited Away",
+        "year": "2001",
+        "type": "film"
+      },
+      {
+        "title": "Howl's Moving Castle",
+        "year": "2004",
+        "type": "film"
+      },
+      {
+        "title": "Ponyo",
+        "year": "2008",
+        "type": "film"
+      },
+      {
+        "title": "The Wind Rises",
+        "year": "2013",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.ghibli.jp/works/"
+    ]
+  },
+  {
+    "meta": "uvres-de-createurs-auteurs-et-studios",
+    "id": "uvres-de-createurs-auteurs-et-studios/acteur-dicaprio",
+    "title": "Leonardo DiCaprio — interprétation",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Titanic",
+        "year": "1997",
+        "type": "film"
+      },
+      {
+        "title": "Inception",
+        "year": "2010",
+        "type": "film"
+      },
+      {
+        "title": "Django Unchained",
+        "year": "2012",
+        "type": "film"
+      },
+      {
+        "title": "The Wolf of Wall Street",
+        "year": "2013",
+        "type": "film"
+      },
+      {
+        "title": "The Aviator",
+        "year": "2004",
+        "type": "film"
+      },
+      {
+        "title": "Catch Me If You Can",
+        "year": "2002",
+        "type": "film"
+      },
+      {
+        "title": "What's Eating Gilbert Grape",
+        "year": "1993",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.youtube.com/watch?v=61oxkOk4jy0"
+    ]
+  },
+  {
+    "meta": "uvres-de-createurs-auteurs-et-studios",
+    "id": "uvres-de-createurs-auteurs-et-studios/acteur-keanu-reeves",
+    "title": "Keanu Reeves — interprétation",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "The Matrix",
+        "year": "1999",
+        "type": "film"
+      },
+      {
+        "title": "Speed",
+        "year": "1994",
+        "type": "film"
+      },
+      {
+        "title": "Point Break",
+        "year": "1991",
+        "type": "film"
+      },
+      {
+        "title": "John Wick",
+        "year": "2014",
+        "type": "film"
+      },
+      {
+        "title": "John Wick: Chapter 2",
+        "year": "2017",
+        "type": "film"
+      },
+      {
+        "title": "John Wick: Chapter 3 - Parabellum",
+        "year": "2019",
+        "type": "film"
+      },
+      {
+        "title": "John Wick: Chapter 4",
+        "year": "2023",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.bfi.org.uk/features/where-begin-with-keanu-reeves"
+    ]
+  }
+]

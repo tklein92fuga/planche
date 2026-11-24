@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-const {createPaths}=await import('data:text/javascript;base64,'+Buffer.from(await readFile(new URL('../static/paths-ui.js',import.meta.url))).toString('base64'));
+const mediaModule='data:text/javascript;base64,'+Buffer.from(await readFile(new URL('../static/media-ui.js',import.meta.url))).toString('base64');
+const source=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./media-ui.js',mediaModule);
+const {createPaths}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const values=new Map();let writes=0;const messages=[];
 globalThis.localStorage={getItem:k=>values.get(k),setItem:(k,v)=>{writes++;values.set(k,v);}};
 globalThis.location={hash:'#profil'};
@@ -13,8 +15,8 @@ globalThis.fetch=async url=>({ok:true,json:async()=>url==='/api/paths'?{groups}:
 const ui=createPaths({esc:String,library:()=>library,open(){},level:()=>1,xp:()=>25,notify:m=>messages.push(m)});
 ui.mount('profil');await ui.load();
 let earned=JSON.parse(values.get('planche.trophies.v1'));
-assert.deepEqual(Object.keys(earned).sort(),['first','overlap']);
-assert.match(target.innerHTML,/2 \/ 8/);
+assert.deepEqual(Object.keys(earned).sort(),['first','overlap','three']);
+assert.match(target.innerHTML,/3 \/ 8/);
 const date=earned.first.date;
 await ui.load();assert.equal(writes,1,'No duplicate award or repeated storage write');
 library=[];await ui.load();earned=JSON.parse(values.get('planche.trophies.v1'));

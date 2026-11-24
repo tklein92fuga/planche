@@ -11,10 +11,11 @@ class JourneysTest(unittest.TestCase):
     def test_full_tree_and_parentage(self):
         self.assertGreater(len(self.groups),0)
         self.assertEqual(sum(g['kind']=='sublist' for g in self.groups.values()),self.data['coverage']['sublists'])
-        self.assertTrue(all(g['total']>=4 for g in self.groups.values()))
+        self.assertTrue(all(g['total']>=3 for g in self.groups.values()))
         self.assertIn('fantasy',self.groups)
         self.assertIn('action',self.groups)
-        self.assertIn('fantasy/format-film',self.groups)
+        self.assertFalse(any('/format-' in g['id'] for g in self.groups.values()))
+        self.assertEqual(self.groups['fantasy/terre-du-milieu-seigneur-des-anneaux']['total'],3)
         self.assertTrue(all(self.groups[i]['kind']=='sublist' for i in self.groups['fantasy']['children']))
         for g in self.groups.values():
             if g['parent']:self.assertIn(g['parent'],self.groups)
@@ -29,7 +30,23 @@ class JourneysTest(unittest.TestCase):
         for g in self.groups.values():
             if not g['total']:self.assertFalse(g['ready'])
         self.assertTrue(self.groups['science-fiction']['ready'])
-        self.assertTrue(all(g['total']>3 for g in self.groups.values()))
+        self.assertTrue(all(g['total']>=3 for g in self.groups.values()))
+
+    def test_format_projection_and_historical_membership(self):
+        all_world_war=self.groups['guerres-et-conflits/seconde-guerre-mondiale']
+        self.assertGreaterEqual(all_world_war['total'],3)
+        self.assertTrue(all(i['type']=='film' for i in all_world_war['items']))
+        original=list(self.groups['science-fiction/cyberpunk']['members'])
+        for kind in ('film','book','game'):
+            data=journeys.overview(kind)
+            for g in data['groups']:
+                self.assertGreaterEqual(g['total'],3)
+                self.assertTrue(all(i['type']==kind for i in g['items']))
+            g=data['groups'][0]
+            detail=journeys.detail(g['id'],1,kind)
+            self.assertEqual(detail['total'],g['total'])
+            self.assertTrue(all(i['type']==kind for i in detail['items']))
+        self.assertEqual(self.groups['science-fiction/cyberpunk']['members'],original)
 
     def test_sparse_awards_are_removed(self):
         self.assertNotIn('uvres-recompensees-par-des-prix/cinema-oscars/meilleur-film',self.groups)

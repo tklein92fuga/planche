@@ -112,14 +112,14 @@ def group_items(definition, full=False, page=1):
     return dict(**definition,total=len(members),members=members,items=items,page=page,pageSize=limit)
 
 
-def overview():
+def overview(kind="all"):
     import journeys
-    return journeys.overview()
+    return journeys.overview(kind)
 
 
-def detail(ident,page):
+def detail(ident,page,kind="all"):
     import journeys
-    return journeys.detail(ident,page)
+    return journeys.detail(ident,page,kind)
 
 
 def resolve(items):

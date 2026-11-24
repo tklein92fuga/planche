@@ -1,5 +1,6 @@
+import {mediaIcon,mediaNames} from './media-ui.js';
 export function createPaths({esc,library,open,level,xp,notify}) {
-  let fullList=false,groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
+  let loadRevision=0,media='all',allGroups=[],fullList=false,groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
   const active=()=>['#parcours','#profil'].includes(location.hash);
   const done=g=>g.members.filter(id=>tracked.get(id)?.status==='done').length;
   const percent=g=>g.total?Math.floor(done(g)/g.total*100):0;
@@ -9,8 +10,8 @@ export function createPaths({esc,library,open,level,xp,notify}) {
   function ledger(){try{return JSON.parse(localStorage.getItem('planche.trophies.v1'))||{};}catch{return {};}}
   function earn(){
     const awards=ledger(),newOnes=[];
-    for(const g of groups.filter(g=>g.kind!=='group')){
-      if(g.ready&&g.total>=4&&done(g)===g.total&&!awards[g.id]){
+    for(const g of allGroups.filter(g=>g.kind!=='group')){
+      if(g.ready&&g.total>=3&&done(g)===g.total&&!awards[g.id]){
         awards[g.id]={date:new Date().toISOString(),title:g.title,tier:medal(g),revision:g.revision,total:g.total};newOnes.push(g.title);
       }
     }
@@ -29,19 +30,20 @@ export function createPaths({esc,library,open,level,xp,notify}) {
   function tile(i){
     items.set(i.id,i);
     const status=tracked.get(i.id)?.status||'todo';
-    return `<button class="mastery-tile ${status}" data-path-work="${esc(i.id)}" aria-label="${esc(i.title)} · ${status==='done'?'Terminé':status==='doing'?'En cours':'À découvrir'}" title="${esc(i.title)}">${status==='done'?'<img src="icons/crown.svg" alt="">':status==='doing'?'<img src="icons/play.svg" alt="">':''}</button>`;
+    return `<button class="mastery-tile ${status}" data-path-work="${esc(i.id)}" aria-label="${esc(i.title)} · ${mediaNames[i.type]} · ${status==='done'?'Terminé':status==='doing'?'En cours':'À découvrir'}" title="${esc(i.title)}">${mediaIcon(i.type)}${status==='done'?'<span class="tile-complete" aria-hidden="true">✓</span>':''}</button>`;
   }
   function row(g){
     const award=ledger()[g.id];
     return `<section class="journey-row ${award?'awarded':''}"><button class="journey-title" data-path-list="${esc(g.id)}"><span>${g.kind==='meta'?'MÉTA-LISTE':g.kind==='group'?'SECTION':'SOUS-LISTE'}</span><strong>${esc(g.title)}</strong><small>${g.total?`${done(g)} / ${g.total} œuvres`:'Sélection à compléter'}</small></button><div class="journey-progress">${g.total?`<div class="mastery-tiles">${g.items.slice(0,16).map(tile).join('')}</div>${meter(g)}`:'<p class="muted">Les œuvres de cette liste seront ajoutées après sélection.</p>'}</div><div class="journey-reward ${award?'earned':'locked'}">${g.kind==='group'?'<small>Ouvrir</small>':`${trophy(g)}<small>${award?'Débloqué':names[medal(g)]}</small>`}</div></section>`;
   }
+  function mediaNav(){return `<nav class="media-navbar" aria-label="Filtrer les parcours par format">${[['all','Tout'],['film','Films'],['game','Jeux vidéo'],['book','Livres']].map(([id,label])=>`<button data-path-media="${id}" aria-label="${label}" aria-pressed="${media===id}">${id==='all'?'':mediaIcon(id)}${label}</button>`).join('')}</nav>${media!=='all'?'<p class="path-data-note">Les trophées demandent la liste complète, tous formats confondus.</p>':''}`;}
   function controls(){
     const families=[...new Set(groups.filter(g=>g.kind==='meta').map(g=>g.family))];
     return `<div class="filter-bar"><input type="search" id="journey-search" value="${esc(query)}" placeholder="Rechercher une liste…" aria-label="Rechercher une liste"><select id="journey-family" aria-label="Famille"><option value="">Toutes les familles</option>${families.map(f=>`<option ${f===family?'selected':''}>${esc(f)}</option>`).join('')}</select></div>`;
   }
   function navigation(){
     const metas=groups.filter(g=>g.kind==='meta');
-    return `<nav class="path-navigation" aria-label="Méta-listes"><button data-path-list="" class="path-overview ${!selected?'selected':''}">Tous les parcours</button>${metas.map(g=>`<button data-path-list="${esc(g.id)}" class="path-nav-item ${selected===g.id?'selected':''}"><strong>${esc(g.title)}</strong><span>${g.children.length} sections · ${percent(g)} %</span></button>`).join('')}</nav>`;
+    return `<nav class="path-navigation" aria-label="Méta-listes"><button data-path-list="" class="path-overview ${!selected?'selected':''}">Tous les parcours</button>${metas.map(g=>`<button data-path-list="${esc(g.id)}" class="path-nav-item ${selected===g.id?'selected':''}"><strong>${esc(g.title)}</strong><span>${g.children.length?g.children.length+' sections':g.total+' œuvres'} · ${percent(g)} %</span></button>`).join('')}</nav>`;
   }
   function match(g){return (!family||family===g.family)&&g.title.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr'));}
   async function draw(){
@@ -53,44 +55,49 @@ export function createPaths({esc,library,open,level,xp,notify}) {
     const g=groups.find(g=>g.id===selected);
     if(!g){
       const visible=groups.filter(g=>g.kind!=='group'&&(!query?g.kind==='meta':true)&&match(g));
-      content=`<div class="path-heading"><p class="eyebrow">EXPLORER · COMPLÉTER · COLLECTIONNER</p><h1>Parcours culturels.</h1><p>${groups.filter(g=>g.kind==='meta').length} méta-listes, ${groups.filter(g=>g.kind==='sublist').length} sous-listes. Une œuvre terminée valide toutes ses cases.</p><a href="#profil">Voir mon profil et mes trophées</a></div>${controls()}<p class="path-data-note">Chaque liste contient au moins quatre œuvres. Un trophée est attribué lorsque toutes ses œuvres sont terminées. Le platine récompense une méta-liste complète.</p>${visible.map(row).join('')||'<p>Aucun parcours trouvé.</p>'}`;
+      content=`<div class="path-heading"><p class="eyebrow">EXPLORER · COMPLÉTER · COLLECTIONNER</p><h1>Parcours culturels.</h1><p>${groups.filter(g=>g.kind==='meta').length} méta-listes, ${groups.filter(g=>g.kind==='sublist').length} sous-listes. Une œuvre terminée valide toutes ses cases.</p><a href="#profil">Voir mon profil et mes trophées</a></div>${controls()}<p class="path-data-note">Chaque liste contient au moins trois œuvres. Un trophée est attribué lorsque toutes ses œuvres sont terminées. Le platine récompense une méta-liste complète.</p>${visible.map(row).join('')||'<p>Aucun parcours trouvé.</p>'}`;
     }else if(g.children?.length&&!fullList){
       content=`<button class="ghost" data-path-list="${esc(g.parent||'')}">Retour aux parcours</button>${heading(g)}${meter(g)}<div class="mastery-tiles">${g.items.map(tile).join('')}</div><button data-path-full>Voir les ${g.total} œuvres de cette méta-liste</button><p class="path-data-note">${g.ready?'Sélections disponibles.':'Certaines sélections restent à compléter. Le trophée final est verrouillé.'}</p>${g.children.map(id=>row(groups.find(g=>g.id===id))).join('')}`;
     }else{
-      target.innerHTML=`<div class="path-layout">${navigation()}<div class="path-content">Chargement…</div></div>`;
+      target.innerHTML=`${mediaNav()}<div class="path-layout">${navigation()}<div class="path-content">Chargement…</div></div>`;
       try{
-        const response=await fetch('/api/paths/detail?'+new URLSearchParams({id:g.id,page}));
+        const response=await fetch('/api/paths/detail?'+new URLSearchParams({id:g.id,page,type:media}));
         if(!response.ok)throw Error('Impossible de charger cette liste.');
         const detail=await response.json();if(version!==request||!active())return;
         const pages=Math.max(1,Math.ceil(detail.total/60));
-        content=`<button class="ghost" data-path-list="${esc(g.parent)}">Retour à ${esc(groups.find(p=>p.id===g.parent)?.title||'tous les parcours')}</button>${heading(g)}${meter(g)}<div class="mastery-legend"><span>♛ Terminé</span><span>◧ En cours</span><span>□ À découvrir</span></div>${detail.total?`<div class="mastery-tiles">${detail.items.map(tile).join('')}</div><div class="path-work-list">${detail.items.map(i=>`<button class="path-work-row" data-path-work="${esc(i.id)}">${tileLabel(i)}<span><strong>${esc(i.title)}</strong><small>${esc(i.year)} · ${{film:'Film',book:'Livre',game:'Jeu vidéo'}[i.type]}</small></span></button>`).join('')}</div><div class="catalog-pagination"><button data-path-page="-1" ${page<=1?'disabled':''}>Précédente</button><span>${page} / ${pages}</span><button data-path-page="1" ${page>=pages?'disabled':''}>Suivante</button></div>`:'<div class="empty">Sélection à compléter. Aucun trophée ne peut être débloqué sur une liste vide.</div>'}`;
+        content=`<button class="ghost" data-path-list="${esc(g.parent)}">Retour à ${esc(groups.find(p=>p.id===g.parent)?.title||'tous les parcours')}</button>${heading(g)}${meter(g)}<div class="mastery-legend"><span>♛ Terminé</span><span>◧ En cours</span><span>□ À découvrir</span></div>${detail.total?`<div class="mastery-tiles">${detail.items.map(tile).join('')}</div><div class="path-work-list">${detail.items.map(i=>`<button class="path-work-row" data-path-work="${esc(i.id)}">${tileLabel(i)}<span><strong>${esc(i.title)}</strong><small>${esc(i.year)} · ${mediaIcon(i.type)} ${mediaNames[i.type]}</small></span></button>`).join('')}</div><div class="catalog-pagination"><button data-path-page="-1" ${page<=1?'disabled':''}>Précédente</button><span>${page} / ${pages}</span><button data-path-page="1" ${page>=pages?'disabled':''}>Suivante</button></div>`:'<div class="empty">Sélection à compléter. Aucun trophée ne peut être débloqué sur une liste vide.</div>'}`;
       }catch(e){content=`<p>${esc(e.message)}</p>`;}
     }
-    if(version===request&&active())target.innerHTML=`<div class="path-layout">${navigation()}<div class="path-content">${content}</div></div>`;
+    if(version===request&&active())target.innerHTML=`${mediaNav()}<div class="path-layout">${navigation()}<div class="path-content">${content}</div></div>`;
   }
-  function tileLabel(i){const status=tracked.get(i.id)?.status||'todo';return `<span class="mastery-tile ${status}">${status==='done'?'<img src="icons/crown.svg" alt="Terminé">':status==='doing'?'◧':''}</span>`;}
+  function tileLabel(i){const status=tracked.get(i.id)?.status||'todo';return `<span class="mastery-tile ${status}">${mediaIcon(i.type)}${status==='done'?'<span class="tile-complete" aria-hidden="true">✓</span>':''}</span>`;}
   function profile(){
     const awards=ledger(),entries=Object.entries(awards).filter(([id])=>groups.some(g=>g.id===id&&g.kind!=='group')).sort((a,b)=>b[1].date.localeCompare(a[1].date));
     const available=groups.filter(g=>g.kind!=='group');
     const filtered=available.filter(g=>match(g)&&(tier==='all'||medal(g)===tier)&&(filter==='all'||filter==='earned'&&awards[g.id]||filter==='locked'&&!awards[g.id]));
     const ongoing=available.filter(g=>g.kind==='sublist'&&g.total>0&&!awards[g.id]).sort((a,b)=>percent(b)-percent(a)).slice(0,5);
     const unique=new Set(library().filter(i=>i.status==='done').map(i=>i.catalogId||resolved[i.id]||i.id));
-    return `<section class="profile-banner"><div class="profile-avatar">Q</div><div><p class="eyebrow">CARNET PERSONNEL</p><h1>Mon profil culturel.</h1><p>Niveau ${level()} · ${xp()} XP</p></div><div class="profile-stats"><div><b>${unique.size}</b><span>Œuvres terminées</span></div><div><b>${entries.length}</b><span>Trophées obtenus</span></div><div><b>${available.filter(g=>g.ready).length}</b><span>Listes disponibles</span></div></div></section><div class="profile-metals">${Object.entries(names).map(([k,n])=>`<div>${trophy({kind:k==='platinum'?'meta':'sublist',total:k==='gold'?50:k==='silver'?15:1})}<b>${entries.filter(([,a])=>a.tier===k).length}</b><span>${n}</span></div>`).join('')}</div><div class="profile-layout"><section><div class="section-line"><h2>Tous les trophées</h2><span>${entries.length} / ${available.length}</span></div>${controls()}<div class="trophy-filters"><select id="trophy-filter" aria-label="Statut des trophées">${[['all','Tous les trophées'],['earned','Débloqués'],['locked','À débloquer']].map(([k,n])=>`<option value="${k}" ${filter===k?'selected':''}>${n}</option>`).join('')}</select><select id="trophy-tier" aria-label="Métal">${[['all','Tous les métaux'],...Object.entries(names)].map(([k,n])=>`<option value="${k}" ${tier===k?'selected':''}>${n}</option>`).join('')}</select></div><p class="muted">Bronze · 4–14 œuvres. Argent · 15–49. Or · 50 et plus. Platine · méta-liste complète. Un trophée acquis reste dans ta collection.</p><div class="trophy-list">${filtered.map(g=>{const a=awards[g.id];return `<button class="trophy-row ${a?'earned':'locked'}" data-profile-path="${esc(g.id)}">${trophy(g)}<span><strong>${esc(g.title)}</strong><small>${esc(g.breadcrumb.join(' / ')||g.family)}</small>${meter(g)}<small>${a?`Obtenu le ${new Date(a.date).toLocaleDateString('fr-FR')}`:g.total?`${done(g)} / ${g.total} œuvres · ${percent(g)} %`:'Sélection à compléter'}</small></span><b>${a?'✓':names[medal(g)]}</b></button>`;}).join('')||'<div class="empty">Aucun trophée pour ces filtres.</div>'}</div></section><aside class="trophy-cabinet"><h2>Ma vitrine</h2>${entries.length?entries.slice(0,6).map(([id,a])=>`<button class="cabinet-item" data-profile-path="${esc(id)}">${trophy(groups.find(g=>g.id===id)||{kind:'sublist',total:a.total})}<span><strong>${esc(a.title)}</strong><small>${names[a.tier]} · ${new Date(a.date).toLocaleDateString('fr-FR')}</small></span></button>`).join(''):'<div class="cabinet-empty">♜<h3>Ton premier trophée t’attend.</h3><p>Termine toutes les œuvres d’une sous-liste pour le débloquer.</p></div>'}<h2>Prochains trophées</h2>${ongoing.map(g=>`<button class="cabinet-item" data-profile-path="${esc(g.id)}">${trophy(g)}<span><strong>${esc(g.title)}</strong><small>${done(g)} / ${g.total} œuvres</small>${meter(g)}</span></button>`).join('')}</aside></div>`;
+    return `<section class="profile-banner"><div class="profile-avatar">Q</div><div><p class="eyebrow">CARNET PERSONNEL</p><h1>Mon profil culturel.</h1><p>Niveau ${level()} · ${xp()} XP</p></div><div class="profile-stats"><div><b>${unique.size}</b><span>Œuvres terminées</span></div><div><b>${entries.length}</b><span>Trophées obtenus</span></div><div><b>${available.filter(g=>g.ready).length}</b><span>Listes disponibles</span></div></div></section><div class="profile-metals">${Object.entries(names).map(([k,n])=>`<div>${trophy({kind:k==='platinum'?'meta':'sublist',total:k==='gold'?50:k==='silver'?15:1})}<b>${entries.filter(([,a])=>a.tier===k).length}</b><span>${n}</span></div>`).join('')}</div><div class="profile-layout"><section><div class="section-line"><h2>Tous les trophées</h2><span>${entries.length} / ${available.length}</span></div>${controls()}<div class="trophy-filters"><select id="trophy-filter" aria-label="Statut des trophées">${[['all','Tous les trophées'],['earned','Débloqués'],['locked','À débloquer']].map(([k,n])=>`<option value="${k}" ${filter===k?'selected':''}>${n}</option>`).join('')}</select><select id="trophy-tier" aria-label="Métal">${[['all','Tous les métaux'],...Object.entries(names)].map(([k,n])=>`<option value="${k}" ${tier===k?'selected':''}>${n}</option>`).join('')}</select></div><p class="muted">Bronze · 3–14 œuvres. Argent · 15–49. Or · 50 et plus. Platine · méta-liste complète. Un trophée acquis reste dans ta collection.</p><div class="trophy-list">${filtered.map(g=>{const a=awards[g.id];return `<button class="trophy-row ${a?'earned':'locked'}" data-profile-path="${esc(g.id)}">${trophy(g)}<span><strong>${esc(g.title)}</strong><small>${esc(g.breadcrumb.join(' / ')||g.family)}</small>${meter(g)}<small>${a?`Obtenu le ${new Date(a.date).toLocaleDateString('fr-FR')}`:g.total?`${done(g)} / ${g.total} œuvres · ${percent(g)} %`:'Sélection à compléter'}</small></span><b>${a?'✓':names[medal(g)]}</b></button>`;}).join('')||'<div class="empty">Aucun trophée pour ces filtres.</div>'}</div></section><aside class="trophy-cabinet"><h2>Ma vitrine</h2>${entries.length?entries.slice(0,6).map(([id,a])=>`<button class="cabinet-item" data-profile-path="${esc(id)}">${trophy(groups.find(g=>g.id===id)||{kind:'sublist',total:a.total})}<span><strong>${esc(a.title)}</strong><small>${names[a.tier]} · ${new Date(a.date).toLocaleDateString('fr-FR')}</small></span></button>`).join(''):'<div class="cabinet-empty">♜<h3>Ton premier trophée t’attend.</h3><p>Termine toutes les œuvres d’une sous-liste pour le débloquer.</p></div>'}<h2>Prochains trophées</h2>${ongoing.map(g=>`<button class="cabinet-item" data-profile-path="${esc(g.id)}">${trophy(g)}<span><strong>${esc(g.title)}</strong><small>${done(g)} / ${g.total} œuvres</small>${meter(g)}</span></button>`).join('')}</aside></div>`;
   }
   async function load(background=false){
-    const version=++request;
+    const version=++loadRevision;request++;
     try{
       const [response,matches]=await Promise.all([fetch('/api/paths'),fetch('/api/catalog/resolve',{method:'POST',body:JSON.stringify(library().map(({id,catalogId,type,title,year})=>({id,catalogId,type,title,year})))}).then(r=>{if(!r.ok)throw Error('Impossible de lire la progression.');return r.json();})]);
       if(!response.ok)throw Error('Redémarre le serveur pour activer les nouveaux parcours.');
-      const data=await response.json();if(version!==request||(!background&&!active()))return;
-      groups=data.groups;resolved=matches;tracked=new Map();items=new Map();
-      for(const g of groups)for(const i of g.items)items.set(i.id,i);
+      const data=await response.json();if(version!==loadRevision||(!background&&!active()))return;
+      allGroups=data.groups;
+      const projection=mode==='parcours'&&media!=='all'?await fetch('/api/paths?'+new URLSearchParams({type:media})).then(r=>{if(!r.ok)throw Error('Impossible de filtrer les parcours.');return r.json();}):data;
+      if(version!==loadRevision||(!background&&!active()))return;
+      groups=projection.groups;if(selected&&!groups.some(g=>g.id===selected)){selected='';fullList=false;}
+      resolved=matches;tracked=new Map();items=new Map();
+      for(const g of allGroups)for(const i of g.items)items.set(i.id,i);
       const rank={todo:0,doing:1,done:2};
       for(const item of library()){const id=item.catalogId||resolved[item.id];if(id&&(!tracked.has(id)||rank[item.status]>rank[tracked.get(id).status]))tracked.set(id,item);}
       earn();if(!background)await draw();
-    }catch(e){const target=document.querySelector('#journey-view');if(target&&active()&&version===request)target.textContent=e.message;}
+    }catch(e){const target=document.querySelector('#journey-view');if(target&&active()&&version===loadRevision)target.textContent=e.message;}
   }
   document.addEventListener('click',e=>{
+    const format=e.target.closest('[data-path-media]');if(format){media=format.dataset.pathMedia;page=1;return load();}
     const path=e.target.closest('[data-path-list]');if(path){fullList=false;selected=path.dataset.pathList;page=1;query='';draw();}
     const profilePath=e.target.closest('[data-profile-path]');if(profilePath){fullList=false;selected=profilePath.dataset.profilePath;page=1;query='';location.hash='#parcours';}
     if(e.target.closest('[data-path-full]')){fullList=true;page=1;draw();}

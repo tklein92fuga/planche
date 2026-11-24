@@ -135,12 +135,12 @@ class Handler(SimpleHTTPRequestHandler):
     def do_GET(self):
         path = urlsplit(self.path)
         if path.path == "/api/paths":
-            self.reply(200, paths.overview())
+            self.reply(200, paths.overview(parse_qs(path.query).get("type",["all"])[0]))
         elif path.path == "/api/paths/detail":
             params = parse_qs(path.query)
             try:
                 page = max(1,int(params.get("page",["1"])[0]))
-                result = paths.detail(params.get("id",[""])[0],page)
+                result = paths.detail(params.get("id",[""])[0],page,params.get("type",["all"])[0])
                 self.reply(200 if result else 404,result or {"error":"Liste introuvable."})
             except ValueError:
                 self.reply(400,{"error":"Page invalide."})

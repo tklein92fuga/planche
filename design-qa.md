@@ -49,3 +49,12 @@ Les méta-listes générales proviennent du fichier d’arborescence initial. Ge
 Collecte des pages publiques Metacritic terminée au seuil inférieur à 70. Instantané de 7 515 jeux, tous avec un Metascore au moins égal à 70 et 10 critiques. Les jeux Steam ne sont plus servis par le catalogue. Liens avec les anciennes bibliothèques conservés par identifiants quand le rapprochement est certain. Test d’installation neuve et réouverture idempotente.
 
 Vérification navigateur sur l’origine de test 8002, navigation Fantasy → Films et Livres, recherche Cyberpunk 2077, source Metacritic et preuve de 86/100 sur 106 critiques, couvertures affichées, aucune erreur JavaScript. Capture `../catalogue-metacritic.jpg`. Huit tests Python et scénario Node validés, incluant les seuils, la structure des pages, la migration et le filtre récompenses combiné au score.
+
+
+## Sous-listes éditoriales et filtre de format — 24 novembre 2026
+
+Suppression des sous-listes automatiques par format, seuil ramené à trois œuvres selon la demande. Ajout de 17 sélections par saga, réalisateur, acteur ou événement historique, sélectionnées par titre, année et format. Les décennies portent sur les années de sortie. Les anciennes sous-listes pertinentes continuent de fonctionner.
+
+Nouvelle navigation Tout / Films / Jeux vidéo / Livres. Chaque vue filtre les membres, les compteurs et la pagination, sans modifier la sélection complète utilisée pour les trophées. Ajout d’icônes SVG originales pellicule, manette et livre sur chaque case et sur les couvertures de cartes.
+
+Contrôles navigateur: neuf films de la Seconde Guerre mondiale, trilogies de trois films, filtre Jeux vidéo montrant uniquement des icônes de manette (120 cases), filtre Livres montrant uniquement des livres (43 cases). Capture `../parcours-sagas-filtres.jpg`. Largeur mobile 390 pixels, aucun débordement, les quatre boutons restent visibles. Aucune erreur JavaScript. Neuf tests Python et deux scénarios Node vérifient aussi la recherche pendant un changement de filtre et l’absence de trophée attribué pour la seule partie visible d’une liste mixte.
