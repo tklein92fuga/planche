@@ -1,5 +1,6 @@
 """Serve Planche and look up public metadata without exposing API keys."""
 import csv
+import gzip
 import io
 import json
 import re
@@ -126,7 +127,12 @@ class Handler(SimpleHTTPRequestHandler):
 
     def reply(self, status, value):
         payload = json.dumps(value, ensure_ascii=False).encode()
+        compressed=len(payload)>65536 and "gzip" in self.headers.get("Accept-Encoding", "")
+        if compressed:payload=gzip.compress(payload,compresslevel=5)
         self.send_response(status)
+        if compressed:
+            self.send_header("Content-Encoding", "gzip")
+            self.send_header("Vary", "Accept-Encoding")
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(payload)))
         self.end_headers()

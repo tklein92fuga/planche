@@ -67,3 +67,12 @@ L’accueil affiche uniquement les méta-listes sous forme de cartes. Chaque car
 Horreur → Films de John Carpenter contient The Thing (1982), Halloween (1978), They Live (1988) et In the Mouth of Madness (1994), rapprochés par titre, année et format, sous réserve des critères du catalogue. Références: https://theofficialjohncarpenter.com/biography/ et https://theofficialjohncarpenter.com/credits/. Le compteur Horreur porte sur les quatre œuvres de cette sous-liste. Les méta-listes sans sous-listes sont retirées, y compris dans les projections par format.
 
 Contrôle navigateur: aucun bouton d’œuvre à l’accueil, aucune icône de format dans le DOM, ouverture de Horreur puis John Carpenter et affichage des quatre titres, retour à la grille de méta-listes. Mobile 390 pixels sans débordement dans les deux vues. Aucune erreur JavaScript. Capture `../parcours-horreur-carpenter.jpg`. Neuf tests Python et deux tests Node validés.
+
+
+## Métadonnées et alignements — 25 novembre 2026
+
+Corrections motivées par les deux captures utilisateur: suppression du centrage implicite des titres dans leurs colonnes, alignement des lignes sur le haut, colonnes de largeur commune, espacement explicite entre barres et cases/légende. Mesures navigateur sur trois lignes de réalisateurs: même abscisse pour les titres (530 px) et les cases (766 px), même décalage vertical (28 px), espace cases/barres de 18 px. Fiche Keanu Reeves: espace barre/légende de 28 px.
+
+Regroupements automatiques par métadonnées, minimum trois identifiants canoniques et déduplication des sélections identiques dans une méta-liste. Enrichissement de 453 jeux depuis leurs pages publiques Metacritic: développeurs, éditeurs et franchises explicitement déclarés. Pas de studios/éditeurs de films inventés. Recherche, critère et pagination de 40 sous-listes ajoutés dans les cours.
+
+Contrôles de l’interface: filtrage sur les réalisateurs, Édités par Nintendo (128 œuvres), TPS (117 œuvres). Capture `../sous-listes-alignees.jpg`. Mobile 390 px: largeur du document 390 px, ligne 368 px, aucune erreur JavaScript. Onze tests Python et deux scénarios Node validés, dont la provenance des rôles de société, le seuil, les décennies et l’absence de regroupements générés identiques au sein d’une méta-liste.

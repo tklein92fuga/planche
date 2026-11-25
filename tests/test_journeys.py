@@ -20,7 +20,7 @@ class JourneysTest(unittest.TestCase):
         self.assertTrue(all(i['type']=='film' for i in carpenter['items']))
         self.assertFalse(any('/format-' in g['id'] for g in self.groups.values()))
         self.assertEqual(self.groups['fantasy/terre-du-milieu-seigneur-des-anneaux']['total'],3)
-        self.assertTrue(all(self.groups[i]['kind']=='sublist' for i in self.groups['fantasy']['children']))
+        self.assertTrue(all(self.groups[i]['kind'] in ('sublist','group') for i in self.groups['fantasy']['children']))
         for g in self.groups.values():
             if g['parent']:self.assertIn(g['parent'],self.groups)
         self.assertEqual(self.groups['science-fiction/cyberpunk']['parent'],'science-fiction')
@@ -52,6 +52,24 @@ class JourneysTest(unittest.TestCase):
             self.assertEqual(detail['total'],g['total'])
             self.assertTrue(all(i['type']==kind for i in detail['items']))
         self.assertEqual(self.groups['science-fiction/cyberpunk']['members'],original)
+
+    def test_metadata_sublist_evidence_and_deduplication(self):
+        generated=[g for g in self.groups.values() if g.get('facet')]
+        self.assertGreater(len(generated),100)
+        seen=set()
+        for g in generated:
+            self.assertGreaterEqual(len(set(g['members'])),3)
+            signature=(g['meta'],tuple(sorted(g['members'])))
+            self.assertNotIn(signature,seen)
+            seen.add(signature)
+            if g['facet']=='decade':
+                decade=int(g['criterion']['value'])
+                for ident in g['members']:
+                    self.assertEqual(int(journeys.CACHE['_works'][ident]['year'])//10*10,decade)
+        fps=next(g for g in generated if g['meta']=='action' and g['facet']=='genre' and g['title'].startswith('FPS —'))
+        self.assertTrue(all('fps' in journeys.CACHE['_works'][i]['genre'].lower() for i in fps['members']))
+        self.assertTrue(any(g['facet']=='publisher' for g in generated))
+        self.assertTrue(any(g['facet']=='developer' for g in generated))
 
     def test_sparse_awards_are_removed(self):
         self.assertNotIn('uvres-recompensees-par-des-prix/cinema-oscars/meilleur-film',self.groups)

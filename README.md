@@ -89,3 +89,16 @@ Les pays proviennent de la propriété « pays d’origine » de Wikidata. La pr
 La sélection de récompenses initiale comprend notamment les dix films nommés à l’Oscar du meilleur film 2024 et cinq lauréats des Game Awards, ainsi que les distinctions déjà présentes. Elle est documentée dans `data/verified-awards.json`. Les métadonnées complémentaires livrées sont appliquées au premier démarrage, y compris sur une installation existante.
 
 Les icônes proviennent de Lucide, dont la licence figure dans `static/icons/LICENSE`.
+
+
+## Sous-listes issues des métadonnées
+
+Les parcours génèrent aussi des sous-listes par genre, type de jeu (FPS, TPS, JRPG…), décennie de sortie, saga, studio/développeur, éditeur, plateforme, auteur et pays de production lorsque le champ existe. Chaque sélection contient au moins trois œuvres distinctes. Les regroupements ayant exactement les mêmes membres au sein d’une méta-liste sont dédupliqués. Aucune catégorie générique fondée uniquement sur le format n’est ajoutée.
+
+La navigation reste Méta-liste → Sous-listes → Œuvres. La page d’un cours propose une recherche de sous-liste, un filtre par critère et une pagination de 40 sous-listes pour garder une page réactive. La pagination des œuvres reste de 60. Les transferts volumineux de l’API sont compressés lorsque le navigateur le permet.
+
+Les années, genres et auteurs viennent du catalogue existant. Les plateformes des jeux sont référencées dans les preuves Metacritic. Le fichier `data/company-metadata.json` enrichit 453 jeux avec les rôles explicitement crédités (Developer / Publisher) et les franchises déclarées par Metacritic. Cette couverture reste partielle; les studios ou éditeurs absents des sources ne sont pas déduits du titre. Les décennies regroupent les années de sortie, sans prétendre dater le cadre historique du récit.
+
+Pour réactualiser cet enrichissement facultatif, lancer `python3 enrich_metadata.py` depuis le dossier du projet. Le script examine les titres les mieux notés ou les plus commentés, réutilise les pages en cache et enregistre les résultats de façon atomique. Il ne change pas les critères de note du catalogue. Le serveur relit automatiquement les sélections lorsque le fichier de métadonnées change.
+
+Les barres des fiches sont séparées de la légende par 28 pixels; les barres des sous-listes restent à 18 pixels des cases. Les titres et les cases utilisent des colonnes communes, avec un placement adapté au mobile.

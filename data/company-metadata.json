@@ -1,0 +1,6644 @@
+[
+  {
+    "id": "metacritic:007-first-light",
+    "franchises": [
+      "James Bond 007"
+    ],
+    "developers": [
+      "Delphi Interactive",
+      "Io Interactive"
+    ],
+    "publishers": [
+      "H2 Interactive Co., Ltd.",
+      "Io Interactive"
+    ],
+    "source": "https://www.metacritic.com/game/007-first-light/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:age-of-empires-ii-the-age-of-kings",
+    "franchises": [
+      "Age of Empires"
+    ],
+    "developers": [
+      "Ensemble Studios"
+    ],
+    "publishers": [
+      "Microsoft",
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/age-of-empires-ii-the-age-of-kings/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:advance-wars",
+    "franchises": [
+      "Advance Wars"
+    ],
+    "developers": [
+      "Intelligent Systems"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/advance-wars/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:advance-wars-1-plus-2-re-boot-camp",
+    "franchises": [
+      "Advance Wars"
+    ],
+    "developers": [
+      "WayForward"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/advance-wars-1-plus-2-re-boot-camp/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:animal-crossing-new-horizons",
+    "franchises": [
+      "Animal Crossing"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/animal-crossing-new-horizons/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:arms",
+    "franchises": [],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/arms/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:assassins-creed-black-flag-resynced",
+    "franchises": [
+      "Assassin's Creed"
+    ],
+    "developers": [
+      "Ubisoft"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/assassins-creed-black-flag-resynced/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:alan-wake",
+    "franchises": [
+      "Alan Wake"
+    ],
+    "developers": [
+      "Remedy Entertainment"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/alan-wake/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:assassins-creed-odyssey",
+    "franchises": [
+      "Assassin's Creed"
+    ],
+    "developers": [
+      "Ubisoft Quebec"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/assassins-creed-odyssey/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:assassins-creed-shadows",
+    "franchises": [
+      "Assassin's Creed"
+    ],
+    "developers": [
+      "Ubisoft Quebec"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/assassins-creed-shadows/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:astral-chain",
+    "franchises": [],
+    "developers": [
+      "PlatinumGames"
+    ],
+    "publishers": [
+      "Nintendo",
+      "PlatinumGames"
+    ],
+    "source": "https://www.metacritic.com/game/astral-chain/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:astro-bot",
+    "franchises": [
+      "The Playroom / Astro"
+    ],
+    "developers": [
+      "Team Asobi"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/astro-bot/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:assassins-creed-mirage",
+    "franchises": [
+      "Assassin's Creed"
+    ],
+    "developers": [
+      "Ubisoft Bordeaux"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/assassins-creed-mirage/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:baldurs-gate-3",
+    "franchises": [
+      "Baldur's Gate"
+    ],
+    "developers": [
+      "Larian Studios Games"
+    ],
+    "publishers": [
+      "Larian Studios Games"
+    ],
+    "source": "https://www.metacritic.com/game/baldurs-gate-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:batman-arkham-asylum",
+    "franchises": [
+      "Batman: Arkham"
+    ],
+    "developers": [
+      "Rocksteady Studios"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "Eidos Interactive",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/batman-arkham-asylum/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:batman-arkham-city",
+    "franchises": [
+      "Batman: Arkham"
+    ],
+    "developers": [
+      "Rocksteady Studios"
+    ],
+    "publishers": [
+      "Warner Bros. Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/batman-arkham-city/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:baldurs-gate-ii-shadows-of-amn",
+    "franchises": [
+      "Baldur's Gate"
+    ],
+    "developers": [
+      "BioWare"
+    ],
+    "publishers": [
+      "Atari Corporation",
+      "Interplay",
+      "Sega",
+      "Virgin Interactive"
+    ],
+    "source": "https://www.metacritic.com/game/baldurs-gate-ii-shadows-of-amn/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:batman-arkham-knight",
+    "franchises": [
+      "Batman: Arkham"
+    ],
+    "developers": [
+      "Rocksteady Studios"
+    ],
+    "publishers": [
+      "Warner Bros. Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/batman-arkham-knight/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:age-of-empires-iv",
+    "franchises": [
+      "Age of Empires"
+    ],
+    "developers": [
+      "Relic Entertainment"
+    ],
+    "publishers": [
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/age-of-empires-iv/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:battlefield-2",
+    "franchises": [
+      "Battlefield"
+    ],
+    "developers": [
+      "Digital Illusions"
+    ],
+    "publishers": [
+      "EA Games",
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/battlefield-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:bayonetta-3",
+    "franchises": [
+      "Bayonetta"
+    ],
+    "developers": [
+      "PlatinumGames"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/bayonetta-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:banjo-kazooie",
+    "franchises": [
+      "Banjo-Kazooie"
+    ],
+    "developers": [
+      "Rare Ltd."
+    ],
+    "publishers": [
+      "Nintendo",
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/banjo-kazooie/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:big-walk",
+    "franchises": [],
+    "developers": [
+      "House House"
+    ],
+    "publishers": [
+      "Panic Inc."
+    ],
+    "source": "https://www.metacritic.com/game/big-walk/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:beyond-two-souls",
+    "franchises": [],
+    "developers": [
+      "Quantic Dream"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/beyond-two-souls/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:bayonetta-origins-cereza-and-the-lost-demon",
+    "franchises": [
+      "Bayonetta"
+    ],
+    "developers": [
+      "PlatinumGames"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/bayonetta-origins-cereza-and-the-lost-demon/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:bioshock",
+    "franchises": [
+      "BioShock"
+    ],
+    "developers": [
+      "2K Marin",
+      "Irrational Games"
+    ],
+    "publishers": [
+      "2K Games",
+      "Spike"
+    ],
+    "source": "https://www.metacritic.com/game/bioshock/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:black-myth-wukong",
+    "franchises": [
+      "Black Myth"
+    ],
+    "developers": [
+      "Game Science"
+    ],
+    "publishers": [
+      "Game Science"
+    ],
+    "source": "https://www.metacritic.com/game/black-myth-wukong/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:bioshock-2",
+    "franchises": [
+      "BioShock"
+    ],
+    "developers": [
+      "2K Marin"
+    ],
+    "publishers": [
+      "2K Games",
+      "D3Publisher"
+    ],
+    "source": "https://www.metacritic.com/game/bioshock-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:bioshock-infinite",
+    "franchises": [
+      "BioShock"
+    ],
+    "developers": [
+      "Irrational Games"
+    ],
+    "publishers": [
+      "2K Games"
+    ],
+    "source": "https://www.metacritic.com/game/bioshock-infinite/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:bloodborne",
+    "franchises": [
+      "Bloodborne"
+    ],
+    "developers": [
+      "From Software"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/bloodborne/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:borderlands-4",
+    "franchises": [
+      "Borderlands"
+    ],
+    "developers": [
+      "Gearbox Software"
+    ],
+    "publishers": [
+      "2K Games"
+    ],
+    "source": "https://www.metacritic.com/game/borderlands-4/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:blue-prince",
+    "franchises": [],
+    "developers": [
+      "Dogubomb"
+    ],
+    "publishers": [
+      "Raw Fury"
+    ],
+    "source": "https://www.metacritic.com/game/blue-prince/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:bayonetta-2",
+    "franchises": [
+      "Bayonetta"
+    ],
+    "developers": [
+      "PlatinumGames"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/bayonetta-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:bravely-default-ii",
+    "franchises": [
+      "Bravely Default"
+    ],
+    "developers": [
+      "Claytech Works"
+    ],
+    "publishers": [
+      "Nintendo",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/bravely-default-ii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:burnout-3-takedown",
+    "franchises": [
+      "Burnout"
+    ],
+    "developers": [
+      "Criterion Games"
+    ],
+    "publishers": [
+      "EA Games",
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/burnout-3-takedown/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:call-of-duty",
+    "franchises": [
+      "Call of Duty"
+    ],
+    "developers": [
+      "Infinity Ward"
+    ],
+    "publishers": [
+      "1C Entertainment",
+      "Activision",
+      "MediaQuest",
+      "ak tronic"
+    ],
+    "source": "https://www.metacritic.com/game/call-of-duty/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:call-of-duty-infinite-warfare",
+    "franchises": [
+      "Call of Duty"
+    ],
+    "developers": [
+      "Infinity Ward"
+    ],
+    "publishers": [
+      "Activision",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/call-of-duty-infinite-warfare/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:call-of-duty-4-modern-warfare",
+    "franchises": [
+      "Call of Duty"
+    ],
+    "developers": [
+      "Infinity Ward"
+    ],
+    "publishers": [
+      "Activision",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/call-of-duty-4-modern-warfare/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:call-of-duty-modern-warfare-2",
+    "franchises": [
+      "Call of Duty"
+    ],
+    "developers": [
+      "Infinity Ward"
+    ],
+    "publishers": [
+      "Activision",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/call-of-duty-modern-warfare-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:chrono-cross",
+    "franchises": [
+      "Chrono Trigger"
+    ],
+    "developers": [
+      "SquareSoft"
+    ],
+    "publishers": [
+      "Square EA",
+      "Square Enix",
+      "SquareSoft"
+    ],
+    "source": "https://www.metacritic.com/game/chrono-cross/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:celeste",
+    "franchises": [
+      "Celeste"
+    ],
+    "developers": [
+      "Maddy Makes Games"
+    ],
+    "publishers": [
+      "Fangamer",
+      "Flyhigh Works",
+      "Limited Run Games",
+      "Maddy Makes Games"
+    ],
+    "source": "https://www.metacritic.com/game/celeste/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:clair-obscur-expedition-33",
+    "franchises": [],
+    "developers": [
+      "Sandfall Interactive"
+    ],
+    "publishers": [
+      "Kepler Interactive"
+    ],
+    "source": "https://www.metacritic.com/game/clair-obscur-expedition-33/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:chrono-trigger",
+    "franchises": [
+      "Chrono Trigger"
+    ],
+    "developers": [
+      "TOSE"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/chrono-trigger/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:conkers-bad-fur-day",
+    "franchises": [
+      "Conker"
+    ],
+    "developers": [
+      "Rare Ltd."
+    ],
+    "publishers": [
+      "Rare Ltd.",
+      "THQ"
+    ],
+    "source": "https://www.metacritic.com/game/conkers-bad-fur-day/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:braid",
+    "franchises": [],
+    "developers": [
+      "Number None Inc."
+    ],
+    "publishers": [
+      "Microsoft Game Studios",
+      "Number None Inc."
+    ],
+    "source": "https://www.metacritic.com/game/braid/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:control-resonant",
+    "franchises": [
+      "Control"
+    ],
+    "developers": [
+      "Remedy Entertainment"
+    ],
+    "publishers": [
+      "Remedy Entertainment",
+      "U&I Entertainment Japan"
+    ],
+    "source": "https://www.metacritic.com/game/control-resonant/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:crackdown-2",
+    "franchises": [
+      "Crackdown"
+    ],
+    "developers": [
+      "Ruffian Games"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/crackdown-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:castlevania-aria-of-sorrow",
+    "franchises": [
+      "Castlevania"
+    ],
+    "developers": [
+      "KCET"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/castlevania-aria-of-sorrow/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:company-of-heroes",
+    "franchises": [
+      "Company of Heroes"
+    ],
+    "developers": [
+      "Relic Entertainment"
+    ],
+    "publishers": [
+      "Russel",
+      "Sega",
+      "THQ",
+      "ak tronic"
+    ],
+    "source": "https://www.metacritic.com/game/company-of-heroes/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:crysis",
+    "franchises": [
+      "Crysis"
+    ],
+    "developers": [
+      "Crytek"
+    ],
+    "publishers": [
+      "EA Games",
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/crysis/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:crusader-kings-iii",
+    "franchises": [
+      "Crusader Kings"
+    ],
+    "developers": [
+      "Paradox Interactive"
+    ],
+    "publishers": [
+      "Paradox Interactive"
+    ],
+    "source": "https://www.metacritic.com/game/crusader-kings-iii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:crash-bandicoot-4-its-about-time",
+    "franchises": [
+      "Crash Bandicoot"
+    ],
+    "developers": [
+      "Toys for Bob"
+    ],
+    "publishers": [
+      "Activision"
+    ],
+    "source": "https://www.metacritic.com/game/crash-bandicoot-4-its-about-time/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:crimson-desert",
+    "franchises": [],
+    "developers": [
+      "Pearl Abyss"
+    ],
+    "publishers": [
+      "Pearl Abyss"
+    ],
+    "source": "https://www.metacritic.com/game/crimson-desert/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:cyberpunk-2077",
+    "franchises": [
+      "Cyberpunk"
+    ],
+    "developers": [
+      "CD Projekt Red Studio"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "CD Projekt",
+      "CD Projekt Red Studio",
+      "Warner Bros. Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/cyberpunk-2077/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:days-gone",
+    "franchises": [],
+    "developers": [
+      "Sony Bend"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/days-gone/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:dead-island-2",
+    "franchises": [
+      "Dead Island"
+    ],
+    "developers": [
+      "Deep Silver Dambuster Studios"
+    ],
+    "publishers": [
+      "Deep Silver",
+      "H2 Interactive Co., Ltd."
+    ],
+    "source": "https://www.metacritic.com/game/dead-island-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:death-stranding",
+    "franchises": [
+      "Death Stranding"
+    ],
+    "developers": [
+      "Kojima Productions"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/death-stranding/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:cult-of-the-lamb",
+    "franchises": [],
+    "developers": [
+      "Massive Monster"
+    ],
+    "publishers": [
+      "Devolver Digital"
+    ],
+    "source": "https://www.metacritic.com/game/cult-of-the-lamb/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:deathloop",
+    "franchises": [],
+    "developers": [
+      "Arkane Studios"
+    ],
+    "publishers": [
+      "Bethesda Softworks"
+    ],
+    "source": "https://www.metacritic.com/game/deathloop/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:demons-souls",
+    "franchises": [],
+    "developers": [
+      "Bluepoint Games",
+      "JapanStudio"
+    ],
+    "publishers": [
+      "PlayStation Studios",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/demons-souls/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:death-stranding-2-on-the-beach",
+    "franchises": [
+      "Death Stranding"
+    ],
+    "developers": [
+      "Kojima Productions"
+    ],
+    "publishers": [
+      "PlayStation Studios",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/death-stranding-2-on-the-beach/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:dead-space",
+    "franchises": [
+      "Dead Space"
+    ],
+    "developers": [
+      "Motive Studios"
+    ],
+    "publishers": [
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/dead-space/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:destiny-2",
+    "franchises": [
+      "Destiny"
+    ],
+    "developers": [
+      "Bungie"
+    ],
+    "publishers": [
+      "Activision",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/destiny-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:dark-souls-ii",
+    "franchises": [
+      "Dark Souls"
+    ],
+    "developers": [
+      "From Software"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "From Software",
+      "Namco Bandai Games"
+    ],
+    "source": "https://www.metacritic.com/game/dark-souls-ii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:detroit-become-human",
+    "franchises": [],
+    "developers": [
+      "Quantic Dream"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/detroit-become-human/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:diablo-iv",
+    "franchises": [
+      "Diablo"
+    ],
+    "developers": [
+      "Blizzard Entertainment"
+    ],
+    "publishers": [
+      "Activision",
+      "Blizzard Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/diablo-iv/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:diablo",
+    "franchises": [
+      "Diablo"
+    ],
+    "developers": [
+      "Blizzard Entertainment"
+    ],
+    "publishers": [
+      "Blizzard Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/diablo/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:destiny",
+    "franchises": [
+      "Destiny"
+    ],
+    "developers": [
+      "Bungie"
+    ],
+    "publishers": [
+      "Activision",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/destiny/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:divinity-original-sin-ii-definitive-edition",
+    "franchises": [
+      "Divinity"
+    ],
+    "developers": [
+      "Larian Studios Games"
+    ],
+    "publishers": [
+      "Larian Studios Games",
+      "Spike Chunsoft"
+    ],
+    "source": "https://www.metacritic.com/game/divinity-original-sin-ii-definitive-edition/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:donkey-kong-bananza",
+    "franchises": [
+      "Donkey Kong"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/donkey-kong-bananza/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:disco-elysium",
+    "franchises": [],
+    "developers": [
+      "ZA/UM"
+    ],
+    "publishers": [
+      "ZA/UM"
+    ],
+    "source": "https://www.metacritic.com/game/disco-elysium/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:devil-may-cry",
+    "franchises": [
+      "Devil May Cry"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/devil-may-cry/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:dragon-quest-xi-echoes-of-an-elusive-age",
+    "franchises": [
+      "Dragon Quest / Warrior"
+    ],
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/dragon-quest-xi-echoes-of-an-elusive-age/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:dragons-dogma-2",
+    "franchises": [
+      "Dragon's Dogma"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/dragons-dogma-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:donkey-kong-country-returns-hd",
+    "franchises": [
+      "Donkey Kong Country"
+    ],
+    "developers": [
+      "Forever Entertainment"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/donkey-kong-country-returns-hd/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:elden-ring",
+    "franchises": [
+      "Elden Ring"
+    ],
+    "developers": [
+      "From Software"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "From Software"
+    ],
+    "source": "https://www.metacritic.com/game/elden-ring/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:dragon-quest-xi-s-echoes-of-an-elusive-age",
+    "franchises": [
+      "Dragon Quest / Warrior"
+    ],
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Nintendo",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/dragon-quest-xi-s-echoes-of-an-elusive-age/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:espn-nfl-2k5",
+    "franchises": [
+      "ESPN NFL",
+      "NFL 2K Football"
+    ],
+    "developers": [
+      "Visual Concepts"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/espn-nfl-2k5/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:elden-ring-nightreign",
+    "franchises": [
+      "Elden Ring"
+    ],
+    "developers": [
+      "From Software"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "From Software"
+    ],
+    "source": "https://www.metacritic.com/game/elden-ring-nightreign/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:elden-ring-shadow-of-the-erdtree",
+    "franchises": [
+      "Elden Ring"
+    ],
+    "developers": [
+      "From Software"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "From Software"
+    ],
+    "source": "https://www.metacritic.com/game/elden-ring-shadow-of-the-erdtree/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:eternal-darkness-sanitys-requiem",
+    "franchises": [
+      "Eternal Darkness"
+    ],
+    "developers": [
+      "Silicon Knights"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/eternal-darkness-sanitys-requiem/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:everybodys-gone-to-the-rapture",
+    "franchises": [],
+    "developers": [
+      "The Chinese Room"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/everybodys-gone-to-the-rapture/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:divinity-original-sin-ii",
+    "franchises": [
+      "Divinity"
+    ],
+    "developers": [
+      "Larian Studios Games"
+    ],
+    "publishers": [
+      "Larian Studios Games"
+    ],
+    "source": "https://www.metacritic.com/game/divinity-original-sin-ii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:fable-ii",
+    "franchises": [
+      "Fable"
+    ],
+    "developers": [
+      "Lionhead Studios"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/fable-ii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:far-cry-5",
+    "franchises": [
+      "Far Cry"
+    ],
+    "developers": [
+      "Ubisoft Montreal"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/far-cry-5/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:espn-nfl-football",
+    "franchises": [
+      "ESPN NFL",
+      "NFL 2K Football"
+    ],
+    "developers": [
+      "Visual Concepts"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/espn-nfl-football/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:fallout-3",
+    "franchises": [
+      "Fallout"
+    ],
+    "developers": [
+      "Bethesda Game Studios"
+    ],
+    "publishers": [
+      "Bethesda Softworks"
+    ],
+    "source": "https://www.metacritic.com/game/fallout-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:far-cry-primal",
+    "franchises": [
+      "Far Cry"
+    ],
+    "developers": [
+      "Ubisoft Montreal"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/far-cry-primal/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-vii",
+    "franchises": [
+      "Final Fantasy",
+      "Final Fantasy VII"
+    ],
+    "developers": [
+      "SquareSoft"
+    ],
+    "publishers": [
+      "SCEA",
+      "SCEE",
+      "SCEI",
+      "Square Enix",
+      "SquareSoft"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-vii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-vii-rebirth",
+    "franchises": [
+      "Final Fantasy",
+      "Final Fantasy VII"
+    ],
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-vii-rebirth/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-ix",
+    "franchises": [
+      "Final Fantasy"
+    ],
+    "developers": [
+      "SquareSoft"
+    ],
+    "publishers": [
+      "Infogrames",
+      "Square EA",
+      "Square Enix",
+      "SquareSoft"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-ix/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-vi",
+    "franchises": [
+      "Final Fantasy"
+    ],
+    "developers": [
+      "TOSE"
+    ],
+    "publishers": [
+      "Nintendo",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-vi/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-vii-remake",
+    "franchises": [
+      "Final Fantasy",
+      "Final Fantasy VII"
+    ],
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-vii-remake/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-xii",
+    "franchises": [
+      "Final Fantasy"
+    ],
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-xii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-x",
+    "franchises": [
+      "Final Fantasy"
+    ],
+    "developers": [
+      "SquareSoft"
+    ],
+    "publishers": [
+      "Electronic Arts",
+      "SCE Australia",
+      "SCEE",
+      "Square EA",
+      "Square Enix",
+      "SquareSoft"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-x/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:fire-emblem-awakening",
+    "franchises": [
+      "Fire Emblem"
+    ],
+    "developers": [
+      "Intelligent Systems"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/fire-emblem-awakening/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-xvi",
+    "franchises": [
+      "Final Fantasy"
+    ],
+    "developers": [
+      "Creative Business Unit III"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-xvi/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-xiv-endwalker",
+    "franchises": [
+      "Final Fantasy"
+    ],
+    "developers": [
+      "Creative Business Unit III"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-xiv-endwalker/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:final-fantasy-xv",
+    "franchises": [
+      "Final Fantasy"
+    ],
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/final-fantasy-xv/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:fire-emblem-fortunes-weave",
+    "franchises": [
+      "Fire Emblem"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/fire-emblem-fortunes-weave/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:fire-emblem-engage",
+    "franchises": [
+      "Fire Emblem"
+    ],
+    "developers": [
+      "Intelligent Systems"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/fire-emblem-engage/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:fire-emblem-three-houses",
+    "franchises": [
+      "Fire Emblem"
+    ],
+    "developers": [
+      "Intelligent Systems",
+      "Koei Tecmo Games"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/fire-emblem-three-houses/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:forza-horizon-3",
+    "franchises": [
+      "Forza"
+    ],
+    "developers": [
+      "Playground Games"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/forza-horizon-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:forza-horizon-4",
+    "franchises": [
+      "Forza"
+    ],
+    "developers": [
+      "Playground Games"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/forza-horizon-4/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:fire-emblem-warriors-three-hopes",
+    "franchises": [
+      "Fire Emblem Warriors"
+    ],
+    "developers": [
+      "Koei Tecmo Games"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/fire-emblem-warriors-three-hopes/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:forza-motorsport-2005",
+    "franchises": [
+      "Forza"
+    ],
+    "developers": [
+      "Microsoft Game Studios"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/forza-motorsport-2005/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:forza-motorsport-3",
+    "franchises": [
+      "Forza"
+    ],
+    "developers": [
+      "Turn 10"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/forza-motorsport-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:forza-horizon-5",
+    "franchises": [
+      "Forza"
+    ],
+    "developers": [
+      "Playground Games"
+    ],
+    "publishers": [
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/forza-horizon-5/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gears-5",
+    "franchises": [
+      "Gears of War"
+    ],
+    "developers": [
+      "The Coalition"
+    ],
+    "publishers": [
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/gears-5/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:forza-motorsport-4",
+    "franchises": [
+      "Forza"
+    ],
+    "developers": [
+      "Turn 10"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/forza-motorsport-4/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:galactic-civilizations-ii-twilight-of-the-arnor",
+    "franchises": [
+      "Galactic Civilizations"
+    ],
+    "developers": [
+      "Stardock"
+    ],
+    "publishers": [
+      "Stardock"
+    ],
+    "source": "https://www.metacritic.com/game/galactic-civilizations-ii-twilight-of-the-arnor/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gears-of-war",
+    "franchises": [
+      "Gears of War"
+    ],
+    "developers": [
+      "Epic Games"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/gears-of-war/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:galactic-civilizations-ii-dark-avatar",
+    "franchises": [
+      "Galactic Civilizations"
+    ],
+    "developers": [
+      "Stardock"
+    ],
+    "publishers": [
+      "Stardock"
+    ],
+    "source": "https://www.metacritic.com/game/galactic-civilizations-ii-dark-avatar/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gears-of-war-4",
+    "franchises": [
+      "Gears of War"
+    ],
+    "developers": [
+      "The Coalition"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/gears-of-war-4/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gears-tactics",
+    "franchises": [
+      "Gears of War"
+    ],
+    "developers": [
+      "Splash Damage"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/gears-tactics/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ghost-of-yotei",
+    "franchises": [
+      "Ghost of Tsushima"
+    ],
+    "developers": [
+      "Sucker Punch"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/ghost-of-yotei/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gears-of-war-3",
+    "franchises": [
+      "Gears of War"
+    ],
+    "developers": [
+      "Epic Games"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/gears-of-war-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ghost-of-tsushima",
+    "franchises": [
+      "Ghost of Tsushima"
+    ],
+    "developers": [
+      "Sucker Punch"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/ghost-of-tsushima/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gears-of-war-2",
+    "franchises": [
+      "Gears of War"
+    ],
+    "developers": [
+      "Epic Games"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/gears-of-war-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ghostwire-tokyo",
+    "franchises": [
+      "Ghostwire: Tokyo"
+    ],
+    "developers": [
+      "Tango Gameworks"
+    ],
+    "publishers": [
+      "Bethesda Softworks"
+    ],
+    "source": "https://www.metacritic.com/game/ghostwire-tokyo/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:god-of-war",
+    "franchises": [
+      "God of War"
+    ],
+    "developers": [
+      "SCE Santa Monica"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/god-of-war/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:god-of-war-chains-of-olympus",
+    "franchises": [
+      "God of War"
+    ],
+    "developers": [
+      "Ready at Dawn"
+    ],
+    "publishers": [
+      "Capcom",
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/god-of-war-chains-of-olympus/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:god-of-war-2005",
+    "franchises": [
+      "God of War"
+    ],
+    "developers": [
+      "SCE Santa Monica"
+    ],
+    "publishers": [
+      "Capcom",
+      "SCE Australia",
+      "SCE Korea",
+      "SCEA",
+      "SCEE"
+    ],
+    "source": "https://www.metacritic.com/game/god-of-war-2005/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:god-of-war-ii",
+    "franchises": [
+      "God of War"
+    ],
+    "developers": [
+      "SCE Santa Monica"
+    ],
+    "publishers": [
+      "Capcom",
+      "SCE Australia",
+      "SCE Korea",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/god-of-war-ii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:god-of-war-ragnarok",
+    "franchises": [
+      "God of War"
+    ],
+    "developers": [
+      "SCE Santa Monica"
+    ],
+    "publishers": [
+      "PlayStation Studios",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/god-of-war-ragnarok/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:goldeneye-007",
+    "franchises": [
+      "James Bond - GoldenEye 007",
+      "James Bond 007"
+    ],
+    "developers": [
+      "Rare Ltd."
+    ],
+    "publishers": [
+      "Gradiente",
+      "Nintendo",
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/goldeneye-007/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:god-of-war-iii",
+    "franchises": [
+      "God of War"
+    ],
+    "developers": [
+      "SCE Santa Monica"
+    ],
+    "publishers": [
+      "Capcom",
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/god-of-war-iii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:god-of-war-collection",
+    "franchises": [
+      "God of War"
+    ],
+    "developers": [
+      "Bluepoint Games"
+    ],
+    "publishers": [
+      "Capcom",
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/god-of-war-collection/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gran-turismo-2",
+    "franchises": [
+      "Gran Turismo"
+    ],
+    "developers": [
+      "Polyphony Digital"
+    ],
+    "publishers": [
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/gran-turismo-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gran-turismo",
+    "franchises": [
+      "Gran Turismo"
+    ],
+    "developers": [
+      "Polyphony Digital"
+    ],
+    "publishers": [
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/gran-turismo/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:golden-sun",
+    "franchises": [
+      "Golden Sun"
+    ],
+    "developers": [
+      "Camelot Software Planning"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/golden-sun/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gran-turismo-7",
+    "franchises": [
+      "Gran Turismo"
+    ],
+    "developers": [
+      "Polyphony Digital"
+    ],
+    "publishers": [
+      "PlayStation Studios",
+      "Polyphony Digital"
+    ],
+    "source": "https://www.metacritic.com/game/gran-turismo-7/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grand-theft-auto-chinatown-wars",
+    "franchises": [
+      "Grand Theft Auto"
+    ],
+    "developers": [
+      "Rockstar Leeds"
+    ],
+    "publishers": [
+      "CyberFront",
+      "Rockstar Games"
+    ],
+    "source": "https://www.metacritic.com/game/grand-theft-auto-chinatown-wars/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gran-turismo-3-a-spec",
+    "franchises": [
+      "Gran Turismo"
+    ],
+    "developers": [
+      "Polyphony Digital"
+    ],
+    "publishers": [
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/gran-turismo-3-a-spec/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grand-theft-auto-iii",
+    "franchises": [
+      "Grand Theft Auto"
+    ],
+    "developers": [
+      "DMA Design"
+    ],
+    "publishers": [
+      "Capcom",
+      "Rockstar Games",
+      "SCEA",
+      "Take-Two Interactive"
+    ],
+    "source": "https://www.metacritic.com/game/grand-theft-auto-iii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grand-theft-auto-iv",
+    "franchises": [
+      "Grand Theft Auto"
+    ],
+    "developers": [
+      "Rockstar North"
+    ],
+    "publishers": [
+      "Capcom",
+      "Rockstar Games"
+    ],
+    "source": "https://www.metacritic.com/game/grand-theft-auto-iv/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grand-theft-auto-double-pack",
+    "franchises": [
+      "Grand Theft Auto"
+    ],
+    "developers": [
+      "Rockstar Vienna"
+    ],
+    "publishers": [
+      "Capcom",
+      "Rockstar Games"
+    ],
+    "source": "https://www.metacritic.com/game/grand-theft-auto-double-pack/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grand-theft-auto-san-andreas",
+    "franchises": [
+      "Grand Theft Auto"
+    ],
+    "developers": [
+      "Rockstar North"
+    ],
+    "publishers": [
+      "Capcom",
+      "Rockstar Games",
+      "SCEA",
+      "Take-Two Interactive"
+    ],
+    "source": "https://www.metacritic.com/game/grand-theft-auto-san-andreas/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grand-theft-auto-v",
+    "franchises": [
+      "Grand Theft Auto"
+    ],
+    "developers": [
+      "Rockstar North"
+    ],
+    "publishers": [
+      "Rockstar Games"
+    ],
+    "source": "https://www.metacritic.com/game/grand-theft-auto-v/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grand-theft-auto-vi",
+    "franchises": [
+      "Grand Theft Auto"
+    ],
+    "developers": [
+      "Rockstar Games"
+    ],
+    "publishers": [
+      "2K Games",
+      "Rockstar Games",
+      "Take-Two Interactive"
+    ],
+    "source": "https://www.metacritic.com/game/grand-theft-auto-vi/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grim-fandango",
+    "franchises": [],
+    "developers": [
+      "LucasArts"
+    ],
+    "publishers": [
+      "Brasoft",
+      "LucasArts"
+    ],
+    "source": "https://www.metacritic.com/game/grim-fandango/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:guitar-hero-ii",
+    "franchises": [
+      "Guitar Hero"
+    ],
+    "developers": [
+      "Harmonix Music Systems"
+    ],
+    "publishers": [
+      "Activision",
+      "RedOctane"
+    ],
+    "source": "https://www.metacritic.com/game/guitar-hero-ii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:grand-theft-auto-vice-city",
+    "franchises": [
+      "Grand Theft Auto"
+    ],
+    "developers": [
+      "Rockstar North"
+    ],
+    "publishers": [
+      "Capcom",
+      "Rockstar Games",
+      "SCEA"
+    ],
+    "source": "https://www.metacritic.com/game/grand-theft-auto-vice-city/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:guitar-hero",
+    "franchises": [
+      "Guitar Hero"
+    ],
+    "developers": [
+      "Harmonix Music Systems"
+    ],
+    "publishers": [
+      "Activision",
+      "RedOctane"
+    ],
+    "source": "https://www.metacritic.com/game/guitar-hero/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:hades",
+    "franchises": [
+      "Hades"
+    ],
+    "developers": [
+      "Supergiant Games"
+    ],
+    "publishers": [
+      "Supergiant Games"
+    ],
+    "source": "https://www.metacritic.com/game/hades/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:gravity-rush-2",
+    "franchises": [
+      "Gravity Rush"
+    ],
+    "developers": [
+      "SCE Japan Studio"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/gravity-rush-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:half-life-2",
+    "franchises": [
+      "Half-Life"
+    ],
+    "developers": [
+      "Valve Software"
+    ],
+    "publishers": [
+      "CyberFront",
+      "Electronic Arts",
+      "Sonokong",
+      "VU Games"
+    ],
+    "source": "https://www.metacritic.com/game/half-life-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:hades-ii",
+    "franchises": [
+      "Hades"
+    ],
+    "developers": [
+      "Supergiant Games"
+    ],
+    "publishers": [
+      "Supergiant Games"
+    ],
+    "source": "https://www.metacritic.com/game/hades-ii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:half-life",
+    "franchises": [
+      "Half-Life"
+    ],
+    "developers": [
+      "Valve Software"
+    ],
+    "publishers": [
+      "CyberFront",
+      "Sierra On-Line",
+      "Source Corporation",
+      "Valve Software"
+    ],
+    "source": "https://www.metacritic.com/game/half-life/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:halo-3",
+    "franchises": [
+      "Halo"
+    ],
+    "developers": [
+      "Bungie"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/halo-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:halo-2",
+    "franchises": [
+      "Halo"
+    ],
+    "developers": [
+      "Bungie"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/halo-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:half-life-alyx",
+    "franchises": [
+      "Half-Life"
+    ],
+    "developers": [
+      "Valve Software"
+    ],
+    "publishers": [
+      "Valve Software"
+    ],
+    "source": "https://www.metacritic.com/game/half-life-alyx/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:halo-3-odst",
+    "franchises": [
+      "Halo"
+    ],
+    "developers": [
+      "Bungie"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/halo-3-odst/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:halo-5-guardians",
+    "franchises": [
+      "Halo"
+    ],
+    "developers": [
+      "343 Industries"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/halo-5-guardians/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:halo-combat-evolved",
+    "franchises": [
+      "Halo"
+    ],
+    "developers": [
+      "Bungie"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/halo-combat-evolved/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:halo-wars",
+    "franchises": [
+      "Halo"
+    ],
+    "developers": [
+      "Ensemble Studios"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/halo-wars/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:halo-infinite",
+    "franchises": [
+      "Halo"
+    ],
+    "developers": [
+      "343 Industries"
+    ],
+    "publishers": [
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/halo-infinite/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:heavy-rain",
+    "franchises": [],
+    "developers": [
+      "Quantic Dream"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/heavy-rain/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:halo-reach",
+    "franchises": [
+      "Halo"
+    ],
+    "developers": [
+      "Bungie"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/halo-reach/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:hogwarts-legacy",
+    "franchises": [
+      "Harry Potter"
+    ],
+    "developers": [
+      "Avalanche Software",
+      "Portkey Games"
+    ],
+    "publishers": [
+      "Warner Bros. Games",
+      "Warner Bros. Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/hogwarts-legacy/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:horizon-forbidden-west",
+    "franchises": [
+      "Horizon"
+    ],
+    "developers": [
+      "Guerrilla"
+    ],
+    "publishers": [
+      "PlayStation Studios",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/horizon-forbidden-west/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:homeworld",
+    "franchises": [
+      "Homeworld"
+    ],
+    "developers": [
+      "Relic Entertainment"
+    ],
+    "publishers": [
+      "Frogster Interactive",
+      "Sierra On-Line",
+      "Sold Out Software"
+    ],
+    "source": "https://www.metacritic.com/game/homeworld/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:hyrule-warriors-age-of-calamity",
+    "franchises": [
+      "Hyrule Warriors"
+    ],
+    "developers": [
+      "Omega Force"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/hyrule-warriors-age-of-calamity/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:horizon-zero-dawn",
+    "franchises": [
+      "Horizon"
+    ],
+    "developers": [
+      "Guerrilla"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/horizon-zero-dawn/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:hyrule-warriors-age-of-imprisonment",
+    "franchises": [
+      "Hyrule Warriors"
+    ],
+    "developers": [
+      "Koei Tecmo Games"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/hyrule-warriors-age-of-imprisonment/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:infamous-2",
+    "franchises": [
+      "inFamous"
+    ],
+    "developers": [
+      "Sucker Punch"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/infamous-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:infamous",
+    "franchises": [
+      "inFamous"
+    ],
+    "developers": [
+      "Sucker Punch"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/infamous/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:injustice-2",
+    "franchises": [
+      "Injustice"
+    ],
+    "developers": [
+      "NetherRealm Studios"
+    ],
+    "publishers": [
+      "Warner Bros. Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/injustice-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:jet-set-radio-2000",
+    "franchises": [
+      "Jet Grind Radio"
+    ],
+    "developers": [
+      "Smilebit"
+    ],
+    "publishers": [
+      "Sega",
+      "Tec Toy"
+    ],
+    "source": "https://www.metacritic.com/game/jet-set-radio-2000/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:inside",
+    "franchises": [],
+    "developers": [
+      "PLAYDEAD"
+    ],
+    "publishers": [
+      "PLAYDEAD"
+    ],
+    "source": "https://www.metacritic.com/game/inside/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:killzone-2",
+    "franchises": [
+      "Killzone"
+    ],
+    "developers": [
+      "Guerrilla"
+    ],
+    "publishers": [
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/killzone-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:infamous-second-son",
+    "franchises": [
+      "inFamous"
+    ],
+    "developers": [
+      "Sucker Punch"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/infamous-second-son/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:kingdom-hearts-iii",
+    "franchises": [
+      "Kingdom Hearts"
+    ],
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/kingdom-hearts-iii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:kirby-air-riders",
+    "franchises": [
+      "Kirby Air Ride"
+    ],
+    "developers": [
+      "Bandai Namco Games"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/kirby-air-riders/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:journey",
+    "franchises": [],
+    "developers": [
+      "ThatGameCompany"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/journey/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:kirby-and-the-forgotten-land",
+    "franchises": [
+      "Kirby"
+    ],
+    "developers": [
+      "HAL Labs"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/kirby-and-the-forgotten-land/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:like-a-dragon-pirate-yakuza-in-hawaii",
+    "franchises": [
+      "Yakuza / Like a Dragon"
+    ],
+    "developers": [
+      "Ryu ga Gotoku Studios"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/like-a-dragon-pirate-yakuza-in-hawaii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:limbo",
+    "franchises": [],
+    "developers": [
+      "PLAYDEAD"
+    ],
+    "publishers": [
+      "Microsoft Game Studios",
+      "PLAYDEAD"
+    ],
+    "source": "https://www.metacritic.com/game/limbo/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:lego-horizon-adventures",
+    "franchises": [
+      "Horizon",
+      "LEGO"
+    ],
+    "developers": [
+      "Guerrilla",
+      "Studio Gobo"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/lego-horizon-adventures/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:kirbys-return-to-dream-land-deluxe",
+    "franchises": [
+      "Kirby"
+    ],
+    "developers": [
+      "HAL Labs"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/kirbys-return-to-dream-land-deluxe/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:littlebigplanet-2",
+    "franchises": [
+      "LittleBigPlanet / Sackboy"
+    ],
+    "developers": [
+      "Media Molecule"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/littlebigplanet-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:littlebigplanet",
+    "franchises": [
+      "LittleBigPlanet / Sackboy"
+    ],
+    "developers": [
+      "Media Molecule",
+      "SCE/WWS"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/littlebigplanet/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:like-a-dragon-infinite-wealth",
+    "franchises": [
+      "Yakuza / Like a Dragon"
+    ],
+    "developers": [
+      "Ryu ga Gotoku Studios"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/like-a-dragon-infinite-wealth/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:madden-nfl-2001",
+    "franchises": [
+      "Madden Football"
+    ],
+    "developers": [
+      "EA Sports"
+    ],
+    "publishers": [
+      "EA Sports",
+      "Electronic Arts",
+      "Electronic Arts Victor"
+    ],
+    "source": "https://www.metacritic.com/game/madden-nfl-2001/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:live-a-live",
+    "franchises": [
+      "Live a Live"
+    ],
+    "developers": [
+      "historia Inc."
+    ],
+    "publishers": [
+      "Nintendo",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/live-a-live/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:luigis-mansion-2-hd",
+    "franchises": [
+      "Luigi's Mansion"
+    ],
+    "developers": [
+      "Tantalus"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/luigis-mansion-2-hd/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:madden-nfl-2002",
+    "franchises": [
+      "Madden Football"
+    ],
+    "developers": [
+      "EA Sports"
+    ],
+    "publishers": [
+      "EA Sports",
+      "Electronic Arts",
+      "Electronic Arts Victor"
+    ],
+    "source": "https://www.metacritic.com/game/madden-nfl-2002/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:madden-nfl-2004",
+    "franchises": [
+      "Madden Football"
+    ],
+    "developers": [
+      "EA Tiburon"
+    ],
+    "publishers": [
+      "EA Sports",
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/madden-nfl-2004/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-and-luigi-brothership",
+    "franchises": [
+      "Mario &amp; Luigi"
+    ],
+    "developers": [
+      "Acquire"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-and-luigi-brothership/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:madden-nfl-2005",
+    "franchises": [
+      "Madden Football"
+    ],
+    "developers": [
+      "EA Tiburon"
+    ],
+    "publishers": [
+      "EA Sports"
+    ],
+    "source": "https://www.metacritic.com/game/madden-nfl-2005/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-kart-8-deluxe",
+    "franchises": [
+      "Mario Kart"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-kart-8-deluxe/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-golf-super-rush",
+    "franchises": [
+      "Mario Sports"
+    ],
+    "developers": [
+      "Camelot Software Planning"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-golf-super-rush/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:madden-nfl-2003",
+    "franchises": [
+      "Madden Football"
+    ],
+    "developers": [
+      "EA Sports"
+    ],
+    "publishers": [
+      "EA Sports",
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/madden-nfl-2003/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-kart-ds",
+    "franchises": [
+      "Mario Kart"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-kart-ds/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-kart-super-circuit",
+    "franchises": [
+      "Mario Kart"
+    ],
+    "developers": [
+      "Intelligent Systems"
+    ],
+    "publishers": [
+      "Gradiente",
+      "Nintendo",
+      "iQue"
+    ],
+    "source": "https://www.metacritic.com/game/mario-kart-super-circuit/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-party-superstars",
+    "franchises": [
+      "Mario Party"
+    ],
+    "developers": [
+      "Nd Cube"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-party-superstars/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-kart-world",
+    "franchises": [
+      "Mario Kart"
+    ],
+    "developers": [
+      "Monolith Soft",
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-kart-world/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-plus-rabbids-sparks-of-hope",
+    "franchises": [
+      "Mario + Rabbids"
+    ],
+    "developers": [
+      "Ubisoft Paris"
+    ],
+    "publishers": [
+      "Nintendo",
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/mario-plus-rabbids-sparks-of-hope/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-plus-rabbids-kingdom-battle",
+    "franchises": [
+      "Mario + Rabbids"
+    ],
+    "developers": [
+      "Ubisoft Paris"
+    ],
+    "publishers": [
+      "Nintendo",
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/mario-plus-rabbids-kingdom-battle/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-strikers-battle-league",
+    "franchises": [
+      "Mario Sports"
+    ],
+    "developers": [
+      "Next Level Games"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-strikers-battle-league/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-tennis-aces",
+    "franchises": [
+      "Mario Sports"
+    ],
+    "developers": [
+      "Camelot Software Planning"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-tennis-aces/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-tennis-fever",
+    "franchises": [
+      "Mario Sports"
+    ],
+    "developers": [
+      "Camelot Software Planning"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-tennis-fever/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:marvels-spider-man",
+    "franchises": [
+      "Marvel's Spider-Man"
+    ],
+    "developers": [
+      "Insomniac Games"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/marvels-spider-man/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:marvels-guardians-of-the-galaxy",
+    "franchises": [
+      "Guardians of the Galaxy"
+    ],
+    "developers": [
+      "Eidos Montreal"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/marvels-guardians-of-the-galaxy/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mario-vs-donkey-kong-2024",
+    "franchises": [
+      "Mario",
+      "Mario vs. Donkey Kong"
+    ],
+    "developers": [
+      "Nintendo Software Technology"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/mario-vs-donkey-kong-2024/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:marvels-spider-man-miles-morales",
+    "franchises": [
+      "Marvel's Spider-Man"
+    ],
+    "developers": [
+      "Insomniac Games"
+    ],
+    "publishers": [
+      "PlayStation Studios",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/marvels-spider-man-miles-morales/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:marvels-wolverine",
+    "franchises": [
+      "Wolverine"
+    ],
+    "developers": [
+      "Insomniac Games"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/marvels-wolverine/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:luigis-mansion-3",
+    "franchises": [
+      "Luigi's Mansion"
+    ],
+    "developers": [
+      "Next Level Games"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/luigis-mansion-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:marvels-spider-man-2",
+    "franchises": [
+      "Marvel's Spider-Man"
+    ],
+    "developers": [
+      "Insomniac Games"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/marvels-spider-man-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mass-effect",
+    "franchises": [
+      "Mass Effect"
+    ],
+    "developers": [
+      "BioWare"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/mass-effect/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:medal-of-honor-1999",
+    "franchises": [
+      "Medal of Honor"
+    ],
+    "developers": [
+      "Dreamworks Interactive"
+    ],
+    "publishers": [
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/medal-of-honor-1999/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mass-effect-2",
+    "franchises": [
+      "Mass Effect"
+    ],
+    "developers": [
+      "BioWare"
+    ],
+    "publishers": [
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/mass-effect-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:medal-of-honor-allied-assault",
+    "franchises": [
+      "Medal of Honor"
+    ],
+    "developers": [
+      "2015"
+    ],
+    "publishers": [
+      "EA Games",
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/medal-of-honor-allied-assault/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mass-effect-3",
+    "franchises": [
+      "Mass Effect"
+    ],
+    "developers": [
+      "BioWare"
+    ],
+    "publishers": [
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/mass-effect-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metal-gear-solid-3-subsistence",
+    "franchises": [
+      "Metal Gear"
+    ],
+    "developers": [
+      "Aspect",
+      "Kojima Productions"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/metal-gear-solid-3-subsistence/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metal-gear-solid",
+    "franchises": [
+      "Metal Gear"
+    ],
+    "developers": [
+      "KCEJ"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/metal-gear-solid/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metal-gear-solid-3-snake-eater",
+    "franchises": [
+      "Metal Gear"
+    ],
+    "developers": [
+      "KCEJ"
+    ],
+    "publishers": [
+      "Atari SA",
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/metal-gear-solid-3-snake-eater/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metal-gear-solid-4-guns-of-the-patriots",
+    "franchises": [
+      "Metal Gear"
+    ],
+    "developers": [
+      "Kojima Productions"
+    ],
+    "publishers": [
+      "Konami",
+      "Sony DADC Brasil"
+    ],
+    "source": "https://www.metacritic.com/game/metal-gear-solid-4-guns-of-the-patriots/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metal-gear-solid-2-sons-of-liberty",
+    "franchises": [
+      "Metal Gear"
+    ],
+    "developers": [
+      "KCEJ"
+    ],
+    "publishers": [
+      "Konami",
+      "SCEE"
+    ],
+    "source": "https://www.metacritic.com/game/metal-gear-solid-2-sons-of-liberty/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metal-gear-solid-v-the-phantom-pain",
+    "franchises": [
+      "Metal Gear"
+    ],
+    "developers": [
+      "Kojima Productions",
+      "Moby Dick Studio"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/metal-gear-solid-v-the-phantom-pain/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metal-gear-solid-delta-snake-eater",
+    "franchises": [
+      "Metal Gear"
+    ],
+    "developers": [
+      "Konami"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/metal-gear-solid-delta-snake-eater/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metaphor-refantazio",
+    "franchises": [],
+    "developers": [
+      "Studio Zero"
+    ],
+    "publishers": [
+      "Atlus",
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/metaphor-refantazio/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metroid-fusion",
+    "franchises": [
+      "Metroid"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo",
+      "iQue"
+    ],
+    "source": "https://www.metacritic.com/game/metroid-fusion/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metroid-dread",
+    "franchises": [
+      "Metroid"
+    ],
+    "developers": [
+      "Mercury Steam",
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/metroid-dread/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metroid-prime",
+    "franchises": [
+      "Metroid Prime"
+    ],
+    "developers": [
+      "Retro Studios"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/metroid-prime/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metroid-prime-4-beyond",
+    "franchises": [
+      "Metroid Prime"
+    ],
+    "developers": [
+      "Retro Studios"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/metroid-prime-4-beyond/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metroid-prime-2-echoes",
+    "franchises": [
+      "Metroid Prime"
+    ],
+    "developers": [
+      "Retro Studios"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/metroid-prime-2-echoes/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metroid-prime-trilogy",
+    "franchises": [
+      "Metroid Prime"
+    ],
+    "developers": [
+      "Retro Studios"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/metroid-prime-trilogy/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:metroid-prime-remastered",
+    "franchises": [
+      "Metroid Prime"
+    ],
+    "developers": [
+      "Iron Galaxy Studios",
+      "Retro Studios"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/metroid-prime-remastered/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:microsoft-flight-simulator",
+    "franchises": [
+      "Microsoft Flight Simulator"
+    ],
+    "developers": [
+      "Asobo Studio"
+    ],
+    "publishers": [
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/microsoft-flight-simulator/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:monster-hunter-rise",
+    "franchises": [
+      "Monster Hunter"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/monster-hunter-rise/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:minecraft",
+    "franchises": [
+      "Minecraft"
+    ],
+    "developers": [
+      "Mojang AB"
+    ],
+    "publishers": [
+      "Microsoft",
+      "Mojang AB"
+    ],
+    "source": "https://www.metacritic.com/game/minecraft/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:mlb-10-the-show",
+    "franchises": [
+      "MLB The Show"
+    ],
+    "developers": [
+      "SCEA"
+    ],
+    "publishers": [
+      "SCEA",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/mlb-10-the-show/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:monster-hunter-stories-2-wings-of-ruin",
+    "franchises": [
+      "Monster Hunter Stories"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/monster-hunter-stories-2-wings-of-ruin/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:monster-hunter-wilds",
+    "franchises": [
+      "Monster Hunter"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/monster-hunter-wilds/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:new-pokemon-snap",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Bandai Namco Games"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/new-pokemon-snap/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:monster-hunter-world",
+    "franchises": [
+      "Monster Hunter"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/monster-hunter-world/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nba-2k1",
+    "franchises": [
+      "NBA 2K Basketball"
+    ],
+    "developers": [
+      "Visual Concepts"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/nba-2k1/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:neverwinter-nights",
+    "franchises": [
+      "Neverwinter"
+    ],
+    "developers": [
+      "BioWare"
+    ],
+    "publishers": [
+      "Atari SA",
+      "Beijing Rongbao Electronic",
+      "Infogrames",
+      "Sold Out Software",
+      "ak tronic"
+    ],
+    "source": "https://www.metacritic.com/game/neverwinter-nights/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nfl-2k1",
+    "franchises": [
+      "NFL 2K Football"
+    ],
+    "developers": [
+      "Visual Concepts"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/nfl-2k1/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nfl-2k3",
+    "franchises": [
+      "NFL 2K Football"
+    ],
+    "developers": [
+      "Visual Concepts"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/nfl-2k3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nier-automata",
+    "franchises": [
+      "NieR"
+    ],
+    "developers": [
+      "PlatinumGames"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/nier-automata/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nhl-2002",
+    "franchises": [
+      "NHL Hockey"
+    ],
+    "developers": [
+      "EA Sports"
+    ],
+    "publishers": [
+      "Electronic Arts",
+      "Electronic Arts Victor"
+    ],
+    "source": "https://www.metacritic.com/game/nhl-2002/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nier-replicant-ver122474487139",
+    "franchises": [
+      "NieR"
+    ],
+    "developers": [
+      "Toylogic"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/nier-replicant-ver122474487139/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ni-no-kuni-ii-revenant-kingdom",
+    "franchises": [
+      "Ni no Kuni"
+    ],
+    "developers": [
+      "Level 5"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "Level 5"
+    ],
+    "source": "https://www.metacritic.com/game/ni-no-kuni-ii-revenant-kingdom/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nintendo-switch-sports-resort",
+    "franchises": [
+      "Wii Sports"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/nintendo-switch-sports-resort/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ninja-gaiden-black",
+    "franchises": [
+      "Ninja Gaiden"
+    ],
+    "developers": [
+      "Team Ninja"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Microsoft Game Studios",
+      "Tecmo"
+    ],
+    "source": "https://www.metacritic.com/game/ninja-gaiden-black/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ninja-gaiden-2004",
+    "franchises": [
+      "Ninja Gaiden"
+    ],
+    "developers": [
+      "Team Ninja"
+    ],
+    "publishers": [
+      "Microsoft Game Studios",
+      "Tecmo"
+    ],
+    "source": "https://www.metacritic.com/game/ninja-gaiden-2004/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nioh-3",
+    "franchises": [
+      "Nioh"
+    ],
+    "developers": [
+      "Team Ninja"
+    ],
+    "publishers": [
+      "Koei Tecmo Games"
+    ],
+    "source": "https://www.metacritic.com/game/nioh-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nioh",
+    "franchises": [
+      "Nioh"
+    ],
+    "developers": [
+      "Team Ninja"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/nioh/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nintendo-switch-sports",
+    "franchises": [
+      "Wii Sports"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/nintendo-switch-sports/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:no-mans-sky",
+    "franchises": [],
+    "developers": [
+      "Hello Games"
+    ],
+    "publishers": [
+      "Hello Games",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/no-mans-sky/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:nioh-2",
+    "franchises": [
+      "Nioh"
+    ],
+    "developers": [
+      "Team Ninja"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/nioh-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:onimusha-way-of-the-sword",
+    "franchises": [
+      "Onimusha"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/onimusha-way-of-the-sword/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:no-more-heroes-iii",
+    "franchises": [
+      "No More Heroes"
+    ],
+    "developers": [
+      "Grasshopper Manufacture"
+    ],
+    "publishers": [
+      "Grasshopper Manufacture",
+      "Marvelous Entertainment",
+      "Marvelous Inc.",
+      "Pix'n Love"
+    ],
+    "source": "https://www.metacritic.com/game/no-more-heroes-iii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:no-one-lives-forever-2-a-spy-in-h-a-r-m-s-way",
+    "franchises": [
+      "No One Lives Forever"
+    ],
+    "developers": [
+      "Monolith Productions"
+    ],
+    "publishers": [
+      "Imagineer",
+      "Sierra Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/no-one-lives-forever-2-a-spy-in-h-a-r-m-s-way/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:okami",
+    "franchises": [
+      "Okami"
+    ],
+    "developers": [
+      "Clover Studio"
+    ],
+    "publishers": [
+      "Capcom",
+      "SCE Korea"
+    ],
+    "source": "https://www.metacritic.com/game/okami/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:overwatch-2016",
+    "franchises": [
+      "Overwatch"
+    ],
+    "developers": [
+      "Blizzard Entertainment"
+    ],
+    "publishers": [
+      "Activision",
+      "Blizzard Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/overwatch-2016/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pac-man-championship-edition-dx",
+    "franchises": [
+      "Pac-Man"
+    ],
+    "developers": [
+      "Namco Bandai Games"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "Namco Bandai Games"
+    ],
+    "source": "https://www.metacritic.com/game/pac-man-championship-edition-dx/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:paper-mario",
+    "franchises": [
+      "Paper Mario"
+    ],
+    "developers": [
+      "Intelligent Systems"
+    ],
+    "publishers": [
+      "Gradiente",
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/paper-mario/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:paper-mario-the-origami-king",
+    "franchises": [
+      "Paper Mario"
+    ],
+    "developers": [
+      "Intelligent Systems"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/paper-mario-the-origami-king/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:perfect-dark-2000",
+    "franchises": [
+      "Perfect Dark"
+    ],
+    "developers": [
+      "Rare Ltd."
+    ],
+    "publishers": [
+      "Nintendo",
+      "Rare Ltd.",
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/perfect-dark-2000/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:paper-mario-the-thousand-year-door",
+    "franchises": [
+      "Paper Mario"
+    ],
+    "developers": [
+      "Intelligent Systems"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/paper-mario-the-thousand-year-door/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:persona-4-golden",
+    "franchises": [
+      "Persona"
+    ],
+    "developers": [
+      "Atlus"
+    ],
+    "publishers": [
+      "Atlus",
+      "NIS America",
+      "SCE Korea"
+    ],
+    "source": "https://www.metacritic.com/game/persona-4-golden/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pikmin-4",
+    "franchises": [
+      "Pikmin"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/pikmin-4/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:persona-5-royal",
+    "franchises": [
+      "Persona"
+    ],
+    "developers": [
+      "Atlus"
+    ],
+    "publishers": [
+      "Atlus",
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/persona-5-royal/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-brilliant-diamond",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "ILCA, Inc."
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-brilliant-diamond/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:persona-5",
+    "franchises": [
+      "Persona"
+    ],
+    "developers": [
+      "Atlus"
+    ],
+    "publishers": [
+      "Atlus",
+      "Deep Silver",
+      "Sony DADC Brasil"
+    ],
+    "source": "https://www.metacritic.com/game/persona-5/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-legends-arceus",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-legends-arceus/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-pokopia",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Omega Force"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-pokopia/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-scarlet",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-scarlet/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pikmin-3-deluxe",
+    "franchises": [
+      "Pikmin"
+    ],
+    "developers": [
+      "Eighting",
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/pikmin-3-deluxe/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-shining-pearl",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "ILCA, Inc."
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-shining-pearl/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-lets-go-pikachu",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-lets-go-pikachu/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-legends-z-a",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-legends-z-a/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-shield",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-shield/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-sun",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-sun/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-violet",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-violet/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:portal-companion-collection",
+    "franchises": [
+      "Portal"
+    ],
+    "developers": [
+      "Valve Software"
+    ],
+    "publishers": [
+      "Valve Software"
+    ],
+    "source": "https://www.metacritic.com/game/portal-companion-collection/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-sword",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-sword/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pragmata",
+    "franchises": [],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/pragmata/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pokemon-sword-shield-dual-pack",
+    "franchises": [
+      "Pokemon"
+    ],
+    "developers": [
+      "Game Freak"
+    ],
+    "publishers": [
+      "Nintendo",
+      "The Pokemon Company"
+    ],
+    "source": "https://www.metacritic.com/game/pokemon-sword-shield-dual-pack/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:portal-2",
+    "franchises": [
+      "Portal"
+    ],
+    "developers": [
+      "Valve Software"
+    ],
+    "publishers": [
+      "Electronic Arts",
+      "Valve Software"
+    ],
+    "source": "https://www.metacritic.com/game/portal-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:pro-evolution-soccer-2",
+    "franchises": [
+      "Pro Evolution / Winning Eleven / eFootball"
+    ],
+    "developers": [
+      "KCET"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/pro-evolution-soccer-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:prince-of-persia-the-sands-of-time",
+    "franchises": [
+      "Prince of Persia"
+    ],
+    "developers": [
+      "Ubisoft"
+    ],
+    "publishers": [
+      "Capcom",
+      "SCEI",
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/prince-of-persia-the-sands-of-time/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:quake-iii-arena-1999",
+    "franchises": [
+      "Quake"
+    ],
+    "developers": [
+      "Raster"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/quake-iii-arena-1999/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:quantum-break",
+    "franchises": [],
+    "developers": [
+      "Remedy Entertainment"
+    ],
+    "publishers": [
+      "Microsoft Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/quantum-break/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:princess-peach-showtime",
+    "franchises": [
+      "Mario",
+      "Princess Peach"
+    ],
+    "developers": [
+      "Good-Feel"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/princess-peach-showtime/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ratchet-and-clank-ps4",
+    "franchises": [
+      "Ratchet & Clank"
+    ],
+    "developers": [
+      "Insomniac Games"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEE",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/ratchet-and-clank-ps4/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:rayman-legends",
+    "franchises": [
+      "Rayman"
+    ],
+    "developers": [
+      "Ubisoft Montpellier"
+    ],
+    "publishers": [
+      "Nintendo",
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/rayman-legends/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ratchet-and-clank-rift-apart",
+    "franchises": [
+      "Ratchet & Clank"
+    ],
+    "developers": [
+      "Insomniac Games"
+    ],
+    "publishers": [
+      "PlayStation Studios",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/ratchet-and-clank-rift-apart/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:red-dead-redemption",
+    "franchises": [
+      "Red Dead"
+    ],
+    "developers": [
+      "Rockstar San Diego"
+    ],
+    "publishers": [
+      "Rockstar Games",
+      "Rockstar San Diego"
+    ],
+    "source": "https://www.metacritic.com/game/red-dead-redemption/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:red-dead-redemption-2",
+    "franchises": [
+      "Red Dead"
+    ],
+    "developers": [
+      "Rockstar Games"
+    ],
+    "publishers": [
+      "Rockstar Games"
+    ],
+    "source": "https://www.metacritic.com/game/red-dead-redemption-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-2-deluxe-edition",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-2-deluxe-edition/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-4",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-4/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-2",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom R&D Division 1"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-4-2005",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-4-2005/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:ratchet-and-clank-up-your-arsenal",
+    "franchises": [
+      "Ratchet & Clank"
+    ],
+    "developers": [
+      "Insomniac Games"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCE Korea",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/ratchet-and-clank-up-your-arsenal/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-3",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "M-Two"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-7-biohazard",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-7-biohazard/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-code-veronica",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "NexTech"
+    ],
+    "publishers": [
+      "Capcom",
+      "Eidos Interactive",
+      "Tec Toy"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-code-veronica/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-requiem",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-requiem/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resistance-3",
+    "franchises": [
+      "Resistance"
+    ],
+    "developers": [
+      "Insomniac Games"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/resistance-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-village",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-village/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-5",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-5/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:resident-evil-remake",
+    "franchises": [
+      "Resident Evil"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/resident-evil-remake/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:rhythm-heaven-groove",
+    "franchises": [
+      "Rhythm Heaven"
+    ],
+    "developers": [
+      "TNX"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/rhythm-heaven-groove/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:rise-of-the-ronin",
+    "franchises": [],
+    "developers": [
+      "Team Ninja"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/rise-of-the-ronin/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:returnal",
+    "franchises": [],
+    "developers": [
+      "Housemarque"
+    ],
+    "publishers": [
+      "PlayStation Studios",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/returnal/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:rock-band",
+    "franchises": [
+      "Rock Band"
+    ],
+    "developers": [
+      "Harmonix Music Systems"
+    ],
+    "publishers": [
+      "Electronic Arts",
+      "MTV Games",
+      "Q Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/rock-band/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:rise-of-the-tomb-raider",
+    "franchises": [
+      "Tomb Raider"
+    ],
+    "developers": [
+      "Crystal Dynamics"
+    ],
+    "publishers": [
+      "Microsoft Game Studios",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/rise-of-the-tomb-raider/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:rock-band-2",
+    "franchises": [
+      "Rock Band"
+    ],
+    "developers": [
+      "Harmonix Music Systems"
+    ],
+    "publishers": [
+      "EA Games",
+      "MTV Games"
+    ],
+    "source": "https://www.metacritic.com/game/rock-band-2/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:saros",
+    "franchises": [],
+    "developers": [
+      "Housemarque"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/saros/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:sektori",
+    "franchises": [],
+    "developers": [
+      "Kimmo Factor"
+    ],
+    "publishers": [
+      "Kimmo Factor",
+      "PM Studios Inc."
+    ],
+    "source": "https://www.metacritic.com/game/sektori/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:rock-band-3",
+    "franchises": [
+      "Rock Band"
+    ],
+    "developers": [
+      "Harmonix Music Systems"
+    ],
+    "publishers": [
+      "MTV Games"
+    ],
+    "source": "https://www.metacritic.com/game/rock-band-3/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:senuas-saga-hellblade-ii",
+    "franchises": [
+      "Hellblade"
+    ],
+    "developers": [
+      "Ninja Theory"
+    ],
+    "publishers": [
+      "Limited Run Games",
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/senuas-saga-hellblade-ii/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:rome-total-war",
+    "franchises": [
+      "Total War"
+    ],
+    "developers": [
+      "Creative Assembly"
+    ],
+    "publishers": [
+      "Activision",
+      "Global Software Publishing (GSP)"
+    ],
+    "source": "https://www.metacritic.com/game/rome-total-war/",
+    "checked": "2026-11-25T01:47:17+00:00"
+  },
+  {
+    "id": "metacritic:shadow-of-the-colossus",
+    "franchises": [
+      "ICO"
+    ],
+    "developers": [
+      "Bluepoint Games"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/shadow-of-the-colossus/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:shin-megami-tensei-v",
+    "franchises": [
+      "Shin Megami Tensei"
+    ],
+    "developers": [
+      "Atlus"
+    ],
+    "publishers": [
+      "Atlus",
+      "Nintendo",
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/shin-megami-tensei-v/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:sid-meiers-alpha-centauri",
+    "franchises": [
+      "Sid Meier's"
+    ],
+    "developers": [
+      "Firaxis Games"
+    ],
+    "publishers": [
+      "Electronic Arts",
+      "Electronic Arts Square",
+      "Sold Out Software",
+      "ak tronic"
+    ],
+    "source": "https://www.metacritic.com/game/sid-meiers-alpha-centauri/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:silent-hill-2",
+    "franchises": [
+      "Silent Hill"
+    ],
+    "developers": [
+      "Bloober Team"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/silent-hill-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:sid-meiers-civilization-iv",
+    "franchises": [
+      "Civilization"
+    ],
+    "developers": [
+      "Firaxis Games"
+    ],
+    "publishers": [
+      "2K Games",
+      "CyberFront",
+      "GameTap",
+      "Mastertronic",
+      "ak tronic"
+    ],
+    "source": "https://www.metacritic.com/game/sid-meiers-civilization-iv/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:sid-meiers-civilization-vi",
+    "franchises": [
+      "Civilization"
+    ],
+    "developers": [
+      "Firaxis Games"
+    ],
+    "publishers": [
+      "2K Games"
+    ],
+    "source": "https://www.metacritic.com/game/sid-meiers-civilization-vi/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:silent-hill-f",
+    "franchises": [
+      "Silent Hill"
+    ],
+    "developers": [
+      "NeoBards Entertainment"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/silent-hill-f/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:silent-hill-townfall",
+    "franchises": [
+      "Silent Hill"
+    ],
+    "developers": [
+      "Screen Burn"
+    ],
+    "publishers": [
+      "Annapurna Interactive",
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/silent-hill-townfall/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:sonic-frontiers",
+    "franchises": [
+      "Sonic the Hedgehog"
+    ],
+    "developers": [
+      "Sonic Team"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/sonic-frontiers/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:sid-meiers-civilization-vii",
+    "franchises": [
+      "Civilization"
+    ],
+    "developers": [
+      "Firaxis Games"
+    ],
+    "publishers": [
+      "2K Games"
+    ],
+    "source": "https://www.metacritic.com/game/sid-meiers-civilization-vii/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:skies-of-arcadia",
+    "franchises": [],
+    "developers": [
+      "Overworks"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/skies-of-arcadia/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:soulcalibur",
+    "franchises": [
+      "SoulCalibur"
+    ],
+    "developers": [
+      "Namco"
+    ],
+    "publishers": [
+      "Namco"
+    ],
+    "source": "https://www.metacritic.com/game/soulcalibur/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:soulcalibur-ii",
+    "franchises": [
+      "SoulCalibur"
+    ],
+    "developers": [
+      "Namco"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "Namco",
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/soulcalibur-ii/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:south-of-midnight",
+    "franchises": [],
+    "developers": [
+      "Compulsion Games"
+    ],
+    "publishers": [
+      "Xbox Game Studios"
+    ],
+    "source": "https://www.metacritic.com/game/south-of-midnight/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:splatoon",
+    "franchises": [
+      "Splatoon"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/splatoon/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:splatoon-2",
+    "franchises": [
+      "Splatoon"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/splatoon-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:splatoon-raiders",
+    "franchises": [
+      "Splatoon"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/splatoon-raiders/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:splatoon-3",
+    "franchises": [
+      "Splatoon"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/splatoon-3/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:split-fiction",
+    "franchises": [],
+    "developers": [
+      "Hazelight"
+    ],
+    "publishers": [
+      "EA Originals",
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/split-fiction/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:ssx-2000",
+    "franchises": [
+      "SSX"
+    ],
+    "developers": [
+      "EA Sports Big"
+    ],
+    "publishers": [
+      "EA Sports Big",
+      "Electronic Arts",
+      "Electronic Arts Square"
+    ],
+    "source": "https://www.metacritic.com/game/ssx-2000/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:star-fox",
+    "franchises": [
+      "Star Fox"
+    ],
+    "developers": [
+      "Velan Studios"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/star-fox/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:ssx-3",
+    "franchises": [
+      "SSX"
+    ],
+    "developers": [
+      "EA Canada"
+    ],
+    "publishers": [
+      "EA Sports Big"
+    ],
+    "source": "https://www.metacritic.com/game/ssx-3/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:ssx-tricky",
+    "franchises": [
+      "SSX"
+    ],
+    "developers": [
+      "EA Canada"
+    ],
+    "publishers": [
+      "EA Sports Big",
+      "Electronic Arts",
+      "Electronic Arts Square"
+    ],
+    "source": "https://www.metacritic.com/game/ssx-tricky/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:star-wars-jedi-survivor",
+    "franchises": [
+      "Star Wars",
+      "Star Wars Jedi"
+    ],
+    "developers": [
+      "Respawn Entertainment"
+    ],
+    "publishers": [
+      "Electronic Arts",
+      "Limited Run Games"
+    ],
+    "source": "https://www.metacritic.com/game/star-wars-jedi-survivor/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:starfield",
+    "franchises": [],
+    "developers": [
+      "Bethesda Game Studios"
+    ],
+    "publishers": [
+      "Bethesda Softworks"
+    ],
+    "source": "https://www.metacritic.com/game/starfield/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:star-wars-knights-of-the-old-republic",
+    "franchises": [
+      "Star Wars: Knights of the Old Republic"
+    ],
+    "developers": [
+      "BioWare"
+    ],
+    "publishers": [
+      "Activision",
+      "Disney Interactive",
+      "LucasArts"
+    ],
+    "source": "https://www.metacritic.com/game/star-wars-knights-of-the-old-republic/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:starcraft-ii-wings-of-liberty",
+    "franchises": [
+      "Starcraft"
+    ],
+    "developers": [
+      "Blizzard Entertainment"
+    ],
+    "publishers": [
+      "Blizzard Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/starcraft-ii-wings-of-liberty/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:stranger-of-paradise-final-fantasy-origin",
+    "franchises": [
+      "Final Fantasy"
+    ],
+    "developers": [
+      "Team Ninja"
+    ],
+    "publishers": [
+      "Koei Tecmo Games",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/stranger-of-paradise-final-fantasy-origin/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:street-fighter-6",
+    "franchises": [
+      "Street Fighter"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/street-fighter-6/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:stellar-blade",
+    "franchises": [
+      "Stellar Blade"
+    ],
+    "developers": [
+      "SHIFT UP Corporation"
+    ],
+    "publishers": [
+      "SHIFT UP Corporation",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/stellar-blade/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:stray",
+    "franchises": [],
+    "developers": [
+      "BlueTwelve Studio"
+    ],
+    "publishers": [
+      "Annapurna Interactive",
+      "Happinet"
+    ],
+    "source": "https://www.metacritic.com/game/stray/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:street-fighter-iv",
+    "franchises": [
+      "Street Fighter"
+    ],
+    "developers": [
+      "Capcom"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/street-fighter-iv/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:star-wars-outlaws",
+    "franchises": [
+      "Star Wars"
+    ],
+    "developers": [
+      "Massive Entertainment"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/star-wars-outlaws/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-64",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Hyundai Electronics",
+      "Nintendo",
+      "Playtronic"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-64/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-3d-all-stars",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-3d-all-stars/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-3d-world",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-3d-world/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-3d-world-plus-bowsers-fury",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-3d-world-plus-bowsers-fury/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-galaxy-2",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo EAD Tokyo "
+    ],
+    "publishers": [
+      "Nintendo",
+      "iQue"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-galaxy-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-advance-4-super-mario-bros-3",
+    "franchises": [
+      "Super Mario Advance"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo",
+      "iQue"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-advance-4-super-mario-bros-3/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-galaxy",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-galaxy/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-maker-2",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-maker-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-odyssey",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-odyssey/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-bros-wonder",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-bros-wonder/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-sunshine",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-sunshine/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-rpg",
+    "franchises": [
+      "Mario"
+    ],
+    "developers": [
+      "ArtePiazza"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-rpg/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-world-super-mario-advance-2",
+    "franchises": [
+      "Mario",
+      "Super Mario Advance"
+    ],
+    "developers": [
+      "Nintendo R&D2"
+    ],
+    "publishers": [
+      "Nintendo",
+      "iQue"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-world-super-mario-advance-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-mario-party-jamboree",
+    "franchises": [
+      "Mario Party"
+    ],
+    "developers": [
+      "Nd Cube"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-mario-party-jamboree/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-smash-bros-melee",
+    "franchises": [
+      "Super Smash Bros."
+    ],
+    "developers": [
+      "HAL Labs"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-smash-bros-melee/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-smash-bros-brawl",
+    "franchises": [
+      "Super Smash Bros."
+    ],
+    "developers": [
+      "Game Arts"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-smash-bros-brawl/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-smash-bros-for-nintendo-3ds-wii-u",
+    "franchises": [
+      "Super Smash Bros."
+    ],
+    "developers": [
+      "Bandai Namco Games"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-smash-bros-for-nintendo-3ds-wii-u/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:team-fortress-2",
+    "franchises": [
+      "Half-Life",
+      "Team Fortress"
+    ],
+    "developers": [
+      "Valve Software"
+    ],
+    "publishers": [
+      "CyberFront",
+      "EA Games",
+      "Electronic Arts",
+      "Valve Software"
+    ],
+    "source": "https://www.metacritic.com/game/team-fortress-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:super-smash-bros-ultimate",
+    "franchises": [
+      "Super Smash Bros."
+    ],
+    "developers": [
+      "Nintendo",
+      "Sora Ltd."
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/super-smash-bros-ultimate/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tekken-8",
+    "franchises": [
+      "Tekken"
+    ],
+    "developers": [
+      "Bandai Namco Games"
+    ],
+    "publishers": [
+      "Bandai Namco Games"
+    ],
+    "source": "https://www.metacritic.com/game/tekken-8/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-elder-scrolls-iv-oblivion",
+    "franchises": [
+      "The Elder Scrolls"
+    ],
+    "developers": [
+      "Bethesda Game Studios"
+    ],
+    "publishers": [
+      "2K Games",
+      "Bethesda Softworks",
+      "Spike"
+    ],
+    "source": "https://www.metacritic.com/game/the-elder-scrolls-iv-oblivion/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-elder-scrolls-v-skyrim",
+    "franchises": [
+      "The Elder Scrolls"
+    ],
+    "developers": [
+      "Bethesda Game Studios"
+    ],
+    "publishers": [
+      "Bethesda Softworks"
+    ],
+    "source": "https://www.metacritic.com/game/the-elder-scrolls-v-skyrim/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-house-in-fata-morgana-dreams-of-the-revenants",
+    "franchises": [
+      "The House in Fata Morgana"
+    ],
+    "developers": [
+      "HuneX"
+    ],
+    "publishers": [
+      "Clear River Games",
+      "HuneX",
+      "Limited Run Games",
+      "dramatic create"
+    ],
+    "source": "https://www.metacritic.com/game/the-house-in-fata-morgana-dreams-of-the-revenants/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tekken-3",
+    "franchises": [
+      "Tekken"
+    ],
+    "developers": [
+      "Namco"
+    ],
+    "publishers": [
+      "Namco",
+      "SCEE"
+    ],
+    "source": "https://www.metacritic.com/game/tekken-3/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-last-guardian",
+    "franchises": [
+      "ICO"
+    ],
+    "developers": [
+      "SCE Japan Studio"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/the-last-guardian/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-last-of-us",
+    "franchises": [
+      "The Last of Us"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/the-last-of-us/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:superhot",
+    "franchises": [
+      "SUPERHOT"
+    ],
+    "developers": [
+      "SUPERHOT"
+    ],
+    "publishers": [
+      "IMGN.PRO",
+      "SUPERHOT"
+    ],
+    "source": "https://www.metacritic.com/game/superhot/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-last-of-us-part-ii",
+    "franchises": [
+      "The Last of Us"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/the-last-of-us-part-ii/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-last-of-us-part-i",
+    "franchises": [
+      "The Last of Us"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "SCEE",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/the-last-of-us-part-i/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-ico-and-shadow-of-the-colossus-collection",
+    "franchises": [
+      "ICO"
+    ],
+    "developers": [
+      "Bluepoint Games"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI",
+      "Sony DADC Brasil"
+    ],
+    "source": "https://www.metacritic.com/game/the-ico-and-shadow-of-the-colossus-collection/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-last-of-us-part-ii-remastered",
+    "franchises": [
+      "The Last of Us"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/the-last-of-us-part-ii-remastered/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-last-of-us-remastered",
+    "franchises": [
+      "The Last of Us"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "SCEA",
+      "SCEE",
+      "SCEI",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/the-last-of-us-remastered/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-a-link-between-worlds",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-a-link-between-worlds/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-breath-of-the-wild-nintendo",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-breath-of-the-wild-nintendo/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-a-link-to-the-past-four-swords",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-a-link-to-the-past-four-swords/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-breath-of-the-wild",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-breath-of-the-wild/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-links-awakening",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "GREZZO"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-links-awakening/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-majoras-mask",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-majoras-mask/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-ocarina-of-time",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Gradiente",
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-ocarina-of-time/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-echoes-of-wisdom",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "GREZZO"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-echoes-of-wisdom/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:system-shock-2",
+    "franchises": [
+      "System Shock"
+    ],
+    "developers": [
+      "Irrational Games",
+      "Looking Glass Studios"
+    ],
+    "publishers": [
+      "Electronic Arts",
+      "Looking Glass Studios",
+      "Nightdive Studios"
+    ],
+    "source": "https://www.metacritic.com/game/system-shock-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-ocarina-of-time-2026",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-ocarina-of-time-2026/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-tears-of-the-kingdom",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-tears-of-the-kingdom/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-ocarina-of-time-3d",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "GREZZO"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-ocarina-of-time-3d/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-tears-of-the-kingdom-nintendo",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-tears-of-the-kingdom-nintendo/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-skyward-sword-hd",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo",
+      "Tantalus"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-skyward-sword-hd/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-the-wind-waker",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-the-wind-waker/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-twilight-princess",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-twilight-princess/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-orange-box",
+    "franchises": [
+      "Half-Life",
+      "Portal",
+      "Team Fortress"
+    ],
+    "developers": [
+      "Valve Software"
+    ],
+    "publishers": [
+      "EA Games",
+      "Electronic Arts"
+    ],
+    "source": "https://www.metacritic.com/game/the-orange-box/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-quarry",
+    "franchises": [],
+    "developers": [
+      "Supermassive Games"
+    ],
+    "publishers": [
+      "2K Games"
+    ],
+    "source": "https://www.metacritic.com/game/the-quarry/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-operative-no-one-lives-forever",
+    "franchises": [
+      "No One Lives Forever"
+    ],
+    "developers": [
+      "Monolith Productions"
+    ],
+    "publishers": [
+      "CyberFront",
+      "Empire Interactive",
+      "Fox Interactive",
+      "Sierra Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/the-operative-no-one-lives-forever/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-witcher-3-wild-hunt",
+    "franchises": [
+      "The Witcher"
+    ],
+    "developers": [
+      "CD Projekt Red Studio"
+    ],
+    "publishers": [
+      "Bandai Namco Games",
+      "CD Projekt",
+      "CD Projekt Red Studio",
+      "Spike Chunsoft",
+      "Warner Bros. Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/the-witcher-3-wild-hunt/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-legend-of-zelda-skyward-sword",
+    "franchises": [
+      "Legend of Zelda"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/the-legend-of-zelda-skyward-sword/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-witcher-3-wild-hunt-remastered",
+    "franchises": [
+      "The Witcher"
+    ],
+    "developers": [
+      "CD Projekt Red Studio"
+    ],
+    "publishers": [
+      "CD Projekt Red Studio"
+    ],
+    "source": "https://www.metacritic.com/game/the-witcher-3-wild-hunt-remastered/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-witcher-3-wild-hunt-blood-and-wine",
+    "franchises": [
+      "The Witcher"
+    ],
+    "developers": [
+      "CD Projekt Red Studio"
+    ],
+    "publishers": [
+      "CD Projekt"
+    ],
+    "source": "https://www.metacritic.com/game/the-witcher-3-wild-hunt-blood-and-wine/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:thief-the-dark-project",
+    "franchises": [
+      "Thief"
+    ],
+    "developers": [
+      "Looking Glass Studios"
+    ],
+    "publishers": [
+      "Eidos Interactive",
+      "Sold Out Software",
+      "ak tronic"
+    ],
+    "source": "https://www.metacritic.com/game/thief-the-dark-project/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tiny-tinas-wonderlands",
+    "franchises": [
+      "Borderlands"
+    ],
+    "developers": [
+      "Gearbox Software"
+    ],
+    "publishers": [
+      "2K Games"
+    ],
+    "source": "https://www.metacritic.com/game/tiny-tinas-wonderlands/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-sims",
+    "franchises": [
+      "The Sims"
+    ],
+    "developers": [
+      "Maxis"
+    ],
+    "publishers": [
+      "Electronic Arts",
+      "Electronic Arts Square",
+      "Maxis"
+    ],
+    "source": "https://www.metacritic.com/game/the-sims/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tom-clancys-splinter-cell-chaos-theory",
+    "franchises": [
+      "Tom Clancy's Splinter Cell"
+    ],
+    "developers": [
+      "Ubisoft Montreal"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/tom-clancys-splinter-cell-chaos-theory/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tom-clancys-splinter-cell-conviction",
+    "franchises": [
+      "Tom Clancy's Splinter Cell"
+    ],
+    "developers": [
+      "Ubisoft Montreal"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/tom-clancys-splinter-cell-conviction/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tomodachi-life-living-the-dream",
+    "franchises": [
+      "Tomodachi Life"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/tomodachi-life-living-the-dream/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tony-hawks-pro-skater",
+    "franchises": [
+      "SuperLite 1500 Series",
+      "Tony Hawk Skateboarding"
+    ],
+    "developers": [
+      "Neversoft Entertainment"
+    ],
+    "publishers": [
+      "Activision",
+      "Success"
+    ],
+    "source": "https://www.metacritic.com/game/tony-hawks-pro-skater/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:the-longest-journey",
+    "franchises": [
+      "Longest Journey"
+    ],
+    "developers": [
+      "Funcom"
+    ],
+    "publishers": [
+      "Empire Interactive",
+      "Funcom",
+      "IQ Media Nordic AB",
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/the-longest-journey/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tony-hawks-pro-skater-2",
+    "franchises": [
+      "Tony Hawk Skateboarding"
+    ],
+    "developers": [
+      "Neversoft Entertainment"
+    ],
+    "publishers": [
+      "Activision"
+    ],
+    "source": "https://www.metacritic.com/game/tony-hawks-pro-skater-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tony-hawks-pro-skater-3",
+    "franchises": [
+      "Tony Hawk Skateboarding"
+    ],
+    "developers": [
+      "Neversoft Entertainment"
+    ],
+    "publishers": [
+      "Activision",
+      "Success"
+    ],
+    "source": "https://www.metacritic.com/game/tony-hawks-pro-skater-3/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:triangle-strategy",
+    "franchises": [],
+    "developers": [
+      "Artdink"
+    ],
+    "publishers": [
+      "Nintendo",
+      "Square Enix"
+    ],
+    "source": "https://www.metacritic.com/game/triangle-strategy/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tom-clancys-splinter-cell",
+    "franchises": [
+      "Tom Clancy's Splinter Cell"
+    ],
+    "developers": [
+      "Ubisoft Montreal"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/tom-clancys-splinter-cell/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tom-clancys-splinter-cell-pandora-tomorrow",
+    "franchises": [
+      "Tom Clancy's Splinter Cell"
+    ],
+    "developers": [
+      "Ubisoft Shanghai"
+    ],
+    "publishers": [
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/tom-clancys-splinter-cell-pandora-tomorrow/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:tony-hawks-pro-skater-4",
+    "franchises": [
+      "Tony Hawk Skateboarding"
+    ],
+    "developers": [
+      "Neversoft Entertainment"
+    ],
+    "publishers": [
+      "Activision",
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/tony-hawks-pro-skater-4/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:uncharted-2-among-thieves",
+    "franchises": [
+      "Uncharted"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/uncharted-2-among-thieves/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:undertale",
+    "franchises": [
+      "Undertale"
+    ],
+    "developers": [
+      "tobyfox"
+    ],
+    "publishers": [
+      "8-4",
+      "Fangamer",
+      "tobyfox"
+    ],
+    "source": "https://www.metacritic.com/game/undertale/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:uncharted-4-a-thiefs-end",
+    "franchises": [
+      "Uncharted"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "SCEE",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/uncharted-4-a-thiefs-end/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:uncharted-the-lost-legacy",
+    "franchises": [
+      "Uncharted"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/uncharted-the-lost-legacy/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:unreal-tournament-2004",
+    "franchises": [
+      "Unreal"
+    ],
+    "developers": [
+      "Epic Games"
+    ],
+    "publishers": [
+      "Atari SA",
+      "Sold Out Software",
+      "Sonokong"
+    ],
+    "source": "https://www.metacritic.com/game/unreal-tournament-2004/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:uncharted-3-drakes-deception",
+    "franchises": [
+      "Uncharted"
+    ],
+    "developers": [
+      "Naughty Dog"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI"
+    ],
+    "source": "https://www.metacritic.com/game/uncharted-3-drakes-deception/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:vagrant-story",
+    "franchises": [],
+    "developers": [
+      "SquareSoft"
+    ],
+    "publishers": [
+      "Square EA",
+      "Square Enix",
+      "SquareSoft"
+    ],
+    "source": "https://www.metacritic.com/game/vagrant-story/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:until-dawn-2015",
+    "franchises": [
+      "Until Dawn"
+    ],
+    "developers": [
+      "Supermassive Games"
+    ],
+    "publishers": [
+      "SCE Australia",
+      "SCEA",
+      "SCEE",
+      "SCEI",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/until-dawn-2015/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:viewtiful-joe",
+    "franchises": [
+      "Viewtiful Joe"
+    ],
+    "developers": [
+      "Clover Studio"
+    ],
+    "publishers": [
+      "Capcom"
+    ],
+    "source": "https://www.metacritic.com/game/viewtiful-joe/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:virtua-fighter-4",
+    "franchises": [
+      "Virtua Fighter"
+    ],
+    "developers": [
+      "Sega AM2"
+    ],
+    "publishers": [
+      "SCEE",
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/virtua-fighter-4/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:virtua-fighter-4-evolution",
+    "franchises": [
+      "Virtua Fighter"
+    ],
+    "developers": [
+      "Sega"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/virtua-fighter-4-evolution/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:warioware-get-it-together",
+    "franchises": [
+      "WarioWare"
+    ],
+    "developers": [
+      "Intelligent Systems",
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/warioware-get-it-together/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:virtua-tennis",
+    "franchises": [
+      "Virtua Tennis"
+    ],
+    "developers": [
+      "Hitmaker"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/virtua-tennis/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:warcraft-iii-reign-of-chaos",
+    "franchises": [
+      "Warcraft"
+    ],
+    "developers": [
+      "Blizzard Entertainment"
+    ],
+    "publishers": [
+      "Blizzard Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/warcraft-iii-reign-of-chaos/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:warioware-move-it",
+    "franchises": [
+      "WarioWare"
+    ],
+    "developers": [
+      "Intelligent Systems"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/warioware-move-it/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:world-of-warcraft",
+    "franchises": [
+      "Warcraft"
+    ],
+    "developers": [
+      "Blizzard Entertainment"
+    ],
+    "publishers": [
+      "Activision",
+      "Blizzard Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/world-of-warcraft/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:watch-dogs-2",
+    "franchises": [
+      "Watch Dogs"
+    ],
+    "developers": [
+      "Ubisoft Montreal"
+    ],
+    "publishers": [
+      "Sony DADC Brasil",
+      "Ubisoft"
+    ],
+    "source": "https://www.metacritic.com/game/watch-dogs-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:wave-race-64",
+    "franchises": [
+      "Wave Race"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo",
+      "Playtronic"
+    ],
+    "source": "https://www.metacritic.com/game/wave-race-64/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:world-of-warcraft-the-burning-crusade",
+    "franchises": [
+      "Warcraft"
+    ],
+    "developers": [
+      "Blizzard Entertainment"
+    ],
+    "publishers": [
+      "Blizzard Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/world-of-warcraft-the-burning-crusade/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:world-soccer-winning-eleven-7-international",
+    "franchises": [
+      "Pro Evolution / Winning Eleven / eFootball"
+    ],
+    "developers": [
+      "KCET"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/world-soccer-winning-eleven-7-international/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:world-of-warcraft-wrath-of-the-lich-king",
+    "franchises": [
+      "Warcraft"
+    ],
+    "developers": [
+      "Blizzard Entertainment"
+    ],
+    "publishers": [
+      "Blizzard Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/world-of-warcraft-wrath-of-the-lich-king/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:world-soccer-winning-eleven-8-international",
+    "franchises": [
+      "Pro Evolution / Winning Eleven / eFootball"
+    ],
+    "developers": [
+      "KCET"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "source": "https://www.metacritic.com/game/world-soccer-winning-eleven-8-international/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:wuchang-fallen-feathers",
+    "franchises": [],
+    "developers": [
+      "Leenzee Games"
+    ],
+    "publishers": [
+      "505 Games"
+    ],
+    "source": "https://www.metacritic.com/game/wuchang-fallen-feathers/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:xenoblade-chronicles-3",
+    "franchises": [
+      "Xenoblade"
+    ],
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/xenoblade-chronicles-3/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:xenoblade-chronicles-definitive-edition",
+    "franchises": [
+      "Xenoblade"
+    ],
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/xenoblade-chronicles-definitive-edition/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:xcom-2",
+    "franchises": [
+      "X-COM"
+    ],
+    "developers": [
+      "Firaxis Games"
+    ],
+    "publishers": [
+      "2K Games"
+    ],
+    "source": "https://www.metacritic.com/game/xcom-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:xenoblade-chronicles-3-expansion-pass-wave-4",
+    "franchises": [
+      "Xenoblade"
+    ],
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/xenoblade-chronicles-3-expansion-pass-wave-4/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:xenoblade-chronicles-2",
+    "franchises": [
+      "Xenoblade"
+    ],
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/xenoblade-chronicles-2/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:xenoblade-chronicles-x-definitive-edition",
+    "franchises": [
+      "Xenoblade"
+    ],
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/xenoblade-chronicles-x-definitive-edition/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:yakuza-0",
+    "franchises": [
+      "Yakuza / Like a Dragon"
+    ],
+    "developers": [
+      "Ryu ga Gotoku Studios"
+    ],
+    "publishers": [
+      "Sega",
+      "Sony Interactive Entertainment"
+    ],
+    "source": "https://www.metacritic.com/game/yakuza-0/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:yoshi-and-the-mysterious-book",
+    "franchises": [
+      "Yoshi"
+    ],
+    "developers": [
+      "Good-Feel"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/yoshi-and-the-mysterious-book/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:yakuza-6-the-song-of-life",
+    "franchises": [
+      "Yakuza / Like a Dragon"
+    ],
+    "developers": [
+      "Ryu ga Gotoku Studios"
+    ],
+    "publishers": [
+      "Sega"
+    ],
+    "source": "https://www.metacritic.com/game/yakuza-6-the-song-of-life/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:yoshis-island-super-mario-advance-3",
+    "franchises": [
+      "Mario",
+      "Super Mario Advance",
+      "Yoshi"
+    ],
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo",
+      "iQue"
+    ],
+    "source": "https://www.metacritic.com/game/yoshis-island-super-mario-advance-3/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  },
+  {
+    "id": "metacritic:yoshis-crafted-world",
+    "franchises": [
+      "Yoshi"
+    ],
+    "developers": [
+      "Good-Feel"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "source": "https://www.metacritic.com/game/yoshis-crafted-world/",
+    "checked": "2026-11-25T01:47:18+00:00"
+  }
+]

@@ -1,6 +1,7 @@
 import {mediaNames} from './media-ui.js';
 export function createPaths({esc,library,open,level,xp,notify}) {
-  let loadRevision=0,media='all',allGroups=[],groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
+  let courseQuery='',courseFacet='all',unitPage=1,lookup=new Map(),loadRevision=0,media='all',allGroups=[],groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
+  const facetNames={editorial:'Sélections thématiques',genre:'Genres et types',decade:'Décennies',franchise:'Sagas et univers',country:'Pays de production',developer:'Studios et développeurs',publisher:'Éditeurs',platform:'Plateformes',author:'Auteurs'};
   const active=()=>['#parcours','#profil'].includes(location.hash);
   const done=g=>g.members.filter(id=>tracked.get(id)?.status==='done').length;
   const percent=g=>g.total?Math.floor(done(g)/g.total*100):0;
@@ -43,12 +44,13 @@ export function createPaths({esc,library,open,level,xp,notify}) {
   }
   const sublistCount=n=>n+' sous-liste'+(n>1?'s':'');
   function descendants(g){
-    return (g.children||[]).flatMap(id=>{const child=groups.find(c=>c.id===id);return !child?[]:child.kind==='group'?descendants(child):[child];});
+    return (g.children||[]).flatMap(id=>{const child=lookup.get(id);return !child?[]:child.kind==='group'?descendants(child):[child];});
   }
   function courseFor(g){return g.kind==='meta'?g:groups.find(c=>c.id===g.meta);}
+  function courseUnits(course){return descendants(course).filter(g=>(courseFacet==='all'||(g.facet||'editorial')===courseFacet)&&g.title.toLocaleLowerCase('fr').includes(courseQuery.toLocaleLowerCase('fr')));}
   function courseNavigation(course){
     if(!course)return '';
-    return `<nav class="path-navigation" aria-label="Sous-listes de ${esc(course.title)}"><button class="path-overview" data-path-list="">Toutes les méta-listes</button><button class="path-course-title ${selected===course.id?'selected':''}" data-path-list="${esc(course.id)}"><strong>${esc(course.title)}</strong><span>${sublistCount(descendants(course).length)}</span></button>${descendants(course).map((child,index)=>`<button class="path-nav-item ${selected===child.id?'selected':''}" data-path-list="${esc(child.id)}"><span>SOUS-LISTE ${index+1}</span><strong>${esc(child.title)}</strong><span>${done(child)} / ${child.total} terminées</span></button>`).join('')}</nav>`;
+    return `<nav class="path-navigation" aria-label="Sous-listes de ${esc(course.title)}"><button class="path-overview" data-path-list="">Toutes les méta-listes</button><button class="path-course-title ${selected===course.id?'selected':''}" data-path-list="${esc(course.id)}"><strong>${esc(course.title)}</strong><span>${sublistCount(descendants(course).length)}</span></button>${courseUnits(course).slice((unitPage-1)*40,unitPage*40).map((child,index)=>`<button class="path-nav-item ${selected===child.id?'selected':''}" data-path-list="${esc(child.id)}"><span>${esc(facetNames[child.facet||'editorial'])}</span><strong>${esc(child.title)}</strong><span>${done(child)} / ${child.total} terminées</span></button>`).join('')}</nav>`;
   }
   function metaCard(g){
     const count=descendants(g).length;
@@ -67,8 +69,10 @@ export function createPaths({esc,library,open,level,xp,notify}) {
       const visible=groups.filter(g=>g.kind==='meta'&&(!family||family===g.family)&&(!query||g.title.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr'))||descendants(g).some(c=>c.title.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr')))));
       content=`<div class="path-heading"><p class="eyebrow">TES PARCOURS CULTURELS</p><h1>Choisis une méta-liste.</h1><p>Ouvre un univers pour découvrir ses sous-listes et suivre ta progression.</p><a href="#profil">Mon profil et mes trophées</a></div>${controls()}<div class="meta-index">${visible.map(metaCard).join('')||'<p>Aucune méta-liste pour cette recherche.</p>'}</div>`;
     }else if(g.kind==='meta'||g.kind==='group'){
-      const units=descendants(g);
-      content=`${heading(g)}${meter(g)}<p class="course-description">${sublistCount(units.length)} à compléter. Une case représente une œuvre.</p><div class="mastery-legend"><span>Terminé</span><span>En cours</span><span>À découvrir</span></div><div class="course-units">${units.length?units.map(row).join(''):'<div class="empty">Les sous-listes de cette méta-liste seront proposées dès qu’au moins trois œuvres pourront être regroupées autour d’un sujet.</div>'}</div>`;
+      const allUnits=descendants(g),units=courseUnits(g);
+      const pages=Math.max(1,Math.ceil(units.length/40));unitPage=Math.min(unitPage,pages);
+      const categories=[...new Set(allUnits.map(g=>g.facet||'editorial'))];
+      content=`${heading(g)}${meter(g)}<p class="course-description">${sublistCount(units.length)} à compléter. Une case représente une œuvre.</p><div class="mastery-legend"><span>Terminé</span><span>En cours</span><span>À découvrir</span></div><div class="filter-bar course-filters"><input id="course-search" type="search" aria-label="Rechercher une sous-liste" value="${esc(courseQuery)}" placeholder="Rechercher une sous-liste…"><select id="course-facet" aria-label="Critère des sous-listes"><option value="all">Tous les critères</option>${categories.map(f=>`<option value="${f}" ${courseFacet===f?'selected':''}>${esc(facetNames[f])}</option>`).join('')}</select></div><p class="muted">${units.length} sous-liste(s) · page ${unitPage} / ${pages}</p><div class="course-units">${units.length?units.slice((unitPage-1)*40,unitPage*40).map(row).join(''):'<div class="empty">Les sous-listes de cette méta-liste seront proposées dès qu’au moins trois œuvres pourront être regroupées autour d’un sujet.</div>'}</div>${pages>1?`<div class="catalog-pagination"><button data-unit-page="-1" ${unitPage<=1?'disabled':''}>Précédente</button><span>${unitPage} / ${pages}</span><button data-unit-page="1" ${unitPage>=pages?'disabled':''}>Suivante</button></div>`:''}`;
     }else{
       target.innerHTML=`${mediaNav()}<div class="path-layout">${courseNavigation(course)}<div class="path-content">Chargement…</div></div>`;
       try{
@@ -100,7 +104,7 @@ export function createPaths({esc,library,open,level,xp,notify}) {
       allGroups=data.groups;
       const projection=mode==='parcours'&&media!=='all'?await fetch('/api/paths?'+new URLSearchParams({type:media})).then(r=>{if(!r.ok)throw Error('Impossible de filtrer les parcours.');return r.json();}):data;
       if(version!==loadRevision||(!background&&!active()))return;
-      groups=projection.groups;if(selected&&!groups.some(g=>g.id===selected)){const previous=allGroups.find(g=>g.id===selected);selected=groups.some(g=>g.id===previous?.meta)?previous.meta:'';}
+      groups=projection.groups;lookup=new Map(groups.map(g=>[g.id,g]));if(selected&&!groups.some(g=>g.id===selected)){const previous=allGroups.find(g=>g.id===selected);selected=groups.some(g=>g.id===previous?.meta)?previous.meta:'';}
       resolved=matches;tracked=new Map();items=new Map();
       for(const g of allGroups)for(const i of g.items)items.set(i.id,i);
       const rank={todo:0,doing:1,done:2};
@@ -109,18 +113,21 @@ export function createPaths({esc,library,open,level,xp,notify}) {
     }catch(e){const target=document.querySelector('#journey-view');if(target&&active()&&version===loadRevision)target.textContent=e.message;}
   }
   document.addEventListener('click',e=>{
-    const format=e.target.closest('[data-path-media]');if(format){media=format.dataset.pathMedia;page=1;return load();}
-    const path=e.target.closest('[data-path-list]');if(path){selected=path.dataset.pathList;page=1;query='';return draw();}
+    const format=e.target.closest('[data-path-media]');if(format){media=format.dataset.pathMedia;page=1;unitPage=1;return load();}
+    const unitPaging=e.target.closest('[data-unit-page]');if(unitPaging){unitPage+=Number(unitPaging.dataset.unitPage);return draw();}
+    const path=e.target.closest('[data-path-list]');if(path){courseQuery='';courseFacet='all';unitPage=1;selected=path.dataset.pathList;page=1;query='';return draw();}
     const profilePath=e.target.closest('[data-profile-path]');if(profilePath){selected=profilePath.dataset.profilePath;page=1;query='';location.hash='#parcours';}
     const paging=e.target.closest('[data-path-page]');if(paging){page+=Number(paging.dataset.pathPage);draw();}
     const work=e.target.closest('[data-path-work]');if(work){const item=items.get(work.dataset.pathWork);if(item)open(item,tracked.get(item.id));}
   });
   document.addEventListener('change',e=>{
+    if(e.target.id==='course-facet'){courseFacet=e.target.value;unitPage=1;draw();}
     if(e.target.id==='journey-family'){family=e.target.value;draw();}
     if(e.target.id==='trophy-filter'){filter=e.target.value;draw();}
     if(e.target.id==='trophy-tier'){tier=e.target.value;draw();}
   });
   document.addEventListener('input',e=>{
+    if(e.target.id==='course-search'){courseQuery=e.target.value;unitPage=1;const position=e.target.selectionStart;draw().then(()=>{const input=document.querySelector('#course-search');if(input){input.focus();input.setSelectionRange(position,position);}});}
     if(e.target.id==='journey-search'){query=e.target.value;const start=e.target.selectionStart;draw().then(()=>{const input=document.querySelector('#journey-search');if(input){input.focus();input.setSelectionRange(start,start);}});}
   });
   return {mount,load,sync:()=>load(true)};

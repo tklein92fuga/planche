@@ -6,6 +6,7 @@ import threading
 from pathlib import Path
 import catalog
 import journey_rules
+import metadata_paths
 
 LOCK = threading.Lock()
 CACHE = None
@@ -25,9 +26,10 @@ def overview(kind="all"):
     with LOCK:
         with catalog.connect() as conn:
             signature = tuple(conn.execute('SELECT count(*),total(length(genre)),max(updated) FROM works').fetchone())
-            signature += ((DATA/'taxonomy.json').stat().st_mtime_ns,(DATA/'editorial-lists.json').stat().st_mtime_ns)
+            signature += ((DATA/'taxonomy.json').stat().st_mtime_ns,(DATA/'editorial-lists.json').stat().st_mtime_ns,(DATA/'company-metadata.json').stat().st_mtime_ns if (DATA/'company-metadata.json').exists() else 0)
             if CACHE is not None and SIGNATURE == signature:
                 return project(CACHE,kind)
+            countries={r['id']:json.loads(r['countries']) for r in conn.execute('SELECT id,countries FROM work_details')}
             rows = conn.execute('SELECT *, '+catalog.CANONICAL+' canonical FROM works ORDER BY score DESC,id').fetchall()
         taxonomy = json.loads((DATA/'taxonomy.json').read_text())
         editorial=json.loads((DATA/'editorial-lists.json').read_text())
@@ -122,6 +124,10 @@ def overview(kind="all"):
         epochs['children'].append(dict(id=epochs['id']+'/epoques-du-cinema',title='Époques du cinéma',kind='group',children=epoch_nodes))
         for meta in taxonomy['meta_lists']:
             build(meta,meta)
+        records=json.loads((DATA/'company-metadata.json').read_text()) if (DATA/'company-metadata.json').exists() else []
+        canonical={row['id']:row['canonical'] for row in rows}
+        companies={canonical[r['id']]:r for r in records if r['id'] in canonical}
+        groups=metadata_paths.extend(groups,works,taxonomy,companies,countries)
         CACHE={'groups':groups,'version':taxonomy['version'],'coverage':{'populated':sum(g['kind']=='sublist' and g['total']>0 for g in groups),'sublists':sum(g['kind']=='sublist' for g in groups),'metaLists':sum(g['kind']=='meta' for g in groups),'minimumWorks':MIN_WORKS}}
         SIGNATURE=signature
         CACHE['_works']=works
