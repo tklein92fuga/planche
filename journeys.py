@@ -135,6 +135,7 @@ def overview(kind="all"):
         canonical={row['id']:row['canonical'] for row in rows}
         companies={canonical[r['id']]:r for r in records if r['id'] in canonical}
         groups=metadata_paths.extend(groups,works,taxonomy,companies,countries)
+        groups,_=deduplicate(groups,works)
         CACHE={'groups':groups,'version':taxonomy['version'],'coverage':{'populated':sum(g['kind']=='sublist' and g['total']>0 for g in groups),'sublists':sum(g['kind']=='sublist' for g in groups),'metaLists':sum(g['kind']=='meta' for g in groups),'minimumWorks':MIN_WORKS}}
         SIGNATURE=signature
         CACHE['_works']=works
@@ -148,6 +149,42 @@ def detail(ident,page,kind="all"):
     ids=sorted(group['members'],key=lambda i:-(CACHE['_works'][i].get('votes') or 0))
     result.update(items=[CACHE['_works'][i] for i in ids[(page-1)*60:page*60]],page=page,pageSize=60)
     return result
+
+
+
+def deduplicate(groups,works):
+    """Keep one leaf per exact canonical membership, then rebuild parent unions.
+
+    Editorial selections win over automatic facets. Facets prefer their natural
+    home (sagas, creators or eras). Partial overlap is deliberately preserved.
+    The same rule applies after filtering formats, without mutating the cache.
+    """
+    owners={'franchise':'grandes-sagas-et-univers-partages','developer':'uvres-de-createurs-auteurs-et-studios','publisher':'uvres-de-createurs-auteurs-et-studios','author':'uvres-de-createurs-auteurs-et-studios','decade':'mouvements-et-courants-culturels'}
+    def priority(pair):
+        index,g=pair
+        return (bool(g.get('facet')),g.get('meta')!=owners.get(g.get('facet'),g.get('meta')),index)
+    winners={};removed={}
+    for _,g in sorted(enumerate(groups),key=priority):
+        if g['kind']!='sublist':continue
+        signature=tuple(sorted(set(g['members'])))
+        if signature in winners:removed[g['id']]=winners[signature]
+        else:winners[signature]=g['id']
+    kept={}
+    for original in groups:
+        if original['id'] in removed:continue
+        g=dict(original)
+        if 'children' in g:
+            g['children']=[ident for ident in g['children'] if ident in kept]
+            if not g['children']:continue
+            g['members']=sorted({ident for child in g['children'] for ident in kept[child]['members']})
+        else:g['members']=sorted(set(g['members']))
+        if len(g['members'])<MIN_WORKS:continue
+        g['total']=len(g['members'])
+        g['revision']=hashlib.sha256('\n'.join(g['members']).encode()).hexdigest()[:16]
+        g['items']=[works[i] for i in sorted(g['members'],key=lambda i:-(works[i].get('votes') or 0))[:16]]
+        if 'populated' in g:g['populated']=len(g['children'])
+        kept[g['id']]=g
+    return list(kept.values()),removed
 
 
 def project(data,kind):
@@ -169,5 +206,5 @@ def project(data,kind):
             ids=sorted({ident for child in g['children'] for ident in kept[child]['members']})
             g.update(members=ids,total=len(ids),items=[data['_works'][i] for i in sorted(ids,key=lambda i:-(data['_works'][i].get('votes') or 0))[:16]])
         kept[g['id']]=g
-    groups=list(kept.values())
+    groups,_=deduplicate(list(kept.values()),data['_works'])
     return dict(public,groups=groups,media=kind,coverage=dict(populated=sum(g['kind']=='sublist' for g in groups),sublists=sum(g['kind']=='sublist' for g in groups),metaLists=sum(g['kind']=='meta' for g in groups),minimumWorks=MIN_WORKS))

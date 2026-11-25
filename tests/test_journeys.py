@@ -71,6 +71,30 @@ class JourneysTest(unittest.TestCase):
         self.assertTrue(any(g['facet']=='publisher' for g in generated))
         self.assertTrue(any(g['facet']=='developer' for g in generated))
 
+    def test_no_identical_sublists_in_any_format(self):
+        for kind in ('all','film','game','book'):
+            groups=journeys.overview(kind)['groups'];seen=set();by_id={g['id']:g for g in groups}
+            for g in groups:
+                self.assertEqual(len(g['members']),len(set(g['members'])))
+                if g['kind']=='sublist':
+                    signature=tuple(sorted(g['members']))
+                    self.assertNotIn(signature,seen,(kind,g['id']))
+                    seen.add(signature)
+                else:
+                    self.assertTrue(g['children'])
+                    self.assertEqual(set(g['members']),{i for c in g['children'] for i in by_id[c]['members']})
+                if g['parent']:self.assertIn(g['parent'],by_id)
+
+    def test_duplicate_removal_preserves_overlap_and_editorial_selection(self):
+        works={i:dict(id=i,votes=0) for i in 'abcd'}
+        def leaf(ident,members,**extra):return dict(id=ident,kind='sublist',meta='m',parent='m',members=list(members),**extra)
+        groups=[leaf('auto','cba',facet='genre'),leaf('editorial','abc'),leaf('different','bcd'),dict(id='m',kind='meta',parent='',children=['auto','editorial','different'],members=list('abcd'))]
+        cleaned,removed=journeys.deduplicate(groups,works)
+        self.assertEqual(removed,{'auto':'editorial'})
+        self.assertEqual({g['id'] for g in cleaned},{'editorial','different','m'})
+        self.assertEqual(cleaned[-1]['members'],list('abcd'))
+        self.assertEqual(groups[-1]['children'],['auto','editorial','different'])
+
     def test_sparse_awards_are_removed(self):
         self.assertNotIn('uvres-recompensees-par-des-prix/cinema-oscars/meilleur-film',self.groups)
         nominated=self.groups['uvres-nommees-et-selectionnees/oscars-nominations/meilleur-film']
