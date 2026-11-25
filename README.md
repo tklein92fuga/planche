@@ -32,7 +32,7 @@ Ouvre [Planche dans ton navigateur](http://127.0.0.1:8000). Garde le Terminal ou
 
 L’onglet « Découvrir » présente toutes les œuvres de la base, avec une recherche par titre et auteur, des filtres de format, de genre, de période, de score et de récompenses, un tri et une pagination. Le bouton « Réinitialiser » affiche à nouveau toutes les œuvres. Les anciens liens vers « Catalogue » restent valides. « Pour moi » propose les recommandations issues de ta bibliothèque. Ouvre une fiche pour consulter ses critères, leurs sources et leurs dates de vérification, puis ajoute l’œuvre à la collection de ton choix. Les scores publics restent distincts de ta note personnelle.
 
-Les règles initiales sont IMDb au moins 7/10 et 1 000 votes, Metacritic au moins 70/100 et 10 critiques professionnelles, Open Library au moins 3,5/5 et 20 avis. Une édition française explicitement identifiée dans Open Library est exigée pour chaque livre, y compris les livres primés. Les notes de lecteurs portent sur l’œuvre, toutes langues et éditions confondues. Le seuil de 20 avis pour les livres est un réglage initial.
+Les règles initiales sont IMDb au moins 7/10 et 1 000 votes, Metacritic au moins 70/100 et 10 critiques professionnelles, Goodreads en priorité (au moins 3,5/5 et 20 avis pour les nouveaux livres), Open Library en complément. Une édition française explicitement identifiée dans Open Library est exigée pour chaque livre, y compris les livres primés. Les notes de lecteurs portent sur l’œuvre, toutes langues et éditions confondues. Le seuil de 20 avis pour les livres est un réglage initial.
 
 Le catalogue livré contient un instantané réel, consultable sans relancer une collecte. Les photos distantes nécessitent une connexion. Les films IMDb gardent leurs titres de référence, parfois en anglais, et n’ont pas tous une affiche. Le bouton « Actualiser les sources » lance une collecte en arrière-plan. Laisse le serveur ouvert pendant la mise à jour. L’état des sources signale les collectes en cours, les interruptions et les limites d’accès. Les résultats précédents sont conservés en cas d’erreur, et Metacritic réutilise les pages déjà collectées pendant 24 heures.
 
@@ -49,7 +49,7 @@ La base active est `data/catalog.sqlite3`. L’instantané Metacritic est livré
 ### Sources et couverture
 
 - [IMDb](https://data.imdb.com/non-commercial-datasets/) fournit les notes, nombres de votes et caractéristiques des films, courts métrages et téléfilms. Les jeux de données sont destinés à un usage personnel et non commercial.
-- [Open Library](https://openlibrary.org/dev/docs/api/search) fournit les notes de lecteurs et les références d’éditions françaises. Cette base collaborative peut contenir des erreurs bibliographiques.
+- [Open Library](https://openlibrary.org/dev/docs/api/search) fournit les références d’éditions françaises et les notes des livres dont le rapprochement Goodreads reste à vérifier. Cette base collaborative peut contenir des erreurs bibliographiques.
 - [Metacritic](https://www.metacritic.com/browse/game/) fournit les jeux PC et consoles, leurs genres, leur année, leurs couvertures et le Metascore de référence. Chaque jeu doit avoir au moins 70/100 et 10 critiques professionnelles. Les nombres de critiques et les plateformes sont conservés dans ses preuves. Le Metascore n’est pas une moyenne calculée par Planche entre plateformes. Les anciennes notes Steam sont retirées du catalogue. Les anciennes références Steam servent uniquement à conserver les liens avec les bibliothèques et récompenses existantes.
 - Wikidata fournit les prix et nominations documentés pour les Oscars du meilleur film, Cannes, Berlin, Venise, Goncourt, Femina, Booker, International Booker, Pulitzer fiction, Hugo, Nebula et Game Awards. Seules les distinctions rattachées à une œuvre sont retenues. Les éditions françaises des livres sont vérifiées ensuite dans Open Library. La couverture dépend des contributions et de l’accès à Wikidata.
 - Des distinctions vérifiées directement auprès de leurs organisateurs sont livrées dans `data/verified-awards.json` pour initialiser ce filtre lorsque la collecte internationale est limitée.
@@ -84,7 +84,7 @@ Après installation de cette version, redémarre le serveur puis recharge la pag
 
 Vérification des règles de progression et de trophées avec `python3 -m unittest discover -s tests` et `node tests/trophies.mjs` et `node tests/paths-filter.mjs`. Le serveur n’a aucune dépendance supplémentaire.
 
-Les pays proviennent de la propriété « pays d’origine » de Wikidata. La première sélection concerne 131 œuvres. Les genres du catalogue de jeux proviennent de Metacritic, et les sujets des livres d’Open Library. Certaines anciennes fiches personnelles peuvent garder leurs métadonnées historiques. Les données manquantes sont omises. Les sources bibliographiques et les pays restent susceptibles d’erreurs de leurs catalogues d’origine.
+Les pays proviennent de la propriété « pays d’origine » de Wikidata. La première sélection concerne 131 œuvres. Les genres du catalogue de jeux proviennent de Metacritic, et les sujets des livres de Goodreads lorsqu’ils sont rapprochés, sinon d’Open Library. Certaines anciennes fiches personnelles peuvent garder leurs métadonnées historiques. Les données manquantes sont omises. Les sources bibliographiques et les pays restent susceptibles d’erreurs de leurs catalogues d’origine.
 
 La sélection de récompenses initiale comprend notamment les dix films nommés à l’Oscar du meilleur film 2024 et cinq lauréats des Game Awards, ainsi que les distinctions déjà présentes. Elle est documentée dans `data/verified-awards.json`. Les métadonnées complémentaires livrées sont appliquées au premier démarrage, y compris sur une installation existante.
 
@@ -102,3 +102,20 @@ Les années, genres et auteurs viennent du catalogue existant. Les plateformes d
 Pour réactualiser cet enrichissement facultatif, lancer `python3 enrich_metadata.py` depuis le dossier du projet. Le script examine les titres les mieux notés ou les plus commentés, réutilise les pages en cache et enregistre les résultats de façon atomique. Il ne change pas les critères de note du catalogue. Le serveur relit automatiquement les sélections lorsque le fichier de métadonnées change.
 
 Les barres des fiches sont séparées de la légende par 28 pixels; les barres des sous-listes restent à 18 pixels des cases. Les titres et les cases utilisent des colonnes communes, avec un placement adapté au mobile.
+
+
+## Fiches au survol et liens externes
+
+Survole une case de parcours pour ouvrir une fiche homogène avec couverture, titre, année, genres et note sourcée. Elle reste ouverte lorsque le pointeur rejoint ses liens. Au clavier, une case affiche la fiche à la prise de focus; Flèche bas donne accès aux boutons et liens, Échap la ferme. Sur écran tactile, toucher une case ouvre la fiche, puis le bouton permet de gérer l’œuvre dans la bibliothèque.
+
+Pour les films, le serveur recherche une fiche JustWatch française et vérifie l’identifiant IMDb ou, à défaut, le titre original et l’année. Il affiche les offres numériques en France (abonnement, location, achat, gratuit) et leur date de consultation. Les offres physiques et celles d’autres pays sont exclues. Le lien mène à la fiche JustWatch. Les prix ne sont pas affichés. Les résultats sont conservés 24 heures. Si la correspondance ou la source est indisponible, une recherche JustWatch est proposée sans inventer d’offre.
+
+Les jeux pointent vers Steam lorsque l’identifiant est déjà connu ou que titre et année de sortie correspondent à une fiche de jeu. Les autres proposent une recherche Steam; certains jeux consoles n’y sont pas commercialisés. La sélection de qualité reste fondée sur Metacritic. Les livres rapprochés ouvrent leur fiche Goodreads, avec un lien distinct vers l’édition française identifiée.
+
+## Livres et Goodreads
+
+Le relevé livré rapproche 846 livres avec Goodreads par titre et auteur, avec une édition française identifiée: 845 notes de lecteurs ont été consultées sur des fiches publiques, et une note provient du relevé historique goodbooks-10k de 2017, explicitement signalé. Les autres livres gardent leur référence Open Library, jusqu’à vérification. Les notes concernent l’œuvre, pas uniquement ses lecteurs francophones. La base n’est pas un export exhaustif de Goodreads.
+
+`python3 goodreads_books.py` renouvelle les fiches publiques accessibles en réutilisant le cache local. Le script s’arrête sur une vérification d’accès et ne contourne pas les protections du site. Le rapprochement initial s’appuie sur [goodbooks-10k](https://github.com/zygmuntz/goodbooks-10k), distribué sous CC BY-SA 4.0; attribution dans `data/GOODREADS-DATA-LICENSE.txt`. Aucun texte de critique n’est copié. Le relevé compressé est livré dans `data/goodreads-seed/` et appliqué automatiquement aux installations existantes, sans toucher aux statuts et notes personnels.
+
+Les parcours ajoutent l’expressionnisme allemand, le néoréalisme italien, la Nouvelle Vague, le modernisme littéraire (Joyce et Woolf), la psychanalyse (Freud et Fromm), la psychologie analytique (Jung), et la psychologie humaniste et quête de sens. Ils comprennent aussi des époques de publication des livres: avant 1500, XVIe–XVIIe, XVIIIe, XIXe, 1900–1945, 1946–1999 et depuis 2000. Une époque désigne l’année de première publication, pas le cadre du récit. Les affectations par mouvement sont éditoriales et leurs sources figurent dans `data/editorial-lists.json`. Le seuil de trois œuvres reste obligatoire.

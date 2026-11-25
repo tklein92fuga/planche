@@ -686,5 +686,173 @@
       "https://theofficialjohncarpenter.com/biography/",
       "https://theofficialjohncarpenter.com/credits/"
     ]
+  },
+  {
+    "meta": "mouvements-et-courants-culturels",
+    "id": "mouvements-et-courants-culturels/expressionnisme-allemand",
+    "title": "Expressionnisme allemand",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "The Cabinet of Dr. Caligari",
+        "year": "1920",
+        "type": "film"
+      },
+      {
+        "title": "Nosferatu",
+        "year": "1922",
+        "type": "film"
+      },
+      {
+        "title": "Metropolis",
+        "year": "1927",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.bfi.org.uk/lists/10-great-german-expressionist-films"
+    ]
+  },
+  {
+    "meta": "mouvements-et-courants-culturels",
+    "id": "mouvements-et-courants-culturels/neorealisme-italien",
+    "title": "Néoréalisme italien",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "Bicycle Thieves",
+        "year": "1948",
+        "type": "film"
+      },
+      {
+        "title": "Rome, Open City",
+        "year": "1945",
+        "type": "film"
+      },
+      {
+        "title": "Umberto D.",
+        "year": "1952",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.bfi.org.uk/sight-and-sound/features/roots-neorealism"
+    ]
+  },
+  {
+    "meta": "mouvements-et-courants-culturels",
+    "id": "mouvements-et-courants-culturels/nouvelle-vague",
+    "title": "Nouvelle Vague française",
+    "kind": "sublist",
+    "selection": [
+      {
+        "title": "The 400 Blows",
+        "year": "1959",
+        "type": "film"
+      },
+      {
+        "title": "Breathless",
+        "year": "1960",
+        "type": "film"
+      },
+      {
+        "title": "Jules and Jim",
+        "year": "1962",
+        "type": "film"
+      }
+    ],
+    "sources": [
+      "https://www.criterion.com/shop/collection/4-french-new-wave/list"
+    ]
+  },
+  {
+    "meta": "mouvements-et-courants-culturels",
+    "id": "mouvements-et-courants-culturels/modernisme-litteraire",
+    "title": "Modernisme littéraire — Joyce et Woolf",
+    "kind": "sublist",
+    "selection": [
+      {
+        "id": "books:OL39349W"
+      },
+      {
+        "id": "books:OL39360W"
+      },
+      {
+        "id": "books:OL39379W"
+      },
+      {
+        "id": "books:OL39396W"
+      },
+      {
+        "id": "books:OL86318W"
+      },
+      {
+        "id": "books:OL86320W"
+      }
+    ],
+    "sources": [
+      "https://english.web.ox.ac.uk/modern-and-contemporary"
+    ]
+  },
+  {
+    "meta": "psychologie-et-developpement-personnel",
+    "id": "psychologie-et-developpement-personnel/psychanalyse",
+    "title": "Psychanalyse — Freud et Fromm",
+    "kind": "sublist",
+    "selection": [
+      {
+        "id": "books:OL1069300W"
+      },
+      {
+        "id": "books:OL1069349W"
+      },
+      {
+        "id": "books:OL1184991W"
+      }
+    ],
+    "sources": [
+      "https://psychoanalysis.org.uk/freud",
+      "https://fromm-online.org/en/erich-fromm-podcast/humanist-psychoanalysis-lecture-1/"
+    ]
+  },
+  {
+    "meta": "psychologie-et-developpement-personnel",
+    "id": "psychologie-et-developpement-personnel/psychologie-analytique",
+    "title": "Psychologie analytique — Jung",
+    "kind": "sublist",
+    "selection": [
+      {
+        "id": "books:OL95094W"
+      },
+      {
+        "id": "books:OL95157W"
+      },
+      {
+        "id": "books:OL95107W"
+      }
+    ],
+    "sources": [
+      "https://isapzurich.com/en/library/reading-list"
+    ]
+  },
+  {
+    "meta": "psychologie-et-developpement-personnel",
+    "id": "psychologie-et-developpement-personnel/humanisme-sens",
+    "title": "Psychologie humaniste et quête de sens",
+    "kind": "sublist",
+    "selection": [
+      {
+        "id": "books:OL1184991W"
+      },
+      {
+        "id": "books:OL1268413W"
+      },
+      {
+        "id": "books:OL2354098W"
+      }
+    ],
+    "sources": [
+      "https://www.viktorfrankl.org/logotherapy.html"
+    ]
   }
 ]

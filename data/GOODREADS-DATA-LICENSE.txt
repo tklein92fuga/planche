@@ -1,0 +1,5 @@
+Goodreads historical metadata: goodbooks-10k, Zygmunt Zając, https://github.com/zygmuntz/goodbooks-10k
+Derived metadata are shared under CC BY-SA 4.0. Ratings dated 2017 are explicitly labelled historical. Live updates link to each Goodreads page.
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. 
+
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.

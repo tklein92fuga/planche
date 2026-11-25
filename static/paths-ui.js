@@ -1,3 +1,4 @@
+import {createWorkHover} from './work-hover.js';
 import {mediaNames} from './media-ui.js';
 export function createPaths({esc,library,open,level,xp,notify}) {
   let courseQuery='',courseFacet='all',unitPage=1,lookup=new Map(),loadRevision=0,media='all',allGroups=[],groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
@@ -130,5 +131,6 @@ export function createPaths({esc,library,open,level,xp,notify}) {
     if(e.target.id==='course-search'){courseQuery=e.target.value;unitPage=1;const position=e.target.selectionStart;draw().then(()=>{const input=document.querySelector('#course-search');if(input){input.focus();input.setSelectionRange(position,position);}});}
     if(e.target.id==='journey-search'){query=e.target.value;const start=e.target.selectionStart;draw().then(()=>{const input=document.querySelector('#journey-search');if(input){input.focus();input.setSelectionRange(start,start);}});}
   });
+  createWorkHover({esc,lookup:id=>{const work=items.get(id);return work?{...work,status:tracked.get(id)?.status||'todo'}:null;},onOpen:work=>open(work,tracked.get(work.id))});
   return {mount,load,sync:()=>load(true)};
 }

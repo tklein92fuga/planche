@@ -140,7 +140,11 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         path = urlsplit(self.path)
-        if path.path == "/api/paths":
+        if path.path == "/api/work-card":
+            import external_links
+            result=external_links.card(parse_qs(path.query).get("id",[""])[0][:200])
+            self.reply(200 if result else 404,result or {"error":"Œuvre introuvable."})
+        elif path.path == "/api/paths":
             self.reply(200, paths.overview(parse_qs(path.query).get("type",["all"])[0]))
         elif path.path == "/api/paths/detail":
             params = parse_qs(path.query)

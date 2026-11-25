@@ -76,3 +76,14 @@ Corrections motivées par les deux captures utilisateur: suppression du centrage
 Regroupements automatiques par métadonnées, minimum trois identifiants canoniques et déduplication des sélections identiques dans une méta-liste. Enrichissement de 453 jeux depuis leurs pages publiques Metacritic: développeurs, éditeurs et franchises explicitement déclarés. Pas de studios/éditeurs de films inventés. Recherche, critère et pagination de 40 sous-listes ajoutés dans les cours.
 
 Contrôles de l’interface: filtrage sur les réalisateurs, Édités par Nintendo (128 œuvres), TPS (117 œuvres). Capture `../sous-listes-alignees.jpg`. Mobile 390 px: largeur du document 390 px, ligne 368 px, aucune erreur JavaScript. Onze tests Python et deux scénarios Node validés, dont la provenance des rôles de société, le seuil, les décennies et l’absence de regroupements générés identiques au sein d’une méta-liste.
+
+
+## Fiches au survol et Goodreads — 26 novembre 2026
+
+- 14 vérifications Python et les deux scénarios JavaScript de progression/trophées passent.
+- Vérification dans le navigateur: The Thing (IMDb exact, offres JustWatch FR), L’art d’aimer (Goodreads 3,99/5 et édition française), Cyberpunk 2077 (Metacritic et Steam app/1091500).
+- Clavier: focus sur case affiche la fiche, Flèche bas atteint Fermer, Échap ferme la fiche.
+- La fiche est dans le viewport 1280×720 sans débordement horizontal; liste des offres défilable, lien de plateforme en premier. Le toucher est pris en charge par le gestionnaire de clic; pas de simulation tactile effectuée.
+- Aucun prix de location n’est inféré. Les offres sont consultées à la demande et conservées 24 heures. La fiche de recherche remplace une correspondance non vérifiée.
+- Snapshot portable: 846 rapprochements Goodreads dont 845 notes publiques actualisées et une note historique étiquetée 2017. Les livres sans rapprochement restent Open Library. Les éditions françaises sont obligatoires.
+- Trois listes de courants psychologiques et quatre mouvements artistiques/littéraires vérifiés, tous à au moins trois œuvres; époques des livres par première publication.

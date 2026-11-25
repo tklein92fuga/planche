@@ -24,7 +24,8 @@ CACHE = ROOT / "data" / "cache"
 LOCK = threading.Lock()
 RULES = {
     "imdb": "IMDb ≥ 7/10 · au moins 1 000 votes",
-    "books": "Lecteurs Open Library ≥ 3,5/5 · au moins 20 avis · édition française identifiée",
+    "books": "Édition française identifiée · Goodreads en priorité, Open Library lorsque le rapprochement reste à vérifier",
+    "goodreads": "Notes et fiches Goodreads rapprochées par titre et auteur · éditions françaises conservées",
     "metacritic": "Metacritic ≥ 70/100 · au moins 10 critiques professionnelles",
     "awards": "Prix ou nomination recensé dans Wikidata · sélection internationale",
 }
@@ -69,6 +70,8 @@ def connect():
     paths.install(conn)
     import metacritic
     metacritic.install(conn)
+    import goodreads_books
+    goodreads_books.install(conn)
     return conn
 
 
@@ -393,7 +396,8 @@ def update(selected=None):
         LOCK.release()
         return False
     import metacritic
-    sources = {"imdb": imdb, "books": books, "metacritic": metacritic.collect, "awards": awards}
+    import goodreads_books
+    sources = {"imdb": imdb, "books": goodreads_books.collect, "metacritic": metacritic.collect, "awards": awards}
     chosen = [s for s in (selected or sources) if s in sources]
 
     def run(name):

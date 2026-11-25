@@ -79,14 +79,16 @@ def overview(kind="all"):
                 creator_family='createur' in catalog.normalized(meta['title'])
                 award_family=meta['id'].startswith('uvres-')
                 candidates=set().union(*(by_title.get(t,set()) for t in titles)) if titles else set()
-                selections={(catalog.normalized(i['title']),i['year'],i['type']) for i in node.get('selection',[])}
+                selected_ids={i['id'] for i in node.get('selection',[]) if i.get('id')}
+                selections={(catalog.normalized(i['title']),str(i['year']),i['type']) for i in node.get('selection',[]) if i.get('title')}
+                candidates.update(selected_ids & works.keys())
                 for title,year,kind in selections:candidates.update(by_title.get(title,set()))
                 if creator_family:candidates.update(by_creator.get(catalog.normalized(node['title']),set()))
                 if award_family:candidates.update(award_ids)
                 for tag in journey_rules.SUBJECTS.get(node['title'],[]):candidates.update(tagged.get(tag,set()))
                 for ident in candidates:
                     w=works[ident]
-                    matched=catalog.normalized(w['title']) in titles or journey_rules.sub_match(node,w) or (catalog.normalized(w['title']),str(w['year']),w['type']) in selections
+                    matched=ident in selected_ids or catalog.normalized(w['title']) in titles or journey_rules.sub_match(node,w) or (catalog.normalized(w['title']),str(w['year']),w['type']) in selections
                     if creator_family:
                         creator=catalog.normalized(node['title'])
                         credits=[catalog.normalized(c) for c in re.split(r'[,;]',w.get('creator',''))]
@@ -122,6 +124,11 @@ def overview(kind="all"):
             if len(selected_works)>=MIN_WORKS:
                 epoch_nodes.append(dict(id=epochs['id']+'/sorties-'+str(decade),title='Cinéma des années '+str(decade),kind='sublist',selection=selected_works))
         epochs['children'].append(dict(id=epochs['id']+'/epoques-du-cinema',title='Époques du cinéma',kind='group',children=epoch_nodes))
+        book_epochs=[]
+        for start,end,label in [(0,1499,'Avant 1500'),(1500,1699,'XVIe et XVIIe siècles'),(1700,1799,'XVIIIe siècle'),(1800,1899,'XIXe siècle'),(1900,1945,'1900–1945'),(1946,1999,'1946–1999'),(2000,2099,'Depuis 2000')]:
+            selected=[{'id':w['id']} for w in works.values() if w['type']=='book' and str(w['year']).isdigit() and start<=int(w['year'])<=end]
+            if len(selected)>=MIN_WORKS:book_epochs.append(dict(id=epochs['id']+'/livres-epoque-'+str(start),title='Livres · '+label,kind='sublist',selection=selected))
+        epochs['children'].append(dict(id=epochs['id']+'/epoques-litteraires',title='Époques de publication des livres',kind='group',children=book_epochs))
         for meta in taxonomy['meta_lists']:
             build(meta,meta)
         records=json.loads((DATA/'company-metadata.json').read_text()) if (DATA/'company-metadata.json').exists() else []
