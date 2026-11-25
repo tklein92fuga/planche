@@ -93,7 +93,7 @@ Les icônes proviennent de Lucide, dont la licence figure dans `static/icons/LIC
 
 ## Sous-listes issues des métadonnées
 
-Les parcours génèrent aussi des sous-listes par genre, type de jeu (FPS, TPS, JRPG…), décennie de sortie, saga, studio/développeur, éditeur, plateforme, auteur et pays de production lorsque le champ existe. Chaque sélection contient au moins trois œuvres distinctes. Les regroupements ayant exactement les mêmes membres au sein d’une méta-liste sont dédupliqués. Aucune catégorie générique fondée uniquement sur le format n’est ajoutée.
+Les parcours génèrent aussi des sous-listes par genre, type de jeu (FPS, TPS, JRPG…), décennie de sortie, saga, studio/développeur, éditeur, auteur et pays de production lorsque le champ existe. Chaque sélection contient au moins trois œuvres distinctes. Les regroupements ayant exactement les mêmes membres au sein d’une méta-liste sont dédupliqués. Aucune catégorie générique fondée uniquement sur le format n’est ajoutée.
 
 La navigation reste Méta-liste → Sous-listes → Œuvres. La page d’un cours propose une recherche de sous-liste, un filtre par critère et une pagination de 40 sous-listes pour garder une page réactive. La pagination des œuvres reste de 60. Les transferts volumineux de l’API sont compressés lorsque le navigateur le permet.
 
@@ -119,3 +119,5 @@ Le relevé livré rapproche 846 livres avec Goodreads par titre et auteur, avec 
 `python3 goodreads_books.py` renouvelle les fiches publiques accessibles en réutilisant le cache local. Le script s’arrête sur une vérification d’accès et ne contourne pas les protections du site. Le rapprochement initial s’appuie sur [goodbooks-10k](https://github.com/zygmuntz/goodbooks-10k), distribué sous CC BY-SA 4.0; attribution dans `data/GOODREADS-DATA-LICENSE.txt`. Aucun texte de critique n’est copié. Le relevé compressé est livré dans `data/goodreads-seed/` et appliqué automatiquement aux installations existantes, sans toucher aux statuts et notes personnels.
 
 Les parcours ajoutent l’expressionnisme allemand, le néoréalisme italien, la Nouvelle Vague, le modernisme littéraire (Joyce et Woolf), la psychanalyse (Freud et Fromm), la psychologie analytique (Jung), et la psychologie humaniste et quête de sens. Ils comprennent aussi des époques de publication des livres: avant 1500, XVIe–XVIIe, XVIIIe, XIXe, 1900–1945, 1946–1999 et depuis 2000. Une époque désigne l’année de première publication, pas le cadre du récit. Les affectations par mouvement sont éditoriales et leurs sources figurent dans `data/editorial-lists.json`. Le seuil de trois œuvres reste obligatoire.
+
+Les plateformes de commercialisation restent dans les métadonnées des jeux, mais ne génèrent plus de sous-listes ni de trophées dans les parcours.

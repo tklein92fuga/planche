@@ -2,7 +2,7 @@ import {createWorkHover} from './work-hover.js';
 import {mediaNames} from './media-ui.js';
 export function createPaths({esc,library,open,level,xp,notify}) {
   let courseQuery='',courseFacet='all',unitPage=1,lookup=new Map(),loadRevision=0,media='all',allGroups=[],groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
-  const facetNames={editorial:'Sélections thématiques',genre:'Genres et types',decade:'Décennies',franchise:'Sagas et univers',country:'Pays de production',developer:'Studios et développeurs',publisher:'Éditeurs',platform:'Plateformes',author:'Auteurs'};
+  const facetNames={editorial:'Sélections thématiques',genre:'Genres et types',decade:'Décennies',franchise:'Sagas et univers',country:'Pays de production',developer:'Studios et développeurs',publisher:'Éditeurs',author:'Auteurs'};
   const active=()=>['#parcours','#profil'].includes(location.hash);
   const done=g=>g.members.filter(id=>tracked.get(id)?.status==='done').length;
   const percent=g=>g.total?Math.floor(done(g)/g.total*100):0;

@@ -5,7 +5,7 @@ from collections import defaultdict
 import catalog
 import journey_rules
 
-FACETS={'genre':'Genres et types de jeux','decade':'Décennies de sortie','franchise':'Sagas et univers partagés','developer':'Studios et développeurs','publisher':'Éditeurs','platform':'Plateformes','author':'Auteurs','country':'Pays de production'}
+FACETS={'genre':'Genres et types de jeux','decade':'Décennies de sortie','franchise':'Sagas et univers partagés','developer':'Studios et développeurs','publisher':'Éditeurs','author':'Auteurs','country':'Pays de production'}
 LABELS={'sci-fi':'Science-fiction','drama':'Drame','comedy':'Comédie','horror':'Horreur','thriller':'Thriller','romance':'Romance','adventure':'Aventure','crime':'Policier','history':'Histoire','war':'Guerre','animation':'Animation','documentary':'Documentaire','biography':'Biographie','family':'Famille','mystery':'Mystère','fps':'FPS — tir à la première personne','tactical fps':'FPS tactiques','third person shooter':'TPS — tir à la troisième personne','third-person shooter':'TPS — tir à la troisième personne','jrpg':'RPG japonais','western rpg':'RPG occidentaux','action rpg':'Action-RPG','2d platformer':'Plateformes en 2D','3d platformer':'Plateformes en 3D','real-time strategy':'Stratégie en temps réel','turn-based strategy':'Stratégie au tour par tour','turn-based tactics':'Tactique au tour par tour','auto racing sim':'Simulation automobile','auto racing':'Course automobile','point-and-click':'Point and click','rhythm':'Jeux de rythme'}
 
 def game_roots(tags):
@@ -60,10 +60,6 @@ def extend(groups,works,taxonomy,companies,countries):
                 # Same spelling variants share an explicit gameplay label.
                 label=LABELS.get(tag,tag[:1].upper()+tag[1:])
                 buckets[('genre',label)].add(ident);labels[('genre',label)]=label
-            for e in w.get('evidence',[]):
-                if e.get('source')=='Metacritic':
-                    for platform in e.get('platforms',[]):
-                        buckets[('platform',platform)].add(ident);labels[('platform',platform)]=platform
             if w['type']=='book' and w.get('creator'):
                 for author in re.split(r',\s+|;',w['creator']):
                     if author.strip():buckets[('author',author.strip())].add(ident);labels[('author',author.strip())]=author.strip()
@@ -87,7 +83,7 @@ def extend(groups,works,taxonomy,companies,countries):
             if signature in seen:continue
             seen.add(signature)
             label=labels[(facet,key)]
-            title={'franchise':'Saga — ','country':'Production — ','developer':'Développés par ','publisher':'Édités par ','author':'Œuvres de ','platform':'Sur '}.get(facet,'')+label
+            title={'franchise':'Saga — ','country':'Production — ','developer':'Développés par ','publisher':'Édités par ','author':'Œuvres de '}.get(facet,'')+label
             group_id=meta_id+'/metadonnees-'+facet
             stable=hashlib.sha256(key.encode()).hexdigest()[:12]
             g=summary(dict(id=group_id+'/'+stable,title=title,kind='sublist',meta=meta_id,family=meta['family'],parent=group_id,breadcrumb=[meta['title'],FACETS[facet]],members=list(ids),facet=facet,criterion=dict(field=facet,value=key),subtitle='Métadonnées du catalogue'))
