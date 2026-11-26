@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+const code=await readFile(new URL('../static/media-ui.js',import.meta.url));
+const {sourceLink}=await import('data:text/javascript;base64,'+code.toString('base64'));
+for(const type of ['film','tv'])assert.equal(sourceLink({type,id:'imdb:tt0903747'}).url,'https://www.imdb.com/title/tt0903747/');
+assert.equal(sourceLink({type:'film',id:'awards:one',evidence:[{source:'IMDb',url:'https://www.imdb.com/title/tt1234567/'}]}).label,'IMDb');
+assert.equal(sourceLink({type:'game',id:'steam:1091500',evidence:[{source:'Metacritic',url:'https://www.metacritic.com/game/cyberpunk-2077/'}]}).label,'Metacritic');
+assert.equal(sourceLink({type:'game',evidence:[{source:'Metacritic',url:'https://www.metacritic.com.evil.test/game/fake/'}]}),null);
+assert.equal(sourceLink({type:'game',title:'Unknown'}),null);
+assert.equal(sourceLink({type:'book',id:'imdb:tt123'}),null);
+assert.equal(sourceLink({type:'film',evidence:[{source:'IMDb',url:'javascript:alert(1)'}]}),null);
+console.log('Source links: IMDb films/TV, Metacritic games, canonical evidence and URL validation passed.');

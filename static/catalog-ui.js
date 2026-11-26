@@ -1,3 +1,4 @@
+import {sourceLink} from './media-ui.js?v=source-links-1';
 export function createCatalog({types, esc, opts, cover, show, library, setStatus, statusOf, notify}) {
   const defaults={q:'',type:'all',criterion:'all',sort:'votes',year_min:'',year_max:'',min_score:'',genre:'',page:1};
   let filter={...defaults};
@@ -10,6 +11,7 @@ export function createCatalog({types, esc, opts, cover, show, library, setStatus
   const active = () => ['#decouvrir','#catalogue','#decouverte'].includes(location.hash);
   const safeLink = url => /^https:\/\//.test(url || '') ? esc(url) : '#';
   const sourceNames = {imdb:'Films · IMDb','imdb-tv':'Séries TV · IMDb',books:'Livres · éditions françaises',goodreads:'Livres · Goodreads',metacritic:'Jeux · Metacritic',awards:'Prix & nominations'};
+  const sourceAnchor=item=>{const link=sourceLink(item);return link?`<a class="work-source-link" href="${esc(link.url)}" target="_blank" rel="noopener noreferrer" aria-label="Voir ${link.label} : ${esc(item.title)}">${link.label} ↗</a>`:'';};
   const formatCount = n => Number(n || 0).toLocaleString('fr-FR');
   async function get(path) {
     const response = await fetch(path);
@@ -35,7 +37,7 @@ export function createCatalog({types, esc, opts, cover, show, library, setStatus
       const pages = Math.max(1,Math.ceil(data.total/24));
       if (filter.page > pages) {filter.page = pages;load();return;}
       document.querySelector('#catalog-results').innerHTML = `<p class="muted count">${formatCount(data.total)} œuvre(s) · page ${filter.page} / ${pages}</p>` +
-        (data.items.length ? `<div class="works catalog-works">${data.items.map(i => `<article class="work"><button class="work-open" data-cat="detail" data-id="${esc(i.id)}">${cover({...i,status:statusOf(i)})}<span class="work-title">${esc(i.title)}</span><span class="muted">${types[i.type].label} · ${esc(i.year || 'Année inconnue')}${i.type==='tv'&&i.endYear&&String(i.endYear)!==String(i.year)?'–'+esc(i.endYear):''}</span></button><p class="catalog-proof">${i.evidence.some(e=>e.kind==='award') ? '✦ Prix / nomination' : i.evidence[0] ? `${esc(i.evidence[0].source)} · ${esc(i.evidence[0].value)}/${i.evidence[0].scale}` : ''}</p>${statusButtons(i)}</article>`).join('')}</div>` :
+        (data.items.length ? `<div class="works catalog-works">${data.items.map(i => `<article class="work"><button class="work-open" data-cat="detail" data-id="${esc(i.id)}">${cover({...i,status:statusOf(i)})}<span class="work-title">${esc(i.title)}</span><span class="muted">${types[i.type].label} · ${esc(i.year || 'Année inconnue')}${i.type==='tv'&&i.endYear&&String(i.endYear)!==String(i.year)?'–'+esc(i.endYear):''}</span></button><p class="catalog-proof">${i.evidence.some(e=>e.kind==='award') ? '✦ Prix / nomination' : i.evidence[0] ? `${esc(i.evidence[0].source)} · ${esc(i.evidence[0].value)}/${i.evidence[0].scale}` : ''}</p>${sourceAnchor(i)}${statusButtons(i)}</article>`).join('')}</div>` :
         '<div class="empty">Aucune œuvre pour ces filtres. Essaie un autre filtre.</div>') +
         `<div class="catalog-pagination"><button data-cat="previous" ${filter.page<=1?'disabled':''}>Précédente</button><span>${filter.page} / ${pages}</span><button data-cat="next" ${filter.page>=pages?'disabled':''}>Suivante</button></div>`;
     } catch (error) {
@@ -92,7 +94,7 @@ export function createCatalog({types, esc, opts, cover, show, library, setStatus
   });
   function openItem(item){
     selectedItem=item;
-    show(esc(item.title),`<p class="muted">${types[item.type].label} · ${esc(item.year)}${item.type==='tv'&&item.endYear&&String(item.endYear)!==String(item.year)?'–'+esc(item.endYear):''}${item.creator?' · '+esc(item.creator):''}</p><p>${esc(item.genre)}</p><ul class="catalog-evidence">${evidence(item)}</ul>${item.edition?`<p>Édition française · <a href="${safeLink(item.edition.url)}" target="_blank" rel="noopener noreferrer">${esc(item.edition.title)}</a></p>`:''}${statusButtons(item)}<button class="ghost" data-cat="todo" data-id="${esc(item.id)}">Remettre à découvrir</button>`);
+    show(esc(item.title),`<p class="muted">${types[item.type].label} · ${esc(item.year)}${item.type==='tv'&&item.endYear&&String(item.endYear)!==String(item.year)?'–'+esc(item.endYear):''}${item.creator?' · '+esc(item.creator):''}</p><p>${esc(item.genre)}</p>${sourceAnchor(item)}<ul class="catalog-evidence">${evidence(item)}</ul>${item.edition?`<p>Édition française · <a href="${safeLink(item.edition.url)}" target="_blank" rel="noopener noreferrer">${esc(item.edition.title)}</a></p>`:''}${statusButtons(item)}<button class="ghost" data-cat="todo" data-id="${esc(item.id)}">Remettre à découvrir</button>`);
   }
   return {mount,open:openItem,load(){load();poll();}};
 }

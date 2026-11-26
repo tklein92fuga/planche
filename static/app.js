@@ -1,6 +1,6 @@
-import {types,statuses,initial,key,today,importRows} from './data.js?v=tv-3';
-import {createCatalog} from './catalog-ui.js?v=tv-3';
-import {createPaths} from './paths-ui.js?v=tv-3';
+import {types,statuses,initial,key,today,importRows} from './data.js?v=source-links-1';
+import {createCatalog} from './catalog-ui.js?v=source-links-1';
+import {createPaths} from './paths-ui.js?v=source-links-1';
 import {workStatus,updateWorkStatus} from './progress-state.js';
 const storage='planche.v1',main=document.querySelector('#main'),modal=document.querySelector('#modal');
 const read=()=>{try{return JSON.parse(localStorage.getItem(storage))||initial();}catch{return initial();}};

@@ -97,3 +97,5 @@ L’instantané `data/imdb-tv-seed/` s’applique au démarrage, y compris à un
 L’import CSV/XLSX reconnaît Série TV, séries, TV show et mini-série dans la colonne Type.
 
 Les œuvres portant le genre IMDb « Talk-Show » sont exclues du catalogue, y compris des anciennes installations. Le filtre s’applique à l’installation de l’instantané et aux prochaines collectes IMDb. Le nettoyage a retiré 106 séries et 3 entrées classées comme films; les parcours et leurs compteurs sont recalculés. Les notes et statuts personnels conservés dans le navigateur ne sont pas effacés.
+
+Les cartes de Découvrir et les fiches au survol proposent un accès direct à IMDb pour les films/séries et à Metacritic pour les jeux. Les liens proviennent des identifiants et preuves du catalogue, s’ouvrent dans un nouvel onglet et restent disponibles pendant la recherche des offres commerciales.

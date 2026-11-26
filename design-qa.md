@@ -117,3 +117,8 @@ Contrôles de l’interface: filtrage sur les réalisateurs, Édités par Ninten
 - Résultat: 8 522 séries et mini-séries, 16 801 films; 320 sous-listes en vue TV. Livres et jeux inchangés.
 - Les relevés historiques sont filtrés avant installation; IMDb et les autres collectes refusent les nouveaux titres portant ce genre. Une modification de la règle force la migration même si le relevé compressé est identique.
 - 19 tests Python passent, incluant le rejet du genre Talk-Show quel que soit le format, l’élimination des anciennes entrées et l’installation répétée sans réapparition.
+
+
+## Liens vers les notes
+
+IMDb (films/séries) et Metacritic (jeux) sont accessibles sur les cartes et dans les fiches au survol, en plus des liens JustWatch/Steam existants. Les destinations sont validées; les jeux sans référence Metacritic vérifiée n’obtiennent pas de lien inventé. Test `node tests/source-links.mjs` ajouté; progression et trophées inchangés.

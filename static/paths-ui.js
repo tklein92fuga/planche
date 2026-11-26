@@ -1,5 +1,5 @@
-import {createWorkHover} from './work-hover.js?v=tv-3';
-import {mediaNames} from './media-ui.js?v=tv-3';
+import {createWorkHover} from './work-hover.js?v=source-links-1';
+import {mediaNames} from './media-ui.js?v=source-links-1';
 export function createPaths({esc,library,open,level,xp,notify,setStatus}) {
   let dashTab='lists',dashFilter='all',dashQuery='',dashPage=1;
   let courseQuery='',courseFacet='all',unitPage=1,lookup=new Map(),loadRevision=0,media='all',allGroups=[],groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
