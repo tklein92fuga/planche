@@ -14,6 +14,14 @@ Ouvrir http://127.0.0.1:8001. Si ce port est occupé, choisir un autre numéro. 
 
 Après une mise à jour, arrêter puis relancer le serveur et recharger la page. Les fichiers de l’interface sont revalidés pour éviter de conserver une ancienne version.
 
+## Aperçu d’une branche et hébergement
+
+Pour essayer une branche, sélectionne-la dans ton clone du dépôt, puis lance `python3 server.py 8001` à la racine. Utilise Linux, macOS ou WSL sous Windows, car le catalogue utilise le verrouillage de fichiers Unix. Ouvre ensuite [Planche en local](http://127.0.0.1:8001).
+
+L’application utilise HTML, CSS et JavaScript côté navigateur, et un serveur Python qui fournit les API de catalogue, de parcours et d’import. GitHub Pages héberge des fichiers statiques. Pour garder ces fonctions, exécute le dépôt entier sur une machine avec Python 3.10 ou plus récent et un dossier `data/` accessible en écriture. Le serveur écoute sur `127.0.0.1`. Pour un accès distant, place-le derrière un proxy HTTPS avec contrôle d’accès. La progression reste liée à l’origine du site dans chaque navigateur.
+
+La vitrine et sa démonstration se trouvent dans `docs/index.html`. Pour les publier avec GitHub Pages, sélectionne une branche contenant ces fichiers et le dossier `/docs` si le dépôt est éligible. Tu peux aussi copier `docs/index.html` à la racine d’un dépôt public dédié, puis publier cette racine. La vitrine utilise uniquement des titres d’exemple et enregistre les coches dans le navigateur.
+
 ## Trois pages
 
 - **Vue d’ensemble** est le dashboard principal: œuvres terminées et en cours, sous-listes complètes, listes à poursuivre, progression en barres et cases, activité des sept derniers jours et vitrine des trophées. Les onglets Sous-listes / Méta-listes / Trophées proposent recherche, filtres et pagination de 12 cartes.

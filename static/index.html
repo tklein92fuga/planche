@@ -3,22 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f8f7f3">
+<meta name="theme-color" content="#f6f5ef">
+<meta name="description" content="Planche, ton carnet culturel pour suivre tes films, séries, livres et jeux vidéo.">
 <title>Planche — Carnet culturel</title>
-<link rel="stylesheet" href="style.css?v=pressed-1">
+<link rel="stylesheet" href="style.css?v=carnet-1">
 <script defer src="vendor/gsap.min.js"></script>
-<script type="module" src="app.js?v=pressed-1"></script>
+<script type="module" src="app.js?v=carnet-1"></script>
 </head>
 <body>
 <a class="skip" href="#main">Aller au contenu</a>
 <div class="shell">
 <aside>
-<a class="brand" href="#accueil"><span>✳</span> planche<span class="dot">.</span></a>
+<a class="brand" href="#accueil" aria-label="Planche, vue d’ensemble"><span aria-hidden="true">✳</span> planche<span class="dot" aria-hidden="true">.</span></a>
 <nav aria-label="Navigation principale" id="nav"></nav>
 <div id="side"></div>
 </aside>
 <div class="workspace">
-<header><span>CARNET CULTUREL <b>/</b> ESPACE PERSONNEL</span><button class="dark" data-act="import">↥ &nbsp; Importer</button></header>
+<header class="workspace-header">
+  <span>Carnet culturel</span>
+  <button class="dark" type="button" data-act="import"><span aria-hidden="true">↥</span> Importer</button>
+</header>
 <main id="main" tabindex="-1"></main>
 <footer>PLANCHE <span>Ton carnet culturel.</span></footer>
 </div>
