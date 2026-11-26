@@ -2,7 +2,7 @@ import {patchDOM} from './dom-patch.js?v=pressed-1';
 import {startMotion} from './motion.js?v=pressed-1';
 import {types,statuses,initial,key,today,importRows} from './data.js?v=pressed-1';
 import {createCatalog} from './catalog-ui.js?v=pressed-1';
-import {createPaths} from './paths-ui.js?v=pressed-1';
+import {createPaths} from './paths-ui.js?v=carnet-1';
 import {workStatus,updateWorkStatus} from './progress-state.js';
 const storage='planche.v1',main=document.querySelector('#main'),modal=document.querySelector('#modal');
 const read=()=>{try{return JSON.parse(localStorage.getItem(storage))||initial();}catch{return initial();}};
@@ -36,7 +36,7 @@ const sideMarkup=()=>`<section class="level"><span class="stat-icon">✦</span><
 function render(){
  const current=page();
  if(location.hash&& !Object.hasOwn(pages,location.hash.slice(1))&&!['#catalogue','#decouverte'].includes(location.hash))history.replaceState(null,'','#accueil');
- document.querySelector('#nav').innerHTML=Object.entries(pages).map(([k,[icon,label]])=>`<a href="#${k}" ${current===k?'aria-current="page"':''}><span>${icon}</span>${label}</a>`).join('');
+ document.querySelector('#nav').innerHTML=Object.entries(pages).map(([k,[icon,label]])=>`<a href="#${k}" ${current===k?'aria-current="page"':''}><span aria-hidden="true">${icon}</span>${label}</a>`).join('');
  document.querySelector('#side').innerHTML=sideMarkup();
  if(current==='decouvrir'){main.innerHTML=catalogUI.mount();catalogUI.load();}
  else{main.innerHTML=pathsUI.mount(current);pathsUI.load();}
@@ -131,6 +131,11 @@ document.addEventListener('submit',async event=>{
  try{await importFile(form,Object.fromEntries(new FormData(form)));}catch(error){tell(form,error.message);}finally{importBusy=false;buttons.forEach(b=>b.disabled=false);}
 });
 modal.addEventListener('cancel',event=>{if(importBusy)event.preventDefault();});
+document.querySelector('.skip').addEventListener('click',event=>{
+ event.preventDefault();
+ main.focus();
+ main.scrollIntoView({block:'start'});
+});
 window.addEventListener('hashchange',()=>{render();main.focus({preventScroll:true});window.scrollTo(0,0);});
 window.addEventListener('storage',event=>{if((event.key===storage||event.key==='planche.trophies.v1')&&!importBusy){state=read();render();}});
 const catalogUI=createCatalog({types,esc,opts,cover,show,notify,library:()=>state.items,setStatus,statusOf});

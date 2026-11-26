@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Planche, ton carnet culturel pour suivre films, séries, livres et jeux vidéo.">
+<meta name="theme-color" content="#f6f4ed">
+<title>Planche — Chaque case compte</title>
+<style>
+:root{color-scheme:light;font:16px/1.55 system-ui,sans-serif;background:#f6f4ed;color:#25233d}
+*{box-sizing:border-box}body{margin:0}a{color:inherit;text-underline-offset:4px}
+.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+header,footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 0}
+header a{font-weight:650}.brand{text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-.06em}
+.brand span{color:#69559a}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:36px;padding:clamp(26px,6vw,80px);background:#25233d;color:#f8f4ed;border-radius:30px}
+h1,h2,p{margin:0}h1{font-size:clamp(53px,8vw,110px);line-height:.89;letter-spacing:-.085em}
+h1 em{font:italic 1em/.9 Georgia,serif;letter-spacing:-.07em;color:#e4edab}
+.hero p{margin:24px 0;max-width:34ch;color:#e3deef}
+.cta{display:inline-flex;align-items:center;min-height:46px;padding:8px 18px;border-radius:999px;background:#e4edab;color:#25233d;text-decoration:none;font-weight:750}
+.art{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;transform:rotate(-7deg)}
+.art i{display:grid;place-items:center;aspect-ratio:1;border-radius:16%;background:#423b62;color:#e4edab;font-size:clamp(23px,5vw,70px);font-style:normal}
+.art i:nth-child(2),.art i:nth-child(6){background:#d7c9f7;color:#25233d}
+.art i:nth-child(3),.art i:nth-child(4){background:#e4edab;color:#25233d}
+section{margin-top:32px}
+.demo{background:#fff;border:1px solid #dcd8cf;border-radius:24px;padding:clamp(20px,4vw,44px)}
+.demo-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}
+h2{font-size:clamp(26px,4vw,41px);letter-spacing:-.055em;line-height:1.12}
+.demo p{margin-top:8px;color:#554f60}
+progress{width:100%;height:13px;display:block;margin:20px 0;accent-color:#64538d}
+.works,.features{display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.work{display:grid;align-content:start;gap:8px;min-height:122px;padding:14px;border:1px solid #e3ddd6;border-radius:14px;background:#f7f4fb;cursor:pointer}
+.work:has(:checked){background:#eff3d8;border-color:#8a9852}
+.work input{width:21px;height:21px;margin:0;accent-color:#414d22}
+.work small{color:#574f67;font-weight:650}
+.features{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}
+.features article{border-top:1px solid #cec8bb;padding:14px 4px}
+h3{margin:0 0 4px}.features p,footer{color:#554f60}
+:focus-visible{outline:3px solid #8665ca;outline-offset:4px}.hero :focus-visible{outline-color:#e4edab}
+@media(max-width:700px){.hero{gap:20px}.works{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.hero,.features{grid-template-columns:1fr}.art{width:min(100%,235px);transform:none}.hero{border-radius:22px}.hero p{margin:16px 0}.work{min-height:112px}}
+</style>
+<body class="wrap">
+<header><a class="brand" href="./"><span aria-hidden="true">✳</span> planche.</a><a href="#fonctionnalites">L’application</a></header>
+<main>
+<div class="hero">
+<div><h1>Chaque case <em>compte.</em></h1><p>Un carnet culturel pour suivre tes films, séries, livres et jeux vidéo, une œuvre à la fois.</p><a class="cta" href="#demo">Essayer la démo&nbsp; ↓</a></div>
+<div class="art" aria-hidden="true"><i>✦</i><i>▦</i><i>✓</i><i>✓</i><i>✳</i><i>◈</i></div>
+</div>
+<section class="demo" id="demo" aria-labelledby="demo-title">
+<div class="demo-head"><h2 id="demo-title">Une case, une œuvre.</h2><strong id="count" role="status">0 / 4 terminées</strong></div>
+<p>Coche les œuvres que tu as terminées. Tes choix restent dans ce navigateur.</p>
+<progress id="progress" max="4" value="0" aria-label="Œuvres terminées dans la démo"></progress>
+<div class="works">
+<label class="work"><input type="checkbox" value="film"><small>Film</small><strong>Le Voyage de Chihiro</strong></label>
+<label class="work"><input type="checkbox" value="tv"><small>Série TV</small><strong>Dark</strong></label>
+<label class="work"><input type="checkbox" value="book"><small>Livre</small><strong>Le Petit Prince</strong></label>
+<label class="work"><input type="checkbox" value="game"><small>Jeu vidéo</small><strong>Celeste</strong></label>
+</div>
+</section>
+<section class="features" id="fonctionnalites" aria-label="Fonctions de l’application complète">
+<article><h3>Découvrir</h3><p>Explore le catalogue et marque les œuvres à découvrir, en cours ou terminées.</p></article>
+<article><h3>Suivre tes parcours</h3><p>Complète des listes thématiques et retrouve tes trophées.</p></article>
+<article><h3>Importer tes listes</h3><p>L’application complète accepte les fichiers CSV et XLSX et fonctionne avec un serveur Python.</p></article>
+</section>
+</main>
+<footer>Planche · Carnet culturel</footer>
+<script>
+const boxes = [...document.querySelectorAll('.work input')];
+const storageKey = 'planche.public-demo.v1';
+let selections = [];
+try {
+  const saved = JSON.parse(localStorage.getItem(storageKey));
+  if (Array.isArray(saved)) selections = saved;
+} catch {}
+for (const box of boxes) box.checked = selections.includes(box.value);
+function updateProgress() {
+  const completed = boxes.filter(box => box.checked);
+  document.getElementById('progress').value = completed.length;
+  document.getElementById('count').textContent = completed.length + ' / ' + boxes.length + ' terminées';
+  return completed.map(box => box.value);
+}
+updateProgress();
+for (const box of boxes) box.addEventListener('change', () => {
+  const completed = updateProgress();
+  try { localStorage.setItem(storageKey, JSON.stringify(completed)); } catch {}
+});
+</script>
+</body>
+</html>
