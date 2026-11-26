@@ -1,6 +1,6 @@
 # Planche — chaque case compte
 
-Application personnelle de suivi de films, livres et jeux vidéo, sans compte ni dépendance à installer. Python 3.10 ou plus récent et un navigateur moderne suffisent.
+Application personnelle de suivi de films, séries TV, livres et jeux vidéo, sans compte ni dépendance à installer. Python 3.10 ou plus récent et un navigateur moderne suffisent.
 
 ## Démarrer
 
@@ -83,3 +83,15 @@ node tests/progress-state.mjs
 ```
 
 Les tests vérifient notamment les identités, les éditions françaises, les filtres, l’absence de listes identiques, les statuts partagés et les conditions des trophées. Le serveur n’a pas de dépendance supplémentaire.
+
+## Séries TV
+
+Le catalogue livré ajoute **8 628 séries et mini-séries IMDb** (6 813 `tvSeries`, 1 815 `tvMiniSeries`), avec une note globale d’au moins 7/10 et 1 000 votes, comme pour les films. Les épisodes individuels `tvEpisode`, téléfilms et émissions spéciales ne sont pas assimilés à des séries. Les films déjà présents restent dans leur format.
+
+Le filtre Séries TV fonctionne dans Découvrir, Parcours et le dashboard. Une case représente une série ou une mini-série complète: aucun décompte par saison ou épisode n’est proposé. Les statuts et trophées suivent les mêmes règles que les autres œuvres. Les regroupements par métadonnées comportent au moins trois œuvres et restent dédupliqués. La vue Séries TV contient initialement 326 sous-listes.
+
+Les fiches affichent l’année de début et, lorsqu’elle existe dans la source, l’année de fin. Une année de fin manquante n’est pas interprétée comme une preuve de diffusion en cours. La durée IMDb est indicative, jamais multipliée pour inventer une durée totale. Les affiches et offres sont recherchées auprès de la fiche JustWatch de la série, vérifiée par identifiant IMDb; les offres peuvent dépendre de la saison. Wikipédia sert de complément de visuel lorsque possible.
+
+L’instantané `data/imdb-tv-seed/` s’applique au démarrage, y compris à une installation existante, sans effacer les films ou la progression personnelle. `python3 imdb_tv.py` renouvelle uniquement cet instantané TV; `python3 catalog.py imdb` réactualise l’ensemble films et séries IMDb. Les références, genres, années et notes viennent des [datasets IMDb](https://data.imdb.com/non-commercial-datasets/), réservés à l’usage personnel non commercial selon leurs conditions. La fiche IMDb reste accessible dans les preuves de chaque titre.
+
+L’import CSV/XLSX reconnaît Série TV, séries, TV show et mini-série dans la colonne Type.

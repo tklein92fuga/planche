@@ -16,3 +16,13 @@ let fresh=updateWorkStatus([],work,'done',options);assert.equal(fresh.length,1);
 fresh=updateWorkStatus(fresh,work,'doing',options);assert.equal(fresh.length,1);
 assert.throws(()=>updateWorkStatus([],work,'invalid',options));
 console.log('Shared status: imports, duplicates, personal notes, undo and persistence passed.');
+const dataSource=await readFile(new URL('../static/data.js',import.meta.url));
+const {importRows}=await import('data:text/javascript;base64,'+dataSource.toString('base64'));
+globalThis.crypto=(await import('node:crypto')).webcrypto;
+for(const alias of ['TV show','Série TV','mini-série','series','TV Series','tvMiniSeries']){
+  const imported=importRows([['Titre','Type'],['Breaking Bad',alias]],'film','');
+  assert.equal(imported[0].type,'tv',alias);
+}
+const sameTitle={id:'imdb:series',type:'tv',title:'Original',year:2000};
+assert.equal(updateWorkStatus([{id:'film',...work,status:'todo'}],sameTitle,'done',options).length,2,'Films and TV are distinct works');
+console.log('TV import aliases and distinct film/series progress passed.');

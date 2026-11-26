@@ -95,6 +95,13 @@ def metadata(kind, title, year):
             if matches(hit.get("trackName", "")) and (not year or not release or abs(int(year) - int(release)) <= 1):
                 return dict(year=release, creator=hit.get("artistName"), genre=hit.get("primaryGenreName"),
                             length=round(hit.get("trackTimeMillis", 0) / 60000) or "", image=hit.get("artworkUrl100", "").replace("100x100", "600x600"), source="Apple")
+    if kind == "tv":
+        with catalog.connect() as conn:
+            rows=conn.execute("SELECT * FROM works WHERE type='tv' AND title=? COLLATE NOCASE AND (?='' OR year=?)",(title,year,year)).fetchall()
+            if len(rows)==1:
+                row=rows[0]
+                return dict(year=row['year'],genre=row['genre'],length=row['length'],image=row['image'],source='IMDb')
+        return {}
     if kind == "book":
         data = remote("https://openlibrary.org/search.json", title=title, limit=12,
                       fields="title,author_name,first_publish_year,number_of_pages_median,cover_i")

@@ -41,7 +41,7 @@ class JourneysTest(unittest.TestCase):
         self.assertGreaterEqual(all_world_war['total'],3)
         self.assertTrue(all(i['type']=='film' for i in all_world_war['items']))
         original=list(self.groups['science-fiction/cyberpunk']['members'])
-        for kind in ('film','book','game'):
+        for kind in ('film','tv','book','game'):
             data=journeys.overview(kind)
             for g in data['groups']:
                 self.assertGreaterEqual(g['total'],3)
@@ -72,7 +72,7 @@ class JourneysTest(unittest.TestCase):
         self.assertTrue(any(g['facet']=='developer' for g in generated))
 
     def test_no_identical_sublists_in_any_format(self):
-        for kind in ('all','film','game','book'):
+        for kind in ('all','film','tv','game','book'):
             groups=journeys.overview(kind)['groups'];seen=set();by_id={g['id']:g for g in groups}
             for g in groups:
                 self.assertEqual(len(g['members']),len(set(g['members'])))

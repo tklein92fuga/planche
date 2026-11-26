@@ -99,3 +99,13 @@ Contrôles de l’interface: filtrage sur les réalisateurs, Édités par Ninten
 - Bureau 1280×720 et mobile 390×844: aucun débordement horizontal. Navigation à trois liens sur mobile. Les barres exposent leurs valeurs aux aides de lecture.
 - 16 tests Python, scénarios JavaScript trophées et filtres, et nouveau test des statuts partagés passent. Le nouveau test conserve critiques/notes, met à jour les doublons canoniques et permet l’annulation du statut.
 - En-têtes de revalidation et version d’interface mis à jour pour éviter une ancienne interface en cache.
+
+## Séries TV IMDb — 26 novembre 2026
+
+- Instantané officiel IMDb: 8 628 séries (6 813 tvSeries et 1 815 tvMiniSeries), note globale ≥7/10 et ≥1 000 votes. Les épisodes sont exclus; films et séries restent deux formats distincts.
+- Filtre TV ajouté au catalogue, aux parcours et au dashboard. La projection TV contient 326 sous-listes sans doublon exact et avec au moins trois œuvres.
+- Dates de début/fin issues d’IMDb; durée indicative, sans total de visionnage inventé. Une case correspond à une série ou mini-série entière.
+- Vérification réelle dans le navigateur: Breaking Bad, 2008–2013, 9,5/10, affiche et fiche JustWatch française vérifiée par IMDb, offres Netflix et achat. Les offres portent un avertissement de variation par saison.
+- Passage Terminé: compteur TV 1 et huit listes commencées; retour À découvrir: compteur 0, aucune liste commencée. Le statut de test a été réinitialisé.
+- 18 tests Python passent, ainsi que les scénarios JavaScript de trophées, filtres, statuts et imports. Tests ajoutés pour les seuils, le rejet des épisodes, la séparation film/série et l’installation idempotente sans suppression des films.
+- Les nouveaux instantanés s’appliquent aussi aux installations existantes. La progression personnelle reste dans le navigateur.

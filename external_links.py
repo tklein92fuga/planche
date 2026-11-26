@@ -31,10 +31,10 @@ def nuxt_entities(markup):
     for i,v in enumerate(pool):
         if not isinstance(v,dict) or '__typename' not in v:continue
         kind=pool[v['__typename']]
-        if kind not in ('Movie','MovieContent','Package','Offer'):continue
+        if kind not in ('Movie','MovieContent','Show','ShowContent','Package','Offer'):continue
         item=decode(i)
         if item.get('id'):entities[kind+':'+str(item['id'])]=item
-        if kind=='Movie':movies.append(item)
+        if kind in ('Movie','Show'):movies.append(item)
     def resolve(v):return entities.get(v.get('__ref'),{}) if isinstance(v,dict) and '__ref' in v else v
     return movies,resolve
 
@@ -54,6 +54,8 @@ def identity(movie,resolve,work):
 def parse_justwatch(markup,work,url):
     movies,resolve=nuxt_entities(markup)
     for movie in movies:
+        expected='Show' if work.get('type')=='tv' else 'Movie'
+        if movie.get('__typename')!=expected:continue
         c=identity(movie,resolve,work)
         if not c:continue
         offers=[];seen=set()
@@ -67,7 +69,10 @@ def parse_justwatch(markup,work,url):
                 label={'FLATRATE':'Abonnement','FLATRATE_AND_BUY':'Abonnement et achat','RENT':'Location','BUY':'Achat','FREE':'Gratuit','ADS':'Avec publicité','FAST':'Chaîne gratuite'}.get(mode)
                 if not name or not label or (name,label) in seen:continue
                 seen.add((name,label));offers.append(dict(provider=name,mode=label))
-        return dict(url=url,verified=True,offers=offers,country='FR',checked=catalog.stamp())
+        poster=next((v for k,v in c.items() if k.startswith('posterUrl(') and isinstance(v,str)),c.get('posterUrl',''))
+        poster=poster.replace('{profile}','s332').replace('{format}','jpg')
+        image='https://images.justwatch.com'+poster if poster.startswith('/poster/') else ''
+        return dict(url=url,verified=True,offers=offers,country='FR',checked=catalog.stamp(),image=image)
     raise ValueError('La fiche JustWatch ne correspond pas à cette œuvre')
 
 def justwatch(work):
@@ -76,7 +81,7 @@ def justwatch(work):
     for movie in movies:
         for c in content(movie,resolve):
             path=c.get('fullPath','')
-            if path.startswith('/fr/film/') and str(c.get('originalReleaseYear'))==str(work['year']) and path not in candidates:candidates.append(path)
+            if path.startswith('/fr/serie/' if work['type']=='tv' else '/fr/film/') and str(c.get('originalReleaseYear'))==str(work['year']) and path not in candidates:candidates.append(path)
     for path in candidates[:3]:
         try:return parse_justwatch(page('https://www.justwatch.com'+path),work,'https://www.justwatch.com'+path)
         except (OSError,ValueError,TypeError):continue
@@ -107,7 +112,7 @@ def card(ident):
     result=dict(links=[],offers=[],country='FR',checked=catalog.stamp())
     try:
         with LIMIT:
-            if work['type']=='film':
+            if work['type'] in ('film','tv'):
                 found=justwatch(work);result.update(found);result['links']=[dict(label='Voir la fiche JustWatch' if found['verified'] else 'Rechercher sur JustWatch',url=found['url'])]
             elif work['type']=='game':
                 found=steam(work);result.update(found);result['links']=[dict(label='Voir la page Steam' if found['verified'] else 'Rechercher sur Steam',url=found['url'])]
@@ -120,7 +125,7 @@ def card(ident):
     except (OSError,ValueError,TypeError,KeyError):
         result['verified']=False
         result['message']='La source ne répond pas pour le moment.'
-        base={'film':'https://www.justwatch.com/fr/recherche?','game':'https://store.steampowered.com/search/?','book':'https://www.goodreads.com/search?'}[work['type']]
-        result['links']=[dict(label='Rechercher sur '+{'film':'JustWatch','game':'Steam','book':'Goodreads'}[work['type']],url=base+urlencode({'term' if work['type']=='game' else 'q':work['title']}))]
+        base={'film':'https://www.justwatch.com/fr/recherche?','tv':'https://www.justwatch.com/fr/recherche?','game':'https://store.steampowered.com/search/?','book':'https://www.goodreads.com/search?'}[work['type']]
+        result['links']=[dict(label='Rechercher sur '+{'film':'JustWatch','tv':'JustWatch','game':'Steam','book':'Goodreads'}[work['type']],url=base+urlencode({'term' if work['type']=='game' else 'q':work['title']}))]
     with catalog.connect() as conn:conn.execute('INSERT OR REPLACE INTO external_cards VALUES(?,?,?)',(ident,json.dumps(result,ensure_ascii=False),time.time()))
     return result

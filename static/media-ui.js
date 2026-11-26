@@ -1,1 +1,1 @@
-export const mediaNames={film:'Film',game:'Jeu vidéo',book:'Livre'};
+export const mediaNames={film:'Film',tv:'Série TV',game:'Jeu vidéo',book:'Livre'};

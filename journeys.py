@@ -189,7 +189,7 @@ def deduplicate(groups,works):
 
 def project(data,kind):
     public={k:v for k,v in data.items() if not k.startswith('_')}
-    if kind not in ('film','book','game'):return public
+    if kind not in ('film','tv','book','game'):return public
     groups=[]
     for original in data['groups']:
         ids=[ident for ident in original['members'] if data['_works'][ident]['type']==kind]

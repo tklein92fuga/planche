@@ -11,3 +11,5 @@ data/*.restore
 data/metacritic.json.gz
 
 data/goodreads.json.gz
+
+data/imdb-tv.json.gz

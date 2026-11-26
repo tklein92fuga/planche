@@ -80,7 +80,7 @@ def definitions():
     for (kind, genre), count in sorted(genres.items(), key=lambda pair: (-pair[1], pair[0])):
         if count >= 3:
             result.append(dict(id="genre:" + kind + ":" + genre, category="Genres", title=translations.get(genre,genre),
-                               subtitle={"film":"Films","book":"Livres","game":"Jeux vidéo"}[kind], type=kind, genre=genre))
+                               subtitle={"film":"Films","tv":"Séries TV","book":"Livres","game":"Jeux vidéo"}[kind], type=kind, genre=genre))
     result += [dict(id="country:"+c, category="Pays", title=c, subtitle="Pays d’origine référencé", country=c) for c in countries]
     result += [dict(id="award:"+a, category="Récompenses", title=a, subtitle="Lauréats et nominations référencés", award=a) for a in sorted(awards)]
     return result
@@ -160,9 +160,14 @@ def artwork(ident):
                 appid=str(match["id"]) if match else ""
             if appid:
                 image="https://cdn.cloudflare.steamstatic.com/steam/apps/"+appid+"/library_600x900.jpg"
-        elif row["type"]=="film":
-            titles = [row["title"], row["title"] + " (" + row["year"] + " film)", row["title"] + " (film)"]
-            for title in titles:
+        elif row["type"] in ("film","tv"):
+            if row['type']=='tv':
+                import external_links
+                found=external_links.card(ident) or {}
+                image=found.get('image','') if found.get('verified') else ''
+            label="TV series" if row["type"]=="tv" else "film"
+            titles = [row["title"]+" ("+label+")", row["title"]+" ("+row["year"]+" "+label+")", row["title"]]
+            for title in ([] if image else titles):
                 try:
                     url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + quote(title.replace(" ", "_"),safe="")
                     request = Request(url,headers={"User-Agent":"Planche/1.1 personal culture catalogue"})
@@ -172,7 +177,7 @@ def artwork(ident):
                     continue
                 art = summary.get("originalimage") or summary.get("thumbnail") or {}
                 description = summary.get("description","").lower()
-                if "film" in description and art.get("source") and art.get("height",0)>art.get("width",0):
+                if ((row["type"]=="film" and "film" in description) or (row["type"]=="tv" and any(t in description for t in ("series","miniseries")))) and art.get("source") and art.get("height",0)>art.get("width",0):
                     image = art["source"]
                     break
         with catalog.connect() as conn:

@@ -1,5 +1,6 @@
 export const types = {
   film: {label:'Film', plural:'Films', icon:'◉', color:'#ded7fc'},
+  tv: {label:'Série TV', plural:'Séries TV', icon:'', color:'#d2e5f8'},
   book: {label:'Livre', plural:'Livres', icon:'▤', color:'#faddb8'},
   game: {label:'Jeu', plural:'Jeux', icon:'✚', color:'#dce99f'}
 };
@@ -39,7 +40,7 @@ export function importRows(rows, fallback, collection) {
   if (!header) throw Error('Le fichier est vide.');
   const headers = header.map(key);
   const index = (...aliases)=>headers.findIndex(h=>aliases.includes(h));
-  const titleIndex = index('titre','title','nom','name','film','livre','jeu');
+  const titleIndex = index('titre','title','nom','name','film','serie','livre','jeu');
   if (titleIndex === -1) throw Error('Ajoute une colonne Titre à la première ligne.');
   return body.flatMap(row=>{
     const get = (...aliases)=>String(row[index(...aliases)] ?? '').trim();
@@ -47,7 +48,7 @@ export function importRows(rows, fallback, collection) {
     if (!title) return [];
     const rawType=key(get('type','media','categorie','medium'));
     const type = Object.keys(types).find(t=>[t,key(types[t].label),key(types[t].plural)].includes(rawType))
-      || ({movie:'film',movies:'film',books:'book',games:'game',jeuxvideo:'game',jeuvideo:'game'})[rawType] || fallback;
+      || ({tv:'tv',tvshow:'tv',tvshows:'tv',tvseries:'tv',tvminiseries:'tv',series:'tv',serie:'tv',serietv:'tv',seriestv:'tv',show:'tv',shows:'tv',miniserie:'tv',miniseries:'tv',movie:'film',movies:'film',books:'book',games:'game',jeuxvideo:'game',jeuvideo:'game'})[rawType] || fallback;
     const raw = key(get('statut','status','vu','lu','joue','termine','fini'));
     const status = ['termine','vu','lu','fini','joue','done','completed','oui','true','vrai','1','x'].includes(raw)?'done':
       ['encours','doing','inprogress'].includes(raw)?'doing':'todo';

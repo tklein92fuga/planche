@@ -23,7 +23,8 @@ CANONICAL = "COALESCE(json_extract(evidence, '$[0].canonical'), id)"
 CACHE = ROOT / "data" / "cache"
 LOCK = threading.Lock()
 RULES = {
-    "imdb": "IMDb ≥ 7/10 · au moins 1 000 votes",
+    "imdb": "Films IMDb ≥ 7/10 · au moins 1 000 votes",
+    "imdb-tv": "Séries et mini-séries IMDb ≥ 7/10 · au moins 1 000 votes",
     "books": "Édition française identifiée · Goodreads en priorité, Open Library lorsque le rapprochement reste à vérifier",
     "goodreads": "Notes et fiches Goodreads rapprochées par titre et auteur · éditions françaises conservées",
     "metacritic": "Metacritic ≥ 70/100 · au moins 10 critiques professionnelles",
@@ -72,6 +73,8 @@ def connect():
     metacritic.install(conn)
     import goodreads_books
     goodreads_books.install(conn)
+    import imdb_tv
+    imdb_tv.install(conn)
     return conn
 
 
@@ -153,23 +156,18 @@ def imdb():
             score, votes = float(row["averageRating"]), int(row["numVotes"])
             if score >= 7 and votes >= 1000:
                 ratings[row["tconst"]] = (score, votes)
-    source_status("imdb", "running", "Lecture des titres, courts métrages et documentaires…")
+    source_status("imdb", "running", "Lecture des films, séries et mini-séries…")
     items = []
+    import imdb_tv
     with gzip.open(download("title.basics.tsv.gz"), "rt", encoding="utf-8") as stream:
         for row in csv.DictReader(stream, delimiter="\t", quoting=csv.QUOTE_NONE):
-            ident = row["tconst"]
-            if ident not in ratings or row["titleType"] not in ("movie", "short", "tvMovie", "tvShort", "video"):
-                continue
-            score, votes = ratings[ident]
-            clean = lambda k: "" if row[k] == "\\N" else row[k]
-            items.append(dict(id="imdb:" + ident, type="film", title=row["primaryTitle"], original=row["originalTitle"],
-                              year=clean("startYear"), genre=clean("genres").replace(",", ", "),
-                              length=clean("runtimeMinutes"), score=score * 10, votes=votes,
-                              evidence=[dict(source="IMDb", kind="rating", value=score, scale=10, votes=votes,
-                                             url="https://www.imdb.com/title/" + ident + "/", checked=stamp())]))
+            if row['tconst'] in ratings:
+                found=imdb_tv.item(row,*ratings[row['tconst']])
+                if found:items.append(found)
     if not items:
-        raise ValueError("Aucun film reçu, ancien catalogue conservé.")
+        raise ValueError("Aucun titre IMDb reçu, ancien catalogue conservé.")
     store("imdb", items)
+    source_status("imdb-tv","ready","Séries et mini-séries IMDb · épisodes individuels exclus",sum(i["type"]=="tv" for i in items))
 
 
 def book_item(hit, evidence=None):
@@ -438,7 +436,7 @@ def search(params):
         clauses.append("search LIKE ? ESCAPE '\\'")
         args.append("%" + token.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%")
     kind = params.get("type", ["all"])[0]
-    if kind in ("film", "book", "game"):
+    if kind in ("film", "tv", "book", "game"):
         clauses.append("type=?")
         args.append(kind)
     genre = normalized(params.get("genre", [""])[0][:100]).strip()
@@ -490,6 +488,10 @@ def serialize(row):
     item = dict(row)
     item["evidence"] = json.loads(item["evidence"])
     item["edition"] = json.loads(item["edition"])
+    if item.get("type")=="tv":
+        proof=next((p for p in item["evidence"] if p.get("source")=="IMDb"),{})
+        item["endYear"]=proof.get("endYear", "")
+        item["titleType"]=proof.get("titleType", "tvSeries")
     item.pop("search")
     return item
 

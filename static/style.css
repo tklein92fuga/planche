@@ -119,3 +119,4 @@ main:has(.completion-dashboard){max-width:1500px;background:#f3f4f4}.completion-
 
 .dash-preview{display:block;font-size:10px;color:#89947b;margin-top:6px}.dash-all{scroll-margin-top:20px}
 @media(prefers-reduced-motion:reduce){.completion-dashboard .track i{transition:none}}
+.catalog-works .work-status-actions button{color:#243020}.catalog-works .work-status-actions button[aria-pressed=true]{color:#fff}.catalog-works .work-status-actions button[data-cat=doing][aria-pressed=true]{color:#6e4a1b}

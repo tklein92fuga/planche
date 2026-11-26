@@ -1,6 +1,6 @@
-import {types,statuses,initial,key,today,importRows} from './data.js';
-import {createCatalog} from './catalog-ui.js?v=completion-3';
-import {createPaths} from './paths-ui.js?v=completion-3';
+import {types,statuses,initial,key,today,importRows} from './data.js?v=tv-3';
+import {createCatalog} from './catalog-ui.js?v=tv-3';
+import {createPaths} from './paths-ui.js?v=tv-3';
 import {workStatus,updateWorkStatus} from './progress-state.js';
 const storage='planche.v1',main=document.querySelector('#main'),modal=document.querySelector('#modal');
 const read=()=>{try{return JSON.parse(localStorage.getItem(storage))||initial();}catch{return initial();}};
@@ -36,7 +36,7 @@ function cover(i){
   const steam=i.evidence?.some(e=>e.source==='Metacritic')?null:String(ident).match(/^steam:(\d+)$/)||String(i.image||'').match(/steam\/apps\/(\d+)/);
   const fallback=/^https?:\/\//i.test(i.image||'')?i.image:'';
   const image=steam?'https://cdn.cloudflare.steamstatic.com/steam/apps/'+steam[1]+'/library_600x900.jpg':
-    fallback||((i.type==='film'||i.type==='game')&&/^(imdb:|steam:|awards:)/.test(ident)?'/api/catalog/art?id='+encodeURIComponent(ident):'');
+    fallback||((i.type==='film'||i.type==='tv'||i.type==='game')&&/^(imdb:|steam:|awards:)/.test(ident)?'/api/catalog/art?id='+encodeURIComponent(ident):'');
   const lookup=!/^(imdb:|steam:|books:|awards:)/.test(ident)?'/api/catalog/art?'+new URLSearchParams({title:i.title,type:i.type,year:i.year||''}):'';
   return `<div class="cover" style="--tint:${types[i.type].color}"><em>${esc(i.title)}</em>${image?`<img src="${esc(image)}" data-fallback="${esc(fallback)}" data-lookup="${esc(lookup)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}<span class="tag ${i.status}">${statuses[i.status]||''}</span></div>`;
 }
