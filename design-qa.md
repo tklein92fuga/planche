@@ -87,3 +87,15 @@ Contrôles de l’interface: filtrage sur les réalisateurs, Édités par Ninten
 - Aucun prix de location n’est inféré. Les offres sont consultées à la demande et conservées 24 heures. La fiche de recherche remplace une correspondance non vérifiée.
 - Snapshot portable: 846 rapprochements Goodreads dont 845 notes publiques actualisées et une note historique étiquetée 2017. Les livres sans rapprochement restent Open Library. Les éditions françaises sont obligatoires.
 - Trois listes de courants psychologiques et quatre mouvements artistiques/littéraires vérifiés, tous à au moins trois œuvres; époques des livres par première publication.
+
+
+## Dashboard de complétion — 26 novembre 2026
+
+- Navigation réduite à Vue d’ensemble / Découvrir / Parcours. Les anciennes routes reviennent à l’accueil; les données personnelles sont conservées.
+- Dashboard: compteurs uniques, listes commencées, prochaine liste à finir, progression en barres et cases, rythme réel des sept jours, vitrine, recherche et filtres sur sous-listes / méta-listes / trophées (12 par page). Les aperçus limités indiquent l’effectif complet.
+- Découvrir ne propose plus d’actualisation ni d’ajout; Terminé et En cours modifient le statut partagé. Les fiches proposent aussi Remettre à découvrir. Les fiches au survol reprennent ces actions.
+- Vérification réelle: The Shawshank Redemption passe À découvrir → En cours (conservé après rechargement) → Terminé; compteur du dashboard 4 → 5 et case cochée; retour À découvrir ramène le compteur à 4. L’œuvre utilisée pour ce test a retrouvé son statut initial.
+- Le bouton Continuer ouvre la sous-liste concernée avec le même compteur et les mêmes états.
+- Bureau 1280×720 et mobile 390×844: aucun débordement horizontal. Navigation à trois liens sur mobile. Les barres exposent leurs valeurs aux aides de lecture.
+- 16 tests Python, scénarios JavaScript trophées et filtres, et nouveau test des statuts partagés passent. Le nouveau test conserve critiques/notes, met à jour les doublons canoniques et permet l’annulation du statut.
+- En-têtes de revalidation et version d’interface mis à jour pour éviter une ancienne interface en cache.

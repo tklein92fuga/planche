@@ -5,7 +5,7 @@ const source=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'u
 const {createPaths}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const values=new Map();let writes=0;const messages=[];
 globalThis.localStorage={getItem:k=>values.get(k),setItem:(k,v)=>{writes++;values.set(k,v);}};
-globalThis.location={hash:'#profil'};
+globalThis.location={hash:'#accueil'};
 const target={innerHTML:''};
 globalThis.document={addEventListener(){},querySelector(){return target;}};
 let library=[{id:'local1',catalogId:'a',status:'done'},{id:'duplicate',catalogId:'a',status:'todo'},{id:'second',catalogId:'b',status:'done'},{id:'third',catalogId:'c',status:'done'},{id:'fourth',catalogId:'d',status:'done'}];
@@ -13,10 +13,10 @@ const base={kind:'sublist',title:'Test',family:'Genres',members:['a','b','c','d'
 const groups=[{...base,id:'first'},{...base,id:'overlap'}, {...base,id:'empty',members:[],total:0,ready:false},{...base,id:'one',members:['a'],total:1},{...base,id:'two',members:['a','b'],total:2},{...base,id:'three',members:['a','b','c'],total:3},{...base,id:'incomplete',members:['a','b','c','d','e'],total:5},{...base,id:'meta',kind:'meta',ready:false}];
 globalThis.fetch=async url=>({ok:true,json:async()=>url==='/api/paths'?{groups}:{}});
 const ui=createPaths({esc:String,library:()=>library,open(){},level:()=>1,xp:()=>25,notify:m=>messages.push(m)});
-ui.mount('profil');await ui.load();
+ui.mount('accueil');await ui.load();
 let earned=JSON.parse(values.get('planche.trophies.v1'));
 assert.deepEqual(Object.keys(earned).sort(),['first','overlap','three']);
-assert.match(target.innerHTML,/3 \/ 8/);
+assert.match(target.innerHTML,/Trophées obtenus/);
 const date=earned.first.date;
 await ui.load();assert.equal(writes,1,'No duplicate award or repeated storage write');
 library=[];await ui.load();earned=JSON.parse(values.get('planche.trophies.v1'));

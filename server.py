@@ -125,6 +125,12 @@ class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT / "static"), **kwargs)
 
+    def end_headers(self):
+        path=urlsplit(self.path).path
+        if not path.startswith('/api/') and (path.endswith(('.js','.css','.html')) or path=='/'):
+            self.send_header('Cache-Control','no-cache')
+        super().end_headers()
+
     def reply(self, status, value):
         payload = json.dumps(value, ensure_ascii=False).encode()
         compressed=len(payload)>65536 and "gzip" in self.headers.get("Accept-Encoding", "")

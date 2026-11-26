@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+const source=await readFile(new URL('../static/progress-state.js',import.meta.url));
+const {workStatus,updateWorkStatus}=await import('data:text/javascript;base64,'+source.toString('base64'));
+const work={id:'imdb:one',type:'film',title:'Original',year:2000};
+const items=[{id:'local',title:'Traduction',type:'film',year:2000,status:'todo',review:'Ma critique',rating:4},{id:'duplicate',catalogId:work.id,status:'done',completed:'2026-01-01'},{id:'other',catalogId:'imdb:other',status:'done'}];
+const options={resolved:{local:work.id},date:'2026-11-26',id:'new'};
+let next=updateWorkStatus(items,work,'doing',options);
+assert.equal(next.length,3);assert.equal(next[0].review,'Ma critique');assert.equal(next[0].rating,4);
+assert.equal(next[0].status,'doing');assert.equal(next[1].status,'doing');assert.equal(next[1].completed,'');assert.equal(next[2],items[2]);
+assert.equal(workStatus(next,work),'doing');assert.equal(items[0].status,'todo');
+next=updateWorkStatus(next,work,'done',options);assert.equal(next[0].completed,options.date);assert.equal(workStatus(next,work),'done');
+assert.equal(JSON.parse(JSON.stringify(next))[0].catalogId,work.id);
+next=updateWorkStatus(next,work,'todo',options);assert.equal(workStatus(next,work),'todo');
+let fresh=updateWorkStatus([],work,'done',options);assert.equal(fresh.length,1);assert.equal(fresh[0].catalogId,work.id);
+fresh=updateWorkStatus(fresh,work,'doing',options);assert.equal(fresh.length,1);
+assert.throws(()=>updateWorkStatus([],work,'invalid',options));
+console.log('Shared status: imports, duplicates, personal notes, undo and persistence passed.');
