@@ -136,3 +136,8 @@ button,a{transition:background-color .16s ease,border-color .16s ease,box-shadow
  .work-hover-links a:hover,.work-source-link:hover{translate:0 -2px;transition:translate .16s ease,background-color .16s ease}
 }
 @media(prefers-reduced-motion:reduce){button,a{transition:none}}
+
+/* An unselected status is muted; only the current state has its checkmark. */
+.work-status-actions button[aria-pressed=false],.catalog-works .work-status-actions button[aria-pressed=false]{background:#dce3df;border-color:#c8d2cc;color:#4a5b50;box-shadow:none}
+.work-status-actions button:is([data-cat=doing],[data-hover-status=doing])[aria-pressed=false],.catalog-works .work-status-actions button[data-cat=doing][aria-pressed=false]{background:#e9e0d6;border-color:#d6c9bb;color:#6b5947}
+.status-check{display:none;margin-left:3px;font-size:14px;line-height:1}.work-status-actions button[aria-pressed=true] .status-check{display:inline-block}

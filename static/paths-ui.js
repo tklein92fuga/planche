@@ -1,6 +1,6 @@
-import {patchDOM} from './dom-patch.js?v=live-2';
-import {createWorkHover} from './work-hover.js?v=live-2';
-import {mediaNames} from './media-ui.js?v=live-2';
+import {patchDOM} from './dom-patch.js?v=pressed-1';
+import {createWorkHover} from './work-hover.js?v=pressed-1';
+import {mediaNames} from './media-ui.js?v=pressed-1';
 export function createPaths({esc,library,open,level,xp,notify,setStatus}) {
   const details=new Map();
   let dashTab='lists',dashFilter='all',dashQuery='',dashPage=1;

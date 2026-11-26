@@ -140,3 +140,10 @@ IMDb (films/séries) et Metacritic (jeux) sont accessibles sur les cartes et dan
 - Le tooltip intercepte elementFromPoint dans sa zone; zéro attribut title natif sur les cases. Animation d’ouverture sans visibility:hidden, et maintien d’un point d’ancrage si les listes se réordonnent.
 - CTA verts et orange, sélection marquée, survols supplémentaires sur boutons et liens. Les animations de barre suivent les valeurs mises à jour en place. Correction d’un clearProps indéfini dans le tween de survol GSAP; aucune nouvelle erreur après rechargement.
 - Tests trophées, filtres, statuts, liens, motion et live-paths passent. Le test live-paths interdit toute requête lors d’une mise à jour dans une sous-liste déjà chargée.
+
+
+## Boutons non sélectionnés et coche — 26 novembre 2026
+
+- Sur une œuvre À découvrir, les deux boutons sont atténués et leurs coches masquées. Après sélection En cours, seul ce bouton est orange avec une coche visible après le texte; Terminé reste atténué.
+- Vérification réelle sur carte et tooltip; retour À découvrir masque de nouveau les coches. Le statut de test est réinitialisé. aria-pressed reste exposé et la coche décorative est masquée aux lecteurs d’écran.
+- Les tests JavaScript de progression, filtres et mise à jour locale passent.

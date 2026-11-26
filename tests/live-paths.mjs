@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 const media='data:text/javascript;base64,'+Buffer.from(await readFile(new URL('../static/media-ui.js',import.meta.url))).toString('base64');
-const code=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./media-ui.js?v=live-2',media).replace('./work-hover.js?v=live-2','data:text/javascript,export function createWorkHover(){}').replace('./dom-patch.js?v=live-2','data:text/javascript,export function patchDOM(root,html){root.innerHTML=html;}');
+const code=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./media-ui.js?v=pressed-1',media).replace('./work-hover.js?v=pressed-1','data:text/javascript,export function createWorkHover(){}').replace('./dom-patch.js?v=pressed-1','data:text/javascript,export function patchDOM(root,html){root.innerHTML=html;}');
 const {createPaths}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
 const listeners={},target={innerHTML:''},values=new Map();
 globalThis.document={addEventListener:(name,fn)=>listeners[name]=fn,querySelector:()=>target};

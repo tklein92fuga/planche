@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 const media='data:text/javascript;base64,'+Buffer.from(await readFile(new URL('../static/media-ui.js',import.meta.url))).toString('base64');
-const source=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./dom-patch.js?v=live-2','data:text/javascript,export function patchDOM(root,html){root.innerHTML=html;}').replace('./media-ui.js?v=live-2',media).replace('./work-hover.js?v=live-2','data:text/javascript,export function createWorkHover(){}');
+const source=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./dom-patch.js?v=pressed-1','data:text/javascript,export function patchDOM(root,html){root.innerHTML=html;}').replace('./media-ui.js?v=pressed-1',media).replace('./work-hover.js?v=pressed-1','data:text/javascript,export function createWorkHover(){}');
 const {createPaths}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const listeners={};const values=new Map();
 const target={innerHTML:'',focus(){},setSelectionRange(){}};

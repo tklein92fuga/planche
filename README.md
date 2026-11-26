@@ -117,3 +117,5 @@ Vérifications complémentaires: `node tests/motion.mjs` et `node tests/source-l
 Terminé et En cours enregistrent le statut puis mettent à jour les boutons, cases, compteurs et trophées sur place, sans recharger les sources ni reconstruire la page. Une sous-liste déjà ouverte utilise ses données en mémoire. Le focus, les filtres, la pagination et la position de lecture sont conservés. La fiche au survol reste ouverte après un changement de statut et continue à intercepter le pointeur. Les bulles natives des cases sont supprimées. Les CTA Terminé sont verts, En cours orange, avec un état sélectionné plus marqué. Les liens et boutons proposent des survols animés respectant la réduction des animations.
 
 Test dédié: `node tests/live-paths.mjs`.
+
+Les boutons de statut non sélectionnés utilisent une teinte grisée. Le statut actif conserve sa couleur pleine (vert ou orange) et affiche une coche après le libellé. La coche suit immédiatement les changements de statut, dans les cartes comme dans les tooltips, et le choix reste enregistré après rechargement.

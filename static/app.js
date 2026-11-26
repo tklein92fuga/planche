@@ -1,8 +1,8 @@
-import {patchDOM} from './dom-patch.js?v=live-2';
-import {startMotion} from './motion.js?v=live-2';
-import {types,statuses,initial,key,today,importRows} from './data.js?v=live-2';
-import {createCatalog} from './catalog-ui.js?v=live-2';
-import {createPaths} from './paths-ui.js?v=live-2';
+import {patchDOM} from './dom-patch.js?v=pressed-1';
+import {startMotion} from './motion.js?v=pressed-1';
+import {types,statuses,initial,key,today,importRows} from './data.js?v=pressed-1';
+import {createCatalog} from './catalog-ui.js?v=pressed-1';
+import {createPaths} from './paths-ui.js?v=pressed-1';
 import {workStatus,updateWorkStatus} from './progress-state.js';
 const storage='planche.v1',main=document.querySelector('#main'),modal=document.querySelector('#modal');
 const read=()=>{try{return JSON.parse(localStorage.getItem(storage))||initial();}catch{return initial();}};

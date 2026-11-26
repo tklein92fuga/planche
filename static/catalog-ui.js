@@ -1,4 +1,4 @@
-import {sourceLink} from './media-ui.js?v=live-2';
+import {sourceLink} from './media-ui.js?v=pressed-1';
 export function createCatalog({types, esc, opts, cover, show, library, setStatus, statusOf, notify}) {
   const defaults={q:'',type:'all',criterion:'all',sort:'votes',year_min:'',year_max:'',min_score:'',genre:'',page:1};
   let filter={...defaults};
@@ -21,7 +21,7 @@ export function createCatalog({types, esc, opts, cover, show, library, setStatus
   function evidence(item) {
     return item.evidence.map(e => `<li><a href="${safeLink(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.source)}</a> · ${e.kind === 'award' ? esc((e.nomination ? 'Nomination · ' : 'Prix · ') + e.label+(e.year?' · '+e.year:'')) : `${esc(e.value)}/${esc(e.scale)} · ${formatCount(e.votes)} avis${e.label ? ' · '+esc(e.label+(e.year?' · '+e.year:'')) : ''}`}<small>Vérifié le ${esc(e.checked.slice(0,10))}</small></li>`).join('');
   }
-  const statusButtons=item=>`<div class="work-status-actions" role="group" aria-label="État de ${esc(item.title)}">${[['done','Terminé'],['doing','En cours']].map(([value,label])=>`<button data-cat="${value}" data-id="${esc(item.id)}" aria-pressed="${statusOf(item)===value}">${label}</button>`).join('')}</div>`;
+  const statusButtons=item=>`<div class="work-status-actions" role="group" aria-label="État de ${esc(item.title)}">${[['done','Terminé'],['doing','En cours']].map(([value,label])=>`<button data-cat="${value}" data-id="${esc(item.id)}" aria-label="${label}" aria-pressed="${statusOf(item)===value}">${label}<span class="status-check" aria-hidden="true">✓</span></button>`).join('')}</div>`;
   function mount() {
     clearTimeout(timer);
     return `<div class="page-title"><div><p class="eyebrow">EXPLORER LES ŒUVRES</p><h1>Découvrir<span>.</span></h1><p class="muted">Explore le catalogue et coche tes découvertes pour avancer dans tous tes parcours.</p></div></div>
