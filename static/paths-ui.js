@@ -1,5 +1,5 @@
-import {createWorkHover} from './work-hover.js?v=source-links-1';
-import {mediaNames} from './media-ui.js?v=source-links-1';
+import {createWorkHover} from './work-hover.js?v=motion-1';
+import {mediaNames} from './media-ui.js?v=motion-1';
 export function createPaths({esc,library,open,level,xp,notify,setStatus}) {
   let dashTab='lists',dashFilter='all',dashQuery='',dashPage=1;
   let courseQuery='',courseFacet='all',unitPage=1,lookup=new Map(),loadRevision=0,media='all',allGroups=[],groups=[],resolved={},tracked=new Map(),mode='parcours',selected='',page=1,query='',family='',request=0,filter='all',tier='all',items=new Map();
@@ -28,7 +28,7 @@ export function createPaths({esc,library,open,level,xp,notify,setStatus}) {
     return `<div class="journeys"><div id="journey-view" aria-live="polite">Chargement des parcours…</div></div>`;
   }
   const heading=(g)=>`<div class="path-heading"><p class="eyebrow">${esc(g.family||'TES PARCOURS CULTURELS')}</p><h1>${esc(g.title)}</h1><p>${done(g)} / ${g.total} œuvres · ${percent(g)} %</p></div>`;
-  const meter=g=>`<div class="track" role="progressbar" aria-label="Progression de ${esc(g.title)}" aria-valuemin="0" aria-valuemax="${g.total}" aria-valuenow="${done(g)}"><i style="width:${percent(g)}%"></i></div>`;
+  const meter=g=>`<div class="track" data-motion-key="${esc(g.id)}" role="progressbar" aria-label="Progression de ${esc(g.title)}" aria-valuemin="0" aria-valuemax="${g.total}" aria-valuenow="${done(g)}"><i style="width:${percent(g)}%"></i></div>`;
   const counts=g=>`<span>${done(g)} / ${g.total} terminées</span>`;
   function tile(i){
     items.set(i.id,i);

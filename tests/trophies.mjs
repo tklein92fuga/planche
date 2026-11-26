@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 const mediaModule='data:text/javascript;base64,'+Buffer.from(await readFile(new URL('../static/media-ui.js',import.meta.url))).toString('base64');
-const source=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./media-ui.js?v=source-links-1',mediaModule).replace('./work-hover.js?v=source-links-1','data:text/javascript,export function createWorkHover(){}');
+const source=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./media-ui.js?v=motion-1',mediaModule).replace('./work-hover.js?v=motion-1','data:text/javascript,export function createWorkHover(){}');
 const {createPaths}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const values=new Map();let writes=0;const messages=[];
 globalThis.localStorage={getItem:k=>values.get(k),setItem:(k,v)=>{writes++;values.set(k,v);}};

@@ -1,0 +1,9 @@
+GSAP 3.15.1, supplied from the user's gsap-public/minified folder.
+Copyright 2026 GreenSock. All rights reserved.
+License: https://gsap.com/standard-license/
+Original copyright/license header preserved in gsap.min.js.
+
+Motion implementation informed by the supplied gsap-skills-main core,
+timeline and performance skills, and the vanilla timeline/stagger example.
+The skills/example repository MIT license is in gsap-skills-LICENSE.txt;
+that MIT license does not replace the GSAP library's own license.

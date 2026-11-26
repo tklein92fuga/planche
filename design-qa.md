@@ -122,3 +122,12 @@ Contrôles de l’interface: filtrage sur les réalisateurs, Édités par Ninten
 ## Liens vers les notes
 
 IMDb (films/séries) et Metacritic (jeux) sont accessibles sur les cartes et dans les fiches au survol, en plus des liens JustWatch/Steam existants. Les destinations sont validées; les jeux sans référence Metacritic vérifiée n’obtiennent pas de lien inventé. Test `node tests/source-links.mjs` ajouté; progression et trophées inchangés.
+
+
+## GSAP et liens du tooltip — 26 novembre 2026
+
+- Bibliothèque GSAP locale 3.15.1 du dossier fourni, avec en-tête de licence intact et licence MIT distincte des exemples/skills. Aucun chargement CDN supplémentaire.
+- Entrées de cartes en timeline/stagger, survol, barres via scaleX, ouverture des fiches et réaction à un statut. Nombre de cibles borné; animations finies, retrait des observations/tweens après suppression et nettoyage de page.
+- Préférence reduced-motion prise en compte par gsap.matchMedia; sans moteur GSAP l’interface continue de fonctionner.
+- Vérification navigateur sur le dashboard et la fiche Cyberpunk 2077: aucun message d’erreur, fiche stable après chargement des disponibilités. Liens Metacritic et Steam dans Découvrir le jeu: même coordonnée Y, même fond rgb(239,240,251), même padding 8px 10px; destinations contrôlées.
+- Tests JavaScript motion, liens, trophées, filtres et statuts passent. Les règles de données restent inchangées.

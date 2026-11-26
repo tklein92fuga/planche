@@ -99,3 +99,14 @@ L’import CSV/XLSX reconnaît Série TV, séries, TV show et mini-série dans l
 Les œuvres portant le genre IMDb « Talk-Show » sont exclues du catalogue, y compris des anciennes installations. Le filtre s’applique à l’installation de l’instantané et aux prochaines collectes IMDb. Le nettoyage a retiré 106 séries et 3 entrées classées comme films; les parcours et leurs compteurs sont recalculés. Les notes et statuts personnels conservés dans le navigateur ne sont pas effacés.
 
 Les cartes de Découvrir et les fiches au survol proposent un accès direct à IMDb pour les films/séries et à Metacritic pour les jeux. Les liens proviennent des identifiants et preuves du catalogue, s’ouvrent dans un nouvel onglet et restent disponibles pendant la recherche des offres commerciales.
+
+
+## Animations locales GSAP
+
+GSAP 3.15.1 fourni dans le dossier `gsap-public` est livré avec le projet dans `static/vendor/gsap.min.js`, sans CDN ni installation supplémentaire. L’implémentation s’appuie sur les skills core, timeline et performance ainsi que sur l’exemple vanilla fournis dans `gsap-skills-main`. Les licences et l’attribution sont conservées dans `static/vendor/`.
+
+Les cartes entrent avec un léger décalage, les barres de progression évoluent avec `scaleX`, les cartes réagissent au survol, les fiches apparaissent en douceur et les cases/boutons visibles réagissent à un changement de statut. Les effets sont courts et sans boucle; les cartes hors écran sont observées puis animées une seule fois à leur apparition. Les animations ne changent pas les compteurs ni les conditions des trophées. Les effets sont désactivés avec la préférence système Réduire les animations. Ils sont nettoyés lorsque les éléments sont retirés, à la sortie de page ou lors du changement de préférence. L’interface reste visible et utilisable si GSAP n’est pas disponible.
+
+Dans les tooltips des jeux, « Voir la page Metacritic » et « Voir la page Steam » partagent désormais le bloc Découvrir le jeu et le même style.
+
+Vérifications complémentaires: `node tests/motion.mjs` et `node tests/source-links.mjs`.

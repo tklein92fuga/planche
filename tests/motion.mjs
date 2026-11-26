@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+const code=await readFile(new URL('../static/motion.js',import.meta.url));
+const {startMotion}=await import('data:text/javascript;base64,'+code.toString('base64'));
+globalThis.window={};
+assert.doesNotThrow(()=>startMotion()(),'Missing GSAP keeps the site usable');
+let reverted=0,queries=[],pagehide;
+window={gsap:{matchMedia:()=>({add:q=>queries.push(q),revert:()=>reverted++})},addEventListener:(name,fn)=>{if(name==='pagehide')pagehide=fn;}};
+const stop=startMotion();
+assert.deepEqual(queries,['(prefers-reduced-motion: no-preference)']);
+stop();assert.equal(reverted,1);pagehide();assert.equal(reverted,2);
+console.log('Motion: graceful fallback, reduced-motion query and page cleanup passed.');

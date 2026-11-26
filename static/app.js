@@ -1,6 +1,7 @@
-import {types,statuses,initial,key,today,importRows} from './data.js?v=source-links-1';
-import {createCatalog} from './catalog-ui.js?v=source-links-1';
-import {createPaths} from './paths-ui.js?v=source-links-1';
+import {startMotion} from './motion.js?v=motion-1';
+import {types,statuses,initial,key,today,importRows} from './data.js?v=motion-1';
+import {createCatalog} from './catalog-ui.js?v=motion-1';
+import {createPaths} from './paths-ui.js?v=motion-1';
 import {workStatus,updateWorkStatus} from './progress-state.js';
 const storage='planche.v1',main=document.querySelector('#main'),modal=document.querySelector('#modal');
 const read=()=>{try{return JSON.parse(localStorage.getItem(storage))||initial();}catch{return initial();}};
@@ -17,7 +18,7 @@ const bar=(n,max)=>`<div class="track"><i style="width:${max?Math.min(100,Math.r
 const byId=id=>state.items.find(i=>i.id===id);
 function notify(message){const toast=document.querySelector('#toast');toast.textContent=message;toast.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('visible'),3600);}
 function save(){try{localStorage.setItem(storage,JSON.stringify(state));render();if(page()==='decouvrir')pathsUI.sync();return true;}catch{state=read();render();notify('Sauvegarde impossible. Vérifie l’espace disponible.');return false;}}
-function setStatus(work,status){state.items=updateWorkStatus(state.items,work,status,{resolved:pathsUI.resolved(),date:today(),id:crypto.randomUUID()});const saved=save();if(saved)notify(status==='done'?'Œuvre terminée · progression mise à jour.':status==='doing'?'Œuvre en cours · progression mise à jour.':'Œuvre remise à découvrir.');return saved;}
+function setStatus(work,status){state.items=updateWorkStatus(state.items,work,status,{resolved:pathsUI.resolved(),date:today(),id:crypto.randomUUID()});const saved=save();if(saved)document.dispatchEvent(new CustomEvent('planche:status',{detail:{id:work.id,status}}));if(saved)notify(status==='done'?'Œuvre terminée · progression mise à jour.':status==='doing'?'Œuvre en cours · progression mise à jour.':'Œuvre remise à découvrir.');return saved;}
 const statusOf=work=>workStatus(state.items,work,pathsUI.resolved());
 function render(){
  const current=page();
@@ -121,5 +122,6 @@ window.addEventListener('hashchange',()=>{render();main.focus({preventScroll:tru
 window.addEventListener('storage',event=>{if((event.key===storage||event.key==='planche.trophies.v1')&&!importBusy){state=read();render();}});
 const catalogUI=createCatalog({types,esc,opts,cover,show,notify,library:()=>state.items,setStatus,statusOf});
 const pathsUI=createPaths({esc,library:()=>state.items,level,xp,notify,setStatus,open:item=>catalogUI.open(item)});
+startMotion();
 render();
 if(page()==='decouvrir')pathsUI.sync();
