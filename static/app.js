@@ -1,7 +1,8 @@
-import {startMotion} from './motion.js?v=motion-1';
-import {types,statuses,initial,key,today,importRows} from './data.js?v=motion-1';
-import {createCatalog} from './catalog-ui.js?v=motion-1';
-import {createPaths} from './paths-ui.js?v=motion-1';
+import {patchDOM} from './dom-patch.js?v=live-2';
+import {startMotion} from './motion.js?v=live-2';
+import {types,statuses,initial,key,today,importRows} from './data.js?v=live-2';
+import {createCatalog} from './catalog-ui.js?v=live-2';
+import {createPaths} from './paths-ui.js?v=live-2';
 import {workStatus,updateWorkStatus} from './progress-state.js';
 const storage='planche.v1',main=document.querySelector('#main'),modal=document.querySelector('#modal');
 const read=()=>{try{return JSON.parse(localStorage.getItem(storage))||initial();}catch{return initial();}};
@@ -18,13 +19,25 @@ const bar=(n,max)=>`<div class="track"><i style="width:${max?Math.min(100,Math.r
 const byId=id=>state.items.find(i=>i.id===id);
 function notify(message){const toast=document.querySelector('#toast');toast.textContent=message;toast.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('visible'),3600);}
 function save(){try{localStorage.setItem(storage,JSON.stringify(state));render();if(page()==='decouvrir')pathsUI.sync();return true;}catch{state=read();render();notify('Sauvegarde impossible. Vérifie l’espace disponible.');return false;}}
-function setStatus(work,status){state.items=updateWorkStatus(state.items,work,status,{resolved:pathsUI.resolved(),date:today(),id:crypto.randomUUID()});const saved=save();if(saved)document.dispatchEvent(new CustomEvent('planche:status',{detail:{id:work.id,status}}));if(saved)notify(status==='done'?'Œuvre terminée · progression mise à jour.':status==='doing'?'Œuvre en cours · progression mise à jour.':'Œuvre remise à découvrir.');return saved;}
+function setStatus(work,status){
+ const previous=state.items;
+ state.items=updateWorkStatus(state.items,work,status,{resolved:pathsUI.resolved(),date:today(),id:crypto.randomUUID()});
+ try{localStorage.setItem(storage,JSON.stringify(state));}
+ catch{state.items=previous;notify('Sauvegarde impossible. Vérifie l’espace disponible.');return false;}
+ catalogUI.updateStatus(work);
+ pathsUI.updateProgress();
+ patchDOM(document.querySelector('#side'),sideMarkup());
+ document.dispatchEvent(new CustomEvent('planche:status',{detail:{id:work.id,status}}));
+ notify(status==='done'?'Œuvre terminée · progression mise à jour.':status==='doing'?'Œuvre en cours · progression mise à jour.':'Œuvre remise à découvrir.');
+ return true;
+}
 const statusOf=work=>workStatus(state.items,work,pathsUI.resolved());
+const sideMarkup=()=>`<section class="level"><span class="stat-icon">✦</span><b>Niveau ${level()}</b><small>${xp()%100} / 100 XP</small>${bar(xp()%100,100)}</section>${state.demo?'<button class="ghost demo" data-act="demo">Retirer la démo</button>':''}`;
 function render(){
  const current=page();
  if(location.hash&& !Object.hasOwn(pages,location.hash.slice(1))&&!['#catalogue','#decouverte'].includes(location.hash))history.replaceState(null,'','#accueil');
  document.querySelector('#nav').innerHTML=Object.entries(pages).map(([k,[icon,label]])=>`<a href="#${k}" ${current===k?'aria-current="page"':''}><span>${icon}</span>${label}</a>`).join('');
- document.querySelector('#side').innerHTML=`<section class="level"><span class="stat-icon">✦</span><b>Niveau ${level()}</b><small>${xp()%100} / 100 XP</small>${bar(xp()%100,100)}</section>${state.demo?'<button class="ghost demo" data-act="demo">Retirer la démo</button>':''}`;
+ document.querySelector('#side').innerHTML=sideMarkup();
  if(current==='decouvrir'){main.innerHTML=catalogUI.mount();catalogUI.load();}
  else{main.innerHTML=pathsUI.mount(current);pathsUI.load();}
 }

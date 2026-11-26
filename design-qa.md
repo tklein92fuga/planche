@@ -131,3 +131,12 @@ IMDb (films/séries) et Metacritic (jeux) sont accessibles sur les cartes et dan
 - Préférence reduced-motion prise en compte par gsap.matchMedia; sans moteur GSAP l’interface continue de fonctionner.
 - Vérification navigateur sur le dashboard et la fiche Cyberpunk 2077: aucun message d’erreur, fiche stable après chargement des disponibilités. Liens Metacritic et Steam dans Découvrir le jeu: même coordonnée Y, même fond rgb(239,240,251), même padding 8px 10px; destinations contrôlées.
 - Tests JavaScript motion, liens, trophées, filtres et statuts passent. Les règles de données restent inchangées.
+
+
+## Interactions sans rechargement — 26 novembre 2026
+
+- Les statuts ne passent plus par le rendu global et ne redemandent pas le catalogue. Le DOM des parcours est mis à jour par différences, avec clés stables, et les détails de sous-liste sont réutilisés.
+- Navigateur: une carte Découvrir conserve son filtre et le focus sur En cours après clic. Dans le dashboard, le tooltip reste ouvert et conserve le focus, tandis que les compteurs passent immédiatement de terminé à en cours; retour À découvrir vérifié. Dans une sous-liste, validation sans Chargement et sans fermeture de fiche.
+- Le tooltip intercepte elementFromPoint dans sa zone; zéro attribut title natif sur les cases. Animation d’ouverture sans visibility:hidden, et maintien d’un point d’ancrage si les listes se réordonnent.
+- CTA verts et orange, sélection marquée, survols supplémentaires sur boutons et liens. Les animations de barre suivent les valeurs mises à jour en place. Correction d’un clearProps indéfini dans le tween de survol GSAP; aucune nouvelle erreur après rechargement.
+- Tests trophées, filtres, statuts, liens, motion et live-paths passent. Le test live-paths interdit toute requête lors d’une mise à jour dans une sous-liste déjà chargée.

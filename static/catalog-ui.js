@@ -1,4 +1,4 @@
-import {sourceLink} from './media-ui.js?v=source-links-1';
+import {sourceLink} from './media-ui.js?v=live-2';
 export function createCatalog({types, esc, opts, cover, show, library, setStatus, statusOf, notify}) {
   const defaults={q:'',type:'all',criterion:'all',sort:'votes',year_min:'',year_max:'',min_score:'',genre:'',page:1};
   let filter={...defaults};
@@ -85,7 +85,7 @@ export function createCatalog({types, esc, opts, cover, show, library, setStatus
     if(action==='previous'||action==='next'){filter.page+=action==='next'?1:-1;load();}
     if(['done','doing','todo'].includes(action)){
       const item=lastItems.find(i=>i.id===button.dataset.id)||(selectedItem?.id===button.dataset.id?selectedItem:null);
-      if(item&&setStatus(item,action)){document.querySelector('#modal').close();}
+      if(item)setStatus(item,action);
     }
     if(action==='detail'){
       const item=lastItems.find(i=>i.id===button.dataset.id);
@@ -96,5 +96,9 @@ export function createCatalog({types, esc, opts, cover, show, library, setStatus
     selectedItem=item;
     show(esc(item.title),`<p class="muted">${types[item.type].label} · ${esc(item.year)}${item.type==='tv'&&item.endYear&&String(item.endYear)!==String(item.year)?'–'+esc(item.endYear):''}${item.creator?' · '+esc(item.creator):''}</p><p>${esc(item.genre)}</p>${sourceAnchor(item)}<ul class="catalog-evidence">${evidence(item)}</ul>${item.edition?`<p>Édition française · <a href="${safeLink(item.edition.url)}" target="_blank" rel="noopener noreferrer">${esc(item.edition.title)}</a></p>`:''}${statusButtons(item)}<button class="ghost" data-cat="todo" data-id="${esc(item.id)}">Remettre à découvrir</button>`);
   }
-  return {mount,open:openItem,load(){load();poll();}};
+  function updateStatus(item){
+    const status=statusOf(item);
+    for(const button of document.querySelectorAll('[data-cat="done"],[data-cat="doing"]'))if(button.dataset.id===item.id)button.setAttribute('aria-pressed',String(button.dataset.cat===status));
+  }
+  return {mount,open:openItem,updateStatus,load(){load();poll();}};
 }

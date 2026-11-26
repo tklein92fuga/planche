@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 const mediaModule='data:text/javascript;base64,'+Buffer.from(await readFile(new URL('../static/media-ui.js',import.meta.url))).toString('base64');
-const source=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./media-ui.js?v=motion-1',mediaModule).replace('./work-hover.js?v=motion-1','data:text/javascript,export function createWorkHover(){}');
+const source=(await readFile(new URL('../static/paths-ui.js',import.meta.url),'utf8')).replace('./dom-patch.js?v=live-2','data:text/javascript,export function patchDOM(root,html){root.innerHTML=html;}').replace('./media-ui.js?v=live-2',mediaModule).replace('./work-hover.js?v=live-2','data:text/javascript,export function createWorkHover(){}');
 const {createPaths}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const values=new Map();let writes=0;const messages=[];
 globalThis.localStorage={getItem:k=>values.get(k),setItem:(k,v)=>{writes++;values.set(k,v);}};
@@ -18,6 +18,8 @@ let earned=JSON.parse(values.get('planche.trophies.v1'));
 assert.deepEqual(Object.keys(earned).sort(),['first','overlap','three']);
 assert.match(target.innerHTML,/Trophées obtenus/);
 const date=earned.first.date;
+const liveFetch=globalThis.fetch;globalThis.fetch=()=>{throw Error('Status update must not fetch the catalogue');};
+await ui.updateProgress();globalThis.fetch=liveFetch;
 await ui.load();assert.equal(writes,1,'No duplicate award or repeated storage write');
 library=[];await ui.load();earned=JSON.parse(values.get('planche.trophies.v1'));
 assert.equal(earned.first.date,date,'Earned trophies survive status changes');

@@ -122,3 +122,17 @@ main:has(.completion-dashboard){max-width:1500px;background:#f3f4f4}.completion-
 .catalog-works .work-status-actions button{color:#243020}.catalog-works .work-status-actions button[aria-pressed=true]{color:#fff}.catalog-works .work-status-actions button[data-cat=doing][aria-pressed=true]{color:#6e4a1b}
 
 .work-source-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:7px 10px;border:1px solid #d8ddd1;border-radius:8px;text-decoration:none;color:#35452f;background:#f4f7ef;align-self:flex-start;margin:8px 0}.work-source-link:hover{background:#e7eddf}.catalog-works .work-source-link{color:#bce8cc;background:#23362e;border-color:#385948}.catalog-works .work-source-link:hover{background:#304f40}.work-hover-card>.work-source-link{margin:13px 0 0}
+
+/* Instant status controls and pointer-safe work cards. */
+.work-hover-card{pointer-events:auto;isolation:isolate;visibility:visible}
+.work-status-actions button:is([data-cat=done],[data-hover-status=done]),.catalog-works .work-status-actions button[data-cat=done]{background:#287849;border-color:#287849;color:#fff}
+.work-status-actions button:is([data-cat=doing],[data-hover-status=doing]),.catalog-works .work-status-actions button[data-cat=doing]{background:#af520e;border-color:#af520e;color:#fff}
+.work-status-actions button:is([data-cat=done],[data-hover-status=done])[aria-pressed=true],.catalog-works .work-status-actions button[data-cat=done][aria-pressed=true]{background:#16592f;border-color:#16592f;color:#fff;box-shadow:0 0 0 3px #b9ddc4}
+.work-status-actions button:is([data-cat=doing],[data-hover-status=doing])[aria-pressed=true],.catalog-works .work-status-actions button[data-cat=doing][aria-pressed=true]{background:#873b07;border-color:#873b07;color:#fff;box-shadow:0 0 0 3px #f3d0a7}
+button,a{transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease,filter .16s ease}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ button:not(:disabled):not(.work-open):not(.mastery-tile):not(.meta-index-card):hover,a:hover{filter:brightness(.94);box-shadow:0 3px 10px #15251b14}
+ .mastery-tile:hover{outline:2px solid #8a91bd;outline-offset:3px}
+ .work-hover-links a:hover,.work-source-link:hover{translate:0 -2px;transition:translate .16s ease,background-color .16s ease}
+}
+@media(prefers-reduced-motion:reduce){button,a{transition:none}}

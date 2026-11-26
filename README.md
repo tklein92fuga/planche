@@ -110,3 +110,10 @@ Les cartes entrent avec un léger décalage, les barres de progression évoluent
 Dans les tooltips des jeux, « Voir la page Metacritic » et « Voir la page Steam » partagent désormais le bloc Découvrir le jeu et le même style.
 
 Vérifications complémentaires: `node tests/motion.mjs` et `node tests/source-links.mjs`.
+
+
+## Statuts instantanés
+
+Terminé et En cours enregistrent le statut puis mettent à jour les boutons, cases, compteurs et trophées sur place, sans recharger les sources ni reconstruire la page. Une sous-liste déjà ouverte utilise ses données en mémoire. Le focus, les filtres, la pagination et la position de lecture sont conservés. La fiche au survol reste ouverte après un changement de statut et continue à intercepter le pointeur. Les bulles natives des cases sont supprimées. Les CTA Terminé sont verts, En cours orange, avec un état sélectionné plus marqué. Les liens et boutons proposent des survols animés respectant la réduction des animations.
+
+Test dédié: `node tests/live-paths.mjs`.

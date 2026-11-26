@@ -29,6 +29,7 @@ export function startMotion(){
       const next=max?value/max:0,previous=ratios.get(key)||0;
       if(key)ratios.set(key,next);
       if(!next||previous===next)return;
+      gsap.killTweensOf(bar);
       track(gsap.fromTo(bar,{scaleX:previous/next,transformOrigin:'left center'},{scaleX:1,duration:.55,ease:'power2.out',clearProps:'transform,transformOrigin'}),[bar]);
     }
     const intersection=new IntersectionObserver(entries=>{
@@ -45,7 +46,7 @@ export function startMotion(){
       if(tooltip&&!shown.has(tooltip)){
         shown.add(tooltip);
         // No scale/position tween: fixed placement remains stable as offers load.
-        track(gsap.fromTo(tooltip,{autoAlpha:0,y:5},{autoAlpha:1,y:0,duration:.18,ease:'power2.out',clearProps:'opacity,visibility,transform'}),[tooltip]);
+        track(gsap.fromTo(tooltip,{opacity:0,y:5},{opacity:1,y:0,duration:.18,ease:'power2.out',clearProps:'opacity,visibility,transform'}),[tooltip]);
       }
       if(pending&&performance.now()<expires){
         const selector=pending.status==='todo'?'[data-path-work]':pending.status==='done'?'[data-path-work], [data-cat="done"]':'[data-path-work], [data-cat="doing"]';
@@ -58,6 +59,7 @@ export function startMotion(){
       }
     }
     const observer=new MutationObserver(records=>{
+      for(const record of records)if(record.type==='attributes'&&visible(record.target)){shown.delete(record.target);progress(record.target);}
       for(const record of records)for(const node of record.removedNodes){
         for(const bar of find(node,'.track[role="progressbar"]')){
           const key=bar.dataset.motionKey||bar.getAttribute('aria-label'),max=Number(bar.getAttribute('aria-valuemax'));
@@ -68,12 +70,12 @@ export function startMotion(){
       for(const record of [...active])if(!record.targets.some(el=>el.isConnected)){record.animation.revert();active.delete(record);}
       if(!frame)frame=requestAnimationFrame(()=>{frame=0;scan(main);});
     });
-    observer.observe(document.body,{childList:true,subtree:true});
+    observer.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['aria-valuenow']});
     function status(event){pending=event.detail;expires=performance.now()+3000;scan(main);}
     function lift(event){
       if(!window.matchMedia('(hover: hover)').matches)return;
       const el=event.target.closest(hoverCards);if(!el||el.contains(event.relatedTarget))return;
-      track(gsap.to(el,{y:event.type==='pointerover'?-3:0,duration:.2,ease:'power2.out',overwrite:'auto',clearProps:event.type==='pointerout'?'transform':undefined}),[el]);
+      track(gsap.to(el,{y:event.type==='pointerover'?-3:0,duration:.2,ease:'power2.out',overwrite:'auto',...(event.type==='pointerout'?{clearProps:'transform'}:{})}),[el]);
     }
     document.addEventListener('planche:status',status);
     document.addEventListener('pointerover',lift);document.addEventListener('pointerout',lift);
