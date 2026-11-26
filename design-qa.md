@@ -109,3 +109,11 @@ Contrôles de l’interface: filtrage sur les réalisateurs, Édités par Ninten
 - Passage Terminé: compteur TV 1 et huit listes commencées; retour À découvrir: compteur 0, aucune liste commencée. Le statut de test a été réinitialisé.
 - 18 tests Python passent, ainsi que les scénarios JavaScript de trophées, filtres, statuts et imports. Tests ajoutés pour les seuils, le rejet des épisodes, la séparation film/série et l’installation idempotente sans suppression des films.
 - Les nouveaux instantanés s’appliquent aussi aux installations existantes. La progression personnelle reste dans le navigateur.
+
+
+## Exclusion des talk-shows — 26 novembre 2026
+
+- Migration sur la base existante: 109 entrées retirées (106 TV et 3 films), avec suppression de leurs caches de visuels et liens. Zéro genre Talk-Show restant dans works.
+- Résultat: 8 522 séries et mini-séries, 16 801 films; 320 sous-listes en vue TV. Livres et jeux inchangés.
+- Les relevés historiques sont filtrés avant installation; IMDb et les autres collectes refusent les nouveaux titres portant ce genre. Une modification de la règle force la migration même si le relevé compressé est identique.
+- 19 tests Python passent, incluant le rejet du genre Talk-Show quel que soit le format, l’élimination des anciennes entrées et l’installation répétée sans réapparition.

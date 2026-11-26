@@ -14,12 +14,18 @@ class IMDbTVTest(unittest.TestCase):
         self.assertIsNone(imdb_tv.item(self.row('tvEpisode'),9.9,100000))
         self.assertIsNone(imdb_tv.item(self.row(),6.9,10000));self.assertIsNone(imdb_tv.item(self.row(),9.0,999))
         row=self.row();row['endYear']='\\N';self.assertEqual(imdb_tv.item(row,8,1000)['evidence'][0]['endYear'],'')
+    def test_talk_shows_are_excluded_for_films_and_series(self):
+        for kind in ('movie','tvSeries','tvMiniSeries'):
+            row=self.row(kind);row['genres']='Comedy,Talk-Show'
+            self.assertIsNone(imdb_tv.item(row,9.9,1000000))
+        self.assertFalse(imdb_tv.is_talk_show('Comedy,Drama'))
+
     def test_seed_preserves_films_and_is_idempotent(self):
         with tempfile.TemporaryDirectory() as d:
             seed=Path(d)/'series.gz';item=imdb_tv.item(self.row(),9.5,10000)
-            seed.write_bytes(gzip.compress(json.dumps({'checked':'2026-11-26','items':[item]}).encode()))
+            seed.write_bytes(gzip.compress(json.dumps({'checked':'2026-11-26','items':[item,{**item,'id':'imdb:talk','genre':'Comedy, Talk-Show'}]}).encode()))
             c=sqlite3.connect(':memory:');c.row_factory=sqlite3.Row
-            c.executescript("CREATE TABLE works(id TEXT PRIMARY KEY,type,title,search,year,genre,creator,image,length,score,votes,evidence,edition,updated);CREATE TABLE sources(id PRIMARY KEY,status,message,updated,count);INSERT INTO works(id,type) VALUES('imdb:film','film');")
+            c.executescript("CREATE TABLE works(id TEXT PRIMARY KEY,type,title,search,year,genre,creator,image,length,score,votes,evidence,edition,updated);CREATE TABLE sources(id PRIMARY KEY,status,message,updated,count);INSERT INTO works(id,type) VALUES('imdb:film','film');INSERT INTO works(id,type,genre) VALUES('imdb:old-talk','tv','Talk-Show');INSERT INTO works(id,type,genre) VALUES('imdb:old-interview','film','Talk-Show');")
             with patch.object(imdb_tv,'SEED',seed):imdb_tv.install(c);imdb_tv.install(c)
             self.assertEqual(c.execute('SELECT count(*) FROM works').fetchone()[0],2)
             self.assertEqual(c.execute("SELECT type FROM works WHERE id='imdb:film'").fetchone()[0],'film')

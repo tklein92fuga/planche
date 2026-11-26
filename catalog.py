@@ -24,7 +24,7 @@ CACHE = ROOT / "data" / "cache"
 LOCK = threading.Lock()
 RULES = {
     "imdb": "Films IMDb ≥ 7/10 · au moins 1 000 votes",
-    "imdb-tv": "Séries et mini-séries IMDb ≥ 7/10 · au moins 1 000 votes",
+    "imdb-tv": "Séries et mini-séries IMDb ≥ 7/10 · au moins 1 000 votes · hors talk-shows",
     "books": "Édition française identifiée · Goodreads en priorité, Open Library lorsque le rapprochement reste à vérifier",
     "goodreads": "Notes et fiches Goodreads rapprochées par titre et auteur · éditions françaises conservées",
     "metacritic": "Metacritic ≥ 70/100 · au moins 10 critiques professionnelles",
@@ -118,6 +118,8 @@ def source_status(source, status, message, count=None):
 
 def store(source, items):
     # Successful source refresh is atomic. Other sources and the previous snapshot survive failures.
+    import imdb_tv
+    items=[i for i in items if not imdb_tv.is_talk_show(i.get("genre"))]
     with connect() as conn:
         conn.execute("DELETE FROM works WHERE id LIKE ?", (source + ":%",))
         for item in items:
